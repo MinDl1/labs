@@ -30,7 +30,7 @@ Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 - Wires Male-Male - 4
 - 220 Ohm resistor- 1
 
-![Minimum kit for Project](https://github.com/MinDl1/lab_1/blob/main/images/Minimum_kit.png?raw=true)
+![Minimum kit for Project](https://github.com/MinDl1/labs/blob/main/lab_1/images/Minimum_kit.png?raw=true)
 
 ##### Maximum kit(to complete all tasks one by one):
 
@@ -43,15 +43,15 @@ Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 - 220 Ohm resistor - 3
 - Slider switches - 6
 
-![Maximum kit for Project](https://github.com/MinDl1/lab_1/blob/main/images/Maximum_kit.png?raw=true)
+![Maximum kit for Project](https://github.com/MinDl1/labs/blob/main/lab_1/images/Maximum_kit.png?raw=true)
 
 ##### Base scheme for Project
 
-![task_1_image](https://github.com/MinDl1/lab_1/blob/main/images/task_1/task_1.png?raw=true)
+![task_1_image](https://github.com/MinDl1/labs/blob/main/lab_1/images/task_1/task_1.png?raw=true)
 
 ##### Other images
 
-Other images with connection in [/images](https://github.com/MinDl1/lab_1/tree/main/images)
+Other images with connection in [/images](/lab_1/images)
 
 #### Software:
 
