@@ -3,7 +3,7 @@
 ## About project
 
 Labs is a project based on different hardware and software.  
-The project is made possible by MinDl, *, * who've generously donated dozens of hours in code development and upkeep.
+The project is made possible by MinDl, [Gryn69](https://github.com/Gryn69), * who've generously donated dozens of hours in code development and upkeep.
 
 <details>
 <summary>Laboratory 1</summary>
@@ -15,6 +15,10 @@ Lab_1 is a project based on Arduino that allows you to control the brightness of
 Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
 
 ## Documentation
+
+### Narrative documentation:
+
+- Our docs will be updated soon
 
 ### Hardware and Software:
 
