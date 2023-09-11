@@ -3,7 +3,7 @@
 ## About project
 
 Labs is a project based on different hardware and software.  
-The project is made possible by MinDl, [Gryn69](https://github.com/Gryn69), * who've generously donated dozens of hours in code development and upkeep.
+The project is made possible by [MinDl](https://github.com/MinDl1), [Gryn69](https://github.com/Gryn69), [Goremika26](https://github.com/Goremika26) who've generously donated dozens of hours in code development and upkeep.
 
 <details>
 <summary>Laboratory 1</summary>
