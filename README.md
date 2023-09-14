@@ -18,7 +18,7 @@ Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 
 ### Narrative documentation:
 
-- Our docs will be updated soon
+- Our [docs](/lab_1/docs/Лабраторная%20работа%201.1.pdf)
 
 ### Hardware and Software:
 
