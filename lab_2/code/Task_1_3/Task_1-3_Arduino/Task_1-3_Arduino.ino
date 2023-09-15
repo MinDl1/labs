@@ -10,11 +10,15 @@
 
 const int leftSensor = A0; // аналоговый ввод для левой руки 
 const int rightSensor = A1; // аналоговый ввод для правой руки 
+const int thirdSensor = A2; // аналоговый ввод для 3 руки 
+const int fourthSensor = A3; // аналоговый ввод для 4 руки 
 const int resetButton = 4; // цифровой ввод для кнопки сброса 
 const int serveButton = 5; // цифровой ввод для кнопки подаuи
 
 int leftReading = 0;	// показания датuика левой руки 
-int rightReading = 0;	// показания датuика правой руки 
+int rightReading = 0;	// показания датuика правой руки
+int thirdReading = 0;	// показания датuика 3 руки 
+int fourthReading = 0;	// показания датuика 4 руки 
 int resetReading = 0;	// данные кнопки сброса
 int serveReading = 0;	// данные кнопки подаuи
 
@@ -30,6 +34,8 @@ void loop() {
 // сuитываем показания аналоговых датuиков: 
   leftReading = analogRead(leftSensor); 
   rightReading = analogRead(rightSensor);
+  thirdReading = analogRead(thirdSensor); 
+  fourthReading = analogRead(fourthSensor);
 
 // сuитываем показания цифровых датuиков: 
   resetReading = digitalRead(resetButton); 
@@ -39,6 +45,10 @@ void loop() {
   Serial.print(leftReading); 
   Serial.print(','); 
   Serial.print(rightReading); 
+  Serial.print(','); 
+  Serial.print(thirdReading); 
+  Serial.print(','); 
+  Serial.print(fourthReading); 
   Serial.print(','); 
   Serial.print(resetReading); 
   Serial.print(',');
