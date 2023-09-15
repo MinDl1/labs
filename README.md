@@ -198,6 +198,176 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 </details>
 
+<details>
+<summary>Laboratory 2</summary>
+
+# Lab_2
+
+Monkey ping pong  
+Lab_2 is a project based on Arduino that allows you to play ping-pong with flexible sensor.
+
+Lab_2 source code is made available on [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [docs](/lab_2/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+##### Minimum kit(to complete task_0): 
+
+- Computer - 1
+- Arduino UNO - 1
+- Wire for connecting an Arduino UNO to a computer - 1
+- Small breadboard - 1
+- Buttons - 2
+- Set of wires
+- 4 kΩ Resistor - 4
+- Flexible sensor - 2
+
+![Minimum kit for Project](/lab_2/images/Minimum_kit.png)
+
+##### Maximum kit(to complete all tasks one by one):
+
+- Computer - 1
+- Arduino UNO - 1
+- Wire for connecting an Arduino UNO to a computer - 1
+- Small breadboard - 1
+- Buttons - 2
+- Set of wires
+- 4 kΩ Resistor - 6
+- Flexible sensor - 4
+
+![Maximum kit for Project](/lab_2/images/Maximum_kit.png)
+
+##### Base scheme for Project
+
+![Task_0_image](/lab_2/images/Task_0/Task_0.png)
+
+![Task_0_Circuit](/lab_2/images/Task_0/Task_0_Circuit.png)
+
+##### Other images
+
+Other images with connection in [/images](/lab_2/images)
+
+#### Software:
+
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Processing](https://processing.org/)
+
+Our code has clear comments, but for you we will write the main points here.  
+This is a base code for our Project.
+
+Arduino code
+
+```cpp
+/*
+Сuитыватель показаний датчиков Контекст: Arduino
+
+Сuитывает показания с двух аналоговых входов и двух цифровых входов и выводит их знаuения.
+
+Подклюuения:
+Аналоговые датuики — к контактам аналогового ввода A0 и A1 Кнопки — к контактам цифрового ввода 4 и 5
+*/
+
+
+const int leftSensor = A0; // аналоговый ввод для левой руки 
+const int rightSensor = A1; // аналоговый ввод для правой руки 
+const int resetButton = 4; // цифровой ввод для кнопки сброса 
+const int serveButton = 5; // цифровой ввод для кнопки подаuи
+
+int leftReading = 0;	// показания датuика левой руки 
+int rightReading = 0;	// показания датuика правой руки 
+int resetReading = 0;	// данные кнопки сброса
+int serveReading = 0;	// данные кнопки подаuи
+
+void setup() {
+// настраиваем последовательное соединение: 
+  Serial.begin(9600);
+// configure the digital inputs: 
+  pinMode(resetButton, INPUT); 
+  pinMode(serveButton, INPUT);
+}
+
+void loop() {
+// сuитываем показания аналоговых датuиков: 
+  leftReading = analogRead(leftSensor); 
+  rightReading = analogRead(rightSensor);
+
+// сuитываем показания цифровых датuиков: 
+  resetReading = digitalRead(resetButton); 
+  serveReading = digitalRead(serveButton);
+
+// Выводим результаты на экран: 
+  Serial.print(leftReading); 
+  Serial.print(','); 
+  Serial.print(rightReading); 
+  Serial.print(','); 
+  Serial.print(resetReading); 
+  Serial.print(',');
+/* выводим на экран последнее показание датuика
+с помощью функции printlin(), uтобы каждый набор из uетырех показаний был на отдельной строке:
+*/
+Serial.println(serveReading);
+}
+```
+Processing code will be updated later
+
+```cpp
+//code will be updated later
+```
+
+Other code in folders in [lab_2](/lab_2/code)
+
+#### Tinkercad
+
+<details>
+<summary>Click to see Task_0</summary>
+
+[Lab_2_Task_0 in Tinkercad](https://www.tinkercad.com/things/9XXuvXolDj3?sharecode=ggglE6MH0tPTb_5_Z6lmFAVOzXe-qpBiG2zrRJ5MMPM
+)  
+This circuit and code allows you to control 2 ping-pong paddles with flexible sensor and show you the game. 
+
+</details>
+
+<details>
+<summary>Click to see Task_1-3</summary>
+
+[Lab_2_Task_1-3 in Tinkercad](https://www.tinkercad.com/things/e2kYLFEPLQk?sharecode=waSgHX7pjD2xIQmv0CseYd5RBD_IypeuP4LmsLCPHZI
+)  
+This circuit and code allows you to control 4 ping-pong paddles with flexible sensor and show you the game. 
+
+</details>
+
+<details>
+<summary>Click to see Task_4</summary>
+
+Will be updated soon
+
+</details>
+
+<details>
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [C++](https://devdocs.io/cpp/)
+- [Tinkercad](https://www.tinkercad.com/learn)
+- [Processing](https://processing.org/)
+
+## Building
+
+For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software) and [Processing](https://processing.org/) to see the game and play.  
+This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+
+---
+
+</details>
+
 ## Wishes
 
 Use this project wisely.  
