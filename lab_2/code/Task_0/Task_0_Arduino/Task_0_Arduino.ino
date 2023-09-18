@@ -18,6 +18,10 @@ int rightReading = 0;	// показания датuика правой руки
 int resetReading = 0;	// данные кнопки сброса
 int serveReading = 0;	// данные кнопки подаuи
 
+while (Serial.available() <= 0){ 
+  Serial.println("hello"); // отправляем начальное сообщение
+}
+
 void setup() {
 // настраиваем последовательное соединение: 
   Serial.begin(9600);
@@ -27,23 +31,29 @@ void setup() {
 }
 
 void loop() {
-// сuитываем показания аналоговых датuиков: 
-  leftReading = analogRead(leftSensor); 
-  rightReading = analogRead(rightSensor);
+  if (Serial.available() > 0) {
+  // считываем данные иѕ последовательного буфера:
+  // ѕначение байта не имеет ѕначения — тольхо фахт его
+  // наличия:
+  int inByte = Serial.read();
+  // сuитываем показания аналоговых датuиков: 
+    leftReading = analogRead(leftSensor); 
+    rightReading = analogRead(rightSensor);
 
-// сuитываем показания цифровых датuиков: 
-  resetReading = digitalRead(resetButton); 
-  serveReading = digitalRead(serveButton);
+  // сuитываем показания цифровых датuиков: 
+    resetReading = digitalRead(resetButton); 
+    serveReading = digitalRead(serveButton);
 
-// Выводим результаты на экран: 
-  Serial.print(leftReading); 
-  Serial.print(','); 
-  Serial.print(rightReading); 
-  Serial.print(','); 
-  Serial.print(resetReading); 
-  Serial.print(',');
-/* выводим на экран последнее показание датuика
-с помощью функции printlin(), uтобы каждый набор из uетырех показаний был на отдельной строке:
-*/
-Serial.println(serveReading);
+  // Выводим результаты на экран: 
+    Serial.print(leftReading); 
+    Serial.print(','); 
+    Serial.print(rightReading); 
+    Serial.print(','); 
+    Serial.print(resetReading); 
+    Serial.print(',');
+  /* выводим на экран последнее показание датuика
+  с помощью функции printlin(), uтобы каждый набор из uетырех показаний был на отдельной строке:
+  */
+  Serial.println(serveReading);
+  }
 }
