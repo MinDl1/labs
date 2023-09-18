@@ -350,8 +350,6 @@ Will be updated soon
 
 </details>
 
-<details>
-
 ### Language & Applications documentation:
 
 - [Arduino](https://docs.arduino.cc/)
