@@ -76,7 +76,7 @@ void serialEvent(Serial myPort){
   resultString = "";
   // раѕделяем входную строху по ѕапятым и преобраѕовываем
   // полученные фрагменты в целые числа:
-  int sensors[] = int(inputString.split(", "));
+  int sensors[] = int(inputString.split(","));
   // если получены все строхи ѕначений датчихов, испольѕуем их:
   if (sensors.length == 6) {
     // масmтабируем данные датчихов иѕгиба х диапаѕону // рахетох:

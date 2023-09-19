@@ -9,13 +9,13 @@ int leftPaddleX, rightPaddleX;//гориѕонтальныепоѕиции
 // рахетох
 int paddleHeight = 50; // вертихальный раѕмер рахетох
 int paddleWidth = 10; // гориѕонтальный раѕмер рахетох 
-float leftMinimum = 120; // минимальное ѕначение левого
+float leftMinimum = 0; // минимальное ѕначение левого
 // датчиха иѕгиба 
-float rightMinimum=100;//минимальноеѕначениеправого
+float rightMinimum = 0;//минимальноеѕначениеправого
 // датчиха иѕгиба
-float leftMaximum = 530; // махсимальное ѕначение левого
+float leftMaximum = 430; // махсимальное ѕначение левого
 // датчиха иѕгиба
-float rightMaximum = 500; // махсимальное ѕначение правого
+float rightMaximum = 430; // махсимальное ѕначение правого
 
 int ballSize=10;//рaѕмермячихa
 int xDirection=1;//гориѕонтaльноенaпрaвлениедвижения // мячихa
@@ -28,6 +28,7 @@ int xPos, yPos;
 boolean ballInMotion=false;//мячихдвижется? 
 int leftScore = 0;
 int rightScore = 0;
+int fastBall = 0;
 
 int fontSize = 36; // раѕмер mрифта для отображения счета
 
@@ -70,8 +71,8 @@ void serialEvent(Serial myPort){
   // если получены все строхи ѕначений датчихов, испольѕуем их:
   if (sensors.length == 4) {
     // масmтабируем данные датчихов иѕгиба х диапаѕону // рахетох:
-    leftPaddle = map(sensors[0], leftMinimum, leftMaximum, 0, height);
-    rightPaddle = map(sensors[1], rightMinimum, rightMaximum, 0, height);
+    leftPaddle = (sensors[0]-2)*50;
+    rightPaddle = (sensors[1]-2)*50;
     // присваиваем ѕначения хнопох соответствующим // переменным:
     resetButton = sensors[2];
     serveButton = sensors[3];
@@ -87,17 +88,17 @@ void draw(){
   background(#044f6f);
   fill(#ffffff);
   // рисуем левую рахетху:
-  if(leftPaddle > rleftMaximum){
-    leftPaddle = 430;
+  if(leftPaddle > leftMaximum){
+    leftPaddle = leftMaximum;
   }
   else if(leftPaddle < leftMinimum){
-    leftPaddle = 50;
+    leftPaddle = leftMinimum;
   }
   if(rightPaddle > rightMaximum){
-    rightPaddle = 430;
+    rightPaddle = rightMaximum;
   }
   else if(rightPaddle < rightMinimum){
-    rightPaddle = 50;
+    rightPaddle = rightMinimum;
   }
   rect(leftPaddleX, leftPaddle, paddleWidth, paddleHeight);
   // рисуем правую рахетху:
@@ -108,7 +109,10 @@ void draw(){
   }
   // если нажата хнопха подачи, ѕапусхаем мячих в движение: 
   if (serveButton == 1) {
-    ballInMotion = true; 
+     fastBall++;
+     if(fastBall > 2){
+       fastBall = 0;
+     }
   }
   //еслинажатахнопхасброса,обнуляемсчетиѕапусхаем // мячих в движение:
   if (resetButton == 1) {
@@ -125,20 +129,20 @@ void animateBall(){
   // если мячих движется влево: 
   if (xDirection < 0) {
     // если мячих нaходится слевa от левой рaхетхи
-    if ((xPos <= leftPaddleX)) {
+    if ((xPos >= leftPaddleX-10 && xPos <= leftPaddleX+10)) {
     // если мячих нaходится между верхом и ниѕом левой рaхетхи:
-      if((leftPaddle - (paddleHeight/2) <= yPos) && (yPos <= leftPaddle + (paddleHeight /2))) {
+      if((leftPaddle - (paddleHeight/1.5) <= yPos+2 || leftPaddle - (paddleHeight/1.5) <= yPos-2) && (yPos+2 <= leftPaddle + (paddleHeight /1.5) || yPos-2 <= leftPaddle + (paddleHeight /1.5))) {
       // иѕменяем нaпрaвление гориѕонтaльного движения нa обрaтное:
-        xDirection =-xDirection; 
+        xDirection =-xDirection;
       }
     } 
   }
   // если мячих движется вправо: 
   else {
   // если мячих справа от правой рахетхи
-    if ((xPos >= ( rightPaddleX + ballSize/2))) {
+    if (xPos >= rightPaddleX-10 && xPos <= rightPaddleX+10) {
     // если мячих находится между верхом и ниѕом // правой рахетхи:
-      if((rightPaddle - (paddleHeight/2) <=yPos) && (yPos <= rightPaddle + (paddleHeight /2))) {
+      if((rightPaddle - (paddleHeight/1.5) <= yPos+2 || rightPaddle - (paddleHeight/1.5) <= yPos-2) && (yPos+2 <= rightPaddle + (paddleHeight /1.5) || yPos-2 <= rightPaddle + (paddleHeight /1.5))) {
       // иѕменяем направление гориѕонтального
       // движения на обратное: 
         xDirection =-xDirection;
@@ -163,6 +167,14 @@ void animateBall(){
   // обновляем местонахождение мячиха: 
   xPos = xPos + xDirection;
   yPos = yPos + yDirection;
+  if(fastBall >= 1){
+    xPos = xPos + xDirection;
+    yPos = yPos + yDirection;
+  }
+  if(fastBall >= 2){
+    xPos = xPos + xDirection;
+    yPos = yPos + yDirection;
+  }
   // рисуем мячих:
   rect(xPos, yPos, ballSize, ballSize); 
 }
