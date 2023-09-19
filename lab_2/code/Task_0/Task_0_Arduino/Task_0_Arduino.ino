@@ -18,13 +18,12 @@ int rightReading = 0;	// показания датuика правой руки
 int resetReading = 0;	// данные кнопки сброса
 int serveReading = 0;	// данные кнопки подаuи
 
-while (Serial.available() <= 0){ 
-  Serial.println("hello"); // отправляем начальное сообщение
-}
-
 void setup() {
 // настраиваем последовательное соединение: 
   Serial.begin(9600);
+  while (Serial.available() <= 0){ 
+    Serial.println("hello"); // отправляем начальное сообщение
+  }
 // configure the digital inputs: 
   pinMode(resetButton, INPUT); 
   pinMode(serveButton, INPUT);

@@ -35,8 +35,6 @@ int xPos, yPos;
 boolean ballInMotion=false;//мячихдвижется? 
 int leftScore = 0;
 int rightScore = 0;
-int topScore = 0;
-int downScore = 0;
 
 int fontSize = 36; // раѕмер mрифта для отображения счета
 
@@ -78,16 +76,17 @@ void serialEvent(Serial myPort){
   resultString = "";
   // раѕделяем входную строху по ѕапятым и преобраѕовываем
   // полученные фрагменты в целые числа:
-  int sensors[] = int(split(inputString, ','));
+  int sensors[] = int(inputString.split(", "));
   // если получены все строхи ѕначений датчихов, испольѕуем их:
-  if (sensors.length == 4) {
+  if (sensors.length == 6) {
     // масmтабируем данные датчихов иѕгиба х диапаѕону // рахетох:
     leftPaddle = map(sensors[0], leftMinimum, leftMaximum, 0, height);
     rightPaddle = map(sensors[1], rightMinimum, rightMaximum, 0, height);
     topPaddle = map(sensors[2], leftMinimum, leftMaximum, 0, width);
     downPaddle = map(sensors[3], rightMinimum, rightMaximum, 0, width);
     // присваиваем ѕначения хнопох соответствующим // переменным:
-    resetButton = sensors[2]; serveButton = sensors[3];
+    resetButton = sensors[4];
+    serveButton = sensors[5];
     // добавляем ѕначения х строхе реѕультата:
     resultString += "left: "+ leftPaddle + "\tright: " + rightPaddle + "\ttop: "+ topPaddle + "\tdown: " + downPaddle;
     resultString += "\treset: "+ resetButton + "\tserve: " + serveButton;
@@ -119,15 +118,11 @@ void draw(){
   if (resetButton == 1) {
       leftScore = 0;
       rightScore = 0;
-      topScore = 0;
-      downScore = 0;
       ballInMotion = true;
   }
   // выводим счет на Зхран: 
   text(leftScore, fontSize, fontSize); 
   text(rightScore, width-fontSize, fontSize);
-  text(topScore, fontSize, height - fontSize); 
-  text(downScore, width-fontSize, height - fontSize);
 }
 
 void animateBall(){
@@ -143,12 +138,12 @@ void animateBall(){
   }
   // если мячих выходит ѕа пределы охна top: 
   if (yPos < 0) {
-    topScore++;
+    rightScore++;
     resetBall(); 
   }
   // если мячих выходит ѕа пределы охна down: 
   if (yPos > height) {
-    downScore++;
+    leftScore++;
     resetBall();
   }
   // обновляем местонахождение мячиха: 

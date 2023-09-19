@@ -315,10 +315,69 @@ void loop() {
 Serial.println(serveReading);
 }
 ```
-Processing code will be updated later
+Processing code
 
-```cpp
-//code will be updated later
+```java
+import processing.serial.*;
+
+Serial myPort;
+String resultString; // Строuная переменная для результатов
+
+void setup() {
+  size(480, 130); // устанавливаем размер окна апплета 
+  printArray(Serial.list()); // Выводим на экран все
+  // доступные последовательные порты
+  
+  // Hа моем компьютере порт микроконтроллера обыuно
+  // первый порт в списке,
+  // поэтому я открываю Serial.list()[0].
+  // Измените 0 на номер последовательного порта,
+  // к которому подклюuен ваш микроконтроллер: 
+  String portName = Serial.list()[1];
+  // открываем последовательный порт:
+  myPort = new Serial(this, portName, 9600);
+  
+  // сuитываем байты в буфер, пока не дойдем до символа
+  // перевода строки (ASCII 10): 
+  myPort.bufferUntil('\n');
+}
+
+void draw() {
+  // задаем цвет фона и заливки для окна апплета: 
+  background(#044f6f);
+  fill(#ffffff);
+  // выводим строку в окне:
+  if (resultString != null) { 
+    text(resultString, 10, height/2);
+  }
+}
+
+/* Метод serialEvent() исполняется автоматиuески в программе каждый раз, когда в буфер записывается
+байт со знаuением, определенным в методе bufferUntil() в процедуре setup():
+*/
+
+void serialEvent(Serial myPort) {
+  // Сuитываем данные из последовательного буфера: 
+  String inputString = myPort.readStringUntil('\n');
+  
+  // Отбрасываем символы возврата каретки
+  // и перевода строки из строки ввода: 
+  inputString = trim(inputString);
+  // Оuищаем переменную resultString: 
+  resultString = "";
+  
+  // Разделяем входную строку по запятым и преобразовываем
+  // полуuенные фрагменты в целые uисла:
+  int sensors[] = int(inputString.split(", "));
+  
+  // Добавляем знаuения к строке результата:
+  for (int sensorNum = 0; sensorNum < sensors.length; sensorNum++) {
+    resultString += "Sensor " + sensorNum + ": ";
+    resultString += sensors[sensorNum] + '\t';
+  }
+  // Выводим результат на экран: 
+  println(resultString);
+}
 ```
 
 Other code in folders in [lab_2](/lab_2/code)
@@ -328,18 +387,32 @@ Other code in folders in [lab_2](/lab_2/code)
 <details>
 <summary>Click to see Task_0</summary>
 
-[Lab_2_Task_0 in Tinkercad](https://www.tinkercad.com/things/9XXuvXolDj3?sharecode=ggglE6MH0tPTb_5_Z6lmFAVOzXe-qpBiG2zrRJ5MMPM
-)  
+[Lab_2_Task_0 in Tinkercad](https://www.tinkercad.com/things/9XXuvXolDj3?sharecode=ggglE6MH0tPTb_5_Z6lmFAVOzXe-qpBiG2zrRJ5MMPM)  
 This circuit and code allows you to control 2 ping-pong paddles with flexible sensor and show you the game. 
+
+</details>
+
+<details>
+<summary>Click to see Task_0_Arduino_ultrasonic_sensor</summary>
+
+[Lab_2_Task_0_Arduino_ultrasonic_sensor in Tinkercad](https://www.tinkercad.com/things/7Oxql65PcST?sharecode=waaRPWMERvyUNfi1oD_xEmB36GVAiRF01Zue4sO-fDY)  
+This circuit and code allows you to control 2 ping-pong paddles with ultrasonic sensor and show you the game. 
 
 </details>
 
 <details>
 <summary>Click to see Task_1-3</summary>
 
-[Lab_2_Task_1-3 in Tinkercad](https://www.tinkercad.com/things/e2kYLFEPLQk?sharecode=waSgHX7pjD2xIQmv0CseYd5RBD_IypeuP4LmsLCPHZI
-)  
+[Lab_2_Task_1-3 in Tinkercad](https://www.tinkercad.com/things/e2kYLFEPLQk?sharecode=waSgHX7pjD2xIQmv0CseYd5RBD_IypeuP4LmsLCPHZI)  
 This circuit and code allows you to control 4 ping-pong paddles with flexible sensor and show you the game. 
+
+</details>
+
+<details>
+<summary>Click to see Task_1-3_Arduino_ultrasonic_sensor</summary>
+
+[Lab_2_Task_1-3_Arduino_ultrasonic_sensor in Tinkercad](https://www.tinkercad.com/things/h1qa7SH4AzB?sharecode=0vdZN52ufLO0fdSQTVMLpmT19Iv72kAeBdPmgsLWeyQ)  
+This circuit and code allows you to control 4 ping-pong paddles with ultrasonic sensor and show you the game. 
 
 </details>
 

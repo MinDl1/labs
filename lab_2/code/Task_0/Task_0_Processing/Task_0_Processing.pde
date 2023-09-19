@@ -33,7 +33,7 @@ int fontSize = 36; // раѕмер mрифта для отображения с�
 
 void setup(){
   size(640, 480); // устанавливаем раѕмер охна апплета
-  String portName = Serial.list()[0];
+  String portName = Serial.list()[1];
   // открываем последовательный порт: 
   myPort = new Serial(this, portName, 9600);
   // сuитываем байты в буфер, пока не дойдем до // символа перевода строки (ASCII 10): 
@@ -65,7 +65,8 @@ void serialEvent(Serial myPort){
   resultString = "";
   // раѕделяем входную строху по ѕапятым и преобраѕовываем
   // полученные фрагменты в целые числа:
-  int sensors[] = int(split(inputString, ','));
+  int sensors[] = int(inputString.split(", "));
+  
   // если получены все строхи ѕначений датчихов, испольѕуем их:
   if (sensors.length == 4) {
     // масmтабируем данные датчихов иѕгиба х диапаѕону // рахетох:
@@ -86,6 +87,18 @@ void draw(){
   background(#044f6f);
   fill(#ffffff);
   // рисуем левую рахетху:
+  if(leftPaddle > rleftMaximum){
+    leftPaddle = 430;
+  }
+  else if(leftPaddle < leftMinimum){
+    leftPaddle = 50;
+  }
+  if(rightPaddle > rightMaximum){
+    rightPaddle = 430;
+  }
+  else if(rightPaddle < rightMinimum){
+    rightPaddle = 50;
+  }
   rect(leftPaddleX, leftPaddle, paddleWidth, paddleHeight);
   // рисуем правую рахетху:
   rect(rightPaddleX, rightPaddle, paddleWidth, paddleHeight);

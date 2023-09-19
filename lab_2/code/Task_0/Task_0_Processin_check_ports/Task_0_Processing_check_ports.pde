@@ -13,7 +13,7 @@ void setup() {
   // поэтому я открываю Serial.list()[0].
   // Измените 0 на номер последовательного порта,
   // к которому подклюuен ваш микроконтроллер: 
-  String portName = Serial.list()[0];
+  String portName = Serial.list()[1];
   // открываем последовательный порт:
   myPort = new Serial(this, portName, 9600);
   
@@ -48,11 +48,12 @@ void serialEvent(Serial myPort) {
   
   // Разделяем входную строку по запятым и преобразовываем
   // полуuенные фрагменты в целые uисла:
-  int sensors[] = int(split(inputString, ','));
+  int sensors[] = int(inputString.split(", "));
   
   // Добавляем знаuения к строке результата:
   for (int sensorNum = 0; sensorNum < sensors.length; sensorNum++) {
-    resultString += "Sensor " + sensorNum + ": "; resultString += sensors[sensorNum] + '\t';
+    resultString += "Sensor " + sensorNum + ": ";
+    resultString += sensors[sensorNum] + '\t';
   }
   // Выводим результат на экран: 
   println(resultString);
