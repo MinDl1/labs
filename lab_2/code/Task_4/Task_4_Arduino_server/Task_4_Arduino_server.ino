@@ -1,47 +1,57 @@
-#include <Wifi.h>
- 
-const char* ssid = "yourNetworkName";
-const char* password =  "yourNetworkPass";
- 
-WiFiServer wifiServer(80);
- 
-void setup() {
- 
-  Serial.begin(115200);
- 
-  delay(1000);
- 
-  WiFi.begin(ssid, password);
- 
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connecting..");
-  }
- 
-  Serial.print("Connected to WiFi. IP:");
-  Serial.println(WiFi.localIP());
- 
-  wifiServer.begin();
-}
- 
-void loop() {
- 
-  WiFiClient client = wifiServer.available();
- 
-  if (client) {
- 
-    while (client.connected()) {
- 
-      while (client.available()>0) {
-        char c = client.read();
-        Serial.write(c);
-      }
- 
-      delay(10);
+#include <WiFi.h>
+
+const char* ssid     = "yourssid";
+const char* password = "yourpasswd";
+int port = 6000;
+
+WiFiServer server(port);
+
+void setup()
+{
+    Serial.begin(115200);
+    pinMode(5, OUTPUT);      // set the LED pin mode
+
+    delay(10);
+
+    // We start by connecting to a WiFi network
+
+    Serial.println();
+    Serial.println();
+    Serial.print("Connecting to ");
+    Serial.println(ssid);
+
+    WiFi.begin(ssid, password);
+
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
     }
- 
+
+    Serial.println("");
+    Serial.println("WiFi connected.");
+    Serial.println("IP address: ");
+    Serial.println(WiFi.localIP());
+    
+    server.begin();
+
+}
+
+void loop(){
+ WiFiClient client = server.available();   // listen for incoming clients
+
+  if (client) {                             // if you get a client,
+    Serial.println("New Client.");           // print a message out the serial port
+    String currentLine = "";                // make a String to hold incoming data from the client
+    while (client.connected()) {            // loop while the client's connected
+      digitalWrite(5, HIGH);
+      if (client.available()) {             // if there's bytes to read from the client,
+        char c = client.read();             // read a byte, then
+        Serial.write(c);                    // print it out the serial monitor
+      }
+    }
+    digitalWrite(5, LOW);
+    // close the connection:
     client.stop();
-    Serial.println("Client disconnected");
- 
+    Serial.println("Client Disconnected.");
   }
 }

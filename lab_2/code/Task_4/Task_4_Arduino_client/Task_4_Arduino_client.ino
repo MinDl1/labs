@@ -1,37 +1,67 @@
-#include <Wifi.h>
+#include <WiFi.h>
 
-const char* ssid = "yourNetworkName";
-const char* password =  "yourNetworkPass";
+const char* ssid     = "your-ssid"; // Change this to your WiFi SSID
+const char* password = "your-password"; // Change this to your WiFi password
 
-WiFiClient wificlient(80);
+const int httpPort = 6000; // This should not be changed
 
-void setup() {
- 
-  Serial.begin(115200);
- 
-  delay(5000);
-  
- 
-  WiFi.begin(ssid, password);
- 
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connecting..");
-  }
- 
-  Serial.print("Connected to WiFi. IP:");
-  Serial.println(WiFi.localIP());
- 
-  wificlient.begin();
+void setup()
+{
+    pinMode(5, OUTPUT);
+    Serial.begin(115200);
+    while(!Serial){delay(100);}
+
+    // We start by connecting to a WiFi network
+
+    Serial.println();
+    Serial.println("******************************************************");
+    Serial.print("Connecting to ");
+    Serial.println(ssid);
+
+    WiFi.begin(ssid, password);
+
+    while (WiFi.status() != WL_CONNECTED) {
+        delay(500);
+        Serial.print(".");
+    }
+
+    Serial.println("");
+    Serial.println("WiFi connected");
+    Serial.println("IP address: ");
+    Serial.println(WiFi.localIP());
 }
 
-void loop() {
-
-IPAddress remoteHost(xxx,xxx,xxx,xxx);  // IP address of the remote service
-int portNumber = 21;               // FTP standard port number
-WiFiClient client = wificlient.available();
-    if (client.connect(remoteHost, portNumber)) {
-           // here you are connected, you can use the documented FTP protocol to discuss with the service
-           client.write("some");
+void readResponse(WiFiClient *client){
+  unsigned long timeout = millis();
+  while(client->available() == 0){
+    if(millis() - timeout > 5000){
+      Serial.println(">>> Client Timeout !");
+      client->stop();
+      return;
     }
+  }
+
+  // Read all the lines of the reply from server and print them to Serial
+  while(client->available()) {
+    String line = client->readStringUntil('\r');
+    Serial.print(line);
+  }
+
+  Serial.printf("\nClosing connection\n\n");
+}
+
+void loop(){
+  WiFiClient client;
+
+  // WRITE --------------------------------------------------------------------------------------------
+  if (client.connect(host, httpPort)) {
+    client.write("something\n");
+    digitalWrite(5, HIGH);
+  }
+  else{
+    digitalWrite(5, LOW);
+  }
+  // -------------------------------------------------------------------------------------------------
+
+  delay(10000);
 }
