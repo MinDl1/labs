@@ -28,13 +28,11 @@ DHT dht(DHTPIN, DHTTYPE);
 int t_w_numTones = 10;
 // Ноты C, C#, D, D#, E, F, F#, G, G#, A
 int t_w_tones[10] = {261, 277, 294, 311, 330, 349, 370, 392, 415, 440};
-#define DIOD_T_W 3
 
 //gas
 int gas_numTones = 10;
 // Ноты C, C#, D, D#, E, F, F#, G, G#, A
 int gas_tones[10] = {261, 277, 294, 311, 330, 349, 370, 392, 415, 440};
-#define DIOD_GAS 3
 #define ANALOGPIN A1 //подключение аналогового сигнального пина
 MQ135 gasSensor = MQ135(ANALOGPIN);
 
@@ -43,7 +41,6 @@ int flame_numTones = 10;
 // Ноты C, C#, D, D#, E, F, F#, G, G#, A
 int flame_tones[10] = {261, 277, 294, 311, 330, 349, 370, 392, 415, 440};
 #define SENSOR_FLAME_PIN 4
-#define DIOD_FLAME 3
 int flame = 0;
 
 //pump
@@ -52,10 +49,10 @@ int pump_numTones = 10;
 int pump_tones[10] = {261, 277, 294, 311, 330, 349, 370, 392, 415, 440};
 #define PUMP_PIN 2
 #define WET_PIN A2
-#define DIOD_PUMP 1
 int soilMoistureValue = 0;
 int percentage = 0;
 
+#define LED_DIOD 1
 #define SOUND_PIN 6
 
 void setup()
@@ -67,11 +64,10 @@ void setup()
 
 
     pinMode(SENSOR_FLAME_PIN, INPUT);
-    pinMode(DIOD_FLAME, OUTPUT);
 
     pinMode(PUMP_PIN, OUTPUT);
-    pinMode(DIOD_WET, OUTPUT);
 
+    pinMode(LED_DIOD, OUTPUT);
     pinMode(SOUND_PIN, OUTPUT);
 
     Serial.begin(9600);
@@ -95,10 +91,11 @@ void loop() {
         lcd.print("Temp = \1C "); // Выводим текст, \1 - значок градуса
         lcd.setCursor(7, 1); // Устанавливаем курсор на 7 символ
         lcd.print(t,1); // Выводим значение температуры
-        digitalWrite(DIOD_T_W, HIGH);
         for (int i = 0; i < t_w_numTones; i++) {
             tone(SOUND_PIN, t_w_tones[i]);
-            delay(500);
+            digitalWrite(LED_DIOD, HIGH);
+            delay(800);
+            digitalWrite(LED_DIOD, LOW);
         }
         noTone(SOUND_PIN);
     }
@@ -112,7 +109,7 @@ void loop() {
         lcd.print("Temp = \1C "); // Выводим текст, \1 - значок градуса
         lcd.setCursor(7, 1); // Устанавливаем курсор на 7 символ
         lcd.print(t,1); // Выводим значение температуры
-        digitalWrite(DIOD_T_W, LOW);
+        digitalWrite(LED_DIOD, LOW);
     }
 
     float ppm = gasSensor.getPPM();
@@ -123,10 +120,11 @@ void loop() {
         lcd.print(ppm);
         lcd.setCursor(7, 0);
         lcd.print(" > 20");
-        digitalWrite(DIOD_GAS, HIGH);
         for (int i = 0; i < gas_numTones; i++) {
             tone(SOUND_PIN, gas_tones[i]);
-            delay(500);
+            digitalWrite(LED_DIOD, HIGH);
+            delay(400);
+            digitalWrite(LED_DIOD, LOW);
         }
         noTone(SOUND_PIN);
     }
@@ -136,24 +134,25 @@ void loop() {
         lcd.print(ppm);
         lcd.setCursor(7, 0);
         lcd.print(" < 20");
-        digitalWrite(DIOD_GAS, LOW);
+        digitalWrite(LED_DIOD, LOW);
     }
 
     flame = digitalRead(SENSOR_FLAME_PIN);
     if (flame == 1){
         lcd.setCursor(0, 0);
         lcd.print("Есть Пламя");
-        digitalWrite(DIOD_FLAME, HIGH);
         for (int i = 0; i < flame_numTones; i++) {
             tone(SOUND_PIN, flame_tones[i]);
-            delay(500);
+            digitalWrite(LED_DIOD, HIGH);
+            delay(200);
+            digitalWrite(LED_DIOD, LOW);
         }
         noTone(SOUND_PIN);
     } 
     else{
         lcd.setCursor(0, 0);
         lcd.print("Нет Пламя");
-        digitalWrite(DIOD_FLAME, LOW);
+        digitalWrite(LED_DIOD, LOW);
     }
 
     soilMoistureValue = analogRead(WET_PIN);
@@ -163,10 +162,11 @@ void loop() {
         lcd.setCursor(0, 0);
         lcd.print("Pump on");
         digitalWrite(PUMP_PIN, LOW);
-        digitalWrite(DIOD_PUMP, HIGH);
         for (int i = 0; i < pump_numTones; i++) {
             tone(SOUND_PIN, pump_tones[i]);
-            delay(500);
+            digitalWrite(LED_DIOD, HIGH);
+            delay(100);
+            digitalWrite(LED_DIOD, LOW);
         }
         noTone(SOUND_PIN);
     }
@@ -174,7 +174,7 @@ void loop() {
         lcd.setCursor(0, 0);
         lcd.print("Pump off");
         digitalWrite(PUMP_PIN, HIGH);
-        digitalWrite(DIOD_PUMP, LOW);
+        digitalWrite(LED_DIOD, LOW);
     }
     
     delay(1000);
