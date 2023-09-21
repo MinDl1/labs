@@ -198,6 +198,166 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 </details>
 
+<details>
+<summary>Laboratory 3</summary>
+
+# Lab_3
+
+Lab_3 Это проект основанный на Arduino который позволяет обнаружить нарушение климаьисеских условий. 
+
+Lab_3 source code is made available on [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [docs](/lab_3/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+##### Minimum kit(to complete tasks one by one): 
+
+- Computer - 1
+- Arduino UNO - 1
+- Wire for connecting an Arduino UNO to a computer - 1
+- Small breadboard - 1
+- DHT11 - 1
+- LCD 16X2 I2C - 1
+- MQ-3- 1
+- Flame sensor - 1
+- 220 Ω resistor - 1
+- LED - 1
+- Buzzer - 1
+- Water pump - 1
+- Relay - 1
+- 9V battery - 1
+- Ground humidity sensor - 1
+
+![Minimum kit for Project](/lab_3/images/Minimum_kit.png)
+
+##### Maximum kit(to complete all tasks one by one):
+
+- Will be ubdated soon...
+
+![Maximum kit for Project](/lab_3/images/Maximum_kit.png)
+
+##### Base scheme for Project
+
+![task_1_image](/lab_3/images/task_1/task_1.png)
+
+![task_0_Circuit](/lab_3/images/task_1/task_1_Circuit.png)
+
+##### Other images
+
+Other images with connection in [/images](/lab_3/images)
+
+#### Software:
+
+- [Arduino IDE](https://www.arduino.cc/en/software)
+
+Our code has clear comments, but for you we will write the main points here.  
+This is a base code for our Project.
+
+```cpp
+// Подключение пинов
+#define SENSOR_FLAME_PIN 4
+// Переменная для определения огня
+int flame;
+// Настройка Arduino 
+void setup()
+{
+  // Определения режимов для пинов
+  pinMode(SENSOR_FLAME_PIN, INPUT);
+  // Частота для работы Arduino с компьютером по USB порту
+  Serial.begin(9600);
+}
+// Цикл который будет бесконечно работать на Arduino 
+void loop() {
+  // Считывание данных с сенсора
+  flame = digitalRead(SENSOR_FLAME_PIN);
+  // Если огогнь есть
+  if (flame == 1){
+    // Выводить сообщение  "Обнаружено пламя" на компьютер
+    Serial.println("Обнаружено пламя");
+    // Задержка 150 мс
+    delay(150);
+  } 
+  // Если пламени нет
+  else{
+    // Выводить сообщение  "Пламя не обнаружено" на компьютер
+    Serial.println("Пламя не обнаружено");
+  }
+ // delay(500);
+}
+```
+Other code in folders in [Lab_3](/lab_3)
+
+#### Electrical circuit
+
+<details>
+<summary>Click to see Task_0.1</summary>
+
+![Lab3_Task_0.1](/lab_3/images/Task_0.1/Task_0.1.png)
+
+Принцип работы этой схемы заключается в том, что датчик DHT11 измеряет температуру и влажность окружающй сренды, считывает эти данные,  через Arduino передаёт на дисплей LCD 16X2 I2C, который выводит этм данные. 
+
+</details>
+
+<details>
+<summary>Click to see Task_0.2</summary>
+
+![Lab3_Task_0.2](/lab_3/images/Task_0.2/Task_0.2.png)
+
+Принцип работы этой схемы заключается в том, что датчик MQ-3 измеряет количество углексилого газа в воздухе и через Arduino посылает показатели на компьютер.
+
+</details>
+
+<details>
+<summary>Click to see Task_0.3</summary>
+
+![Lab3_Task_0.3](/lab_3/images/Task_0.3/Task_0.3.png)
+
+Принцип работы этой схемы заключается в том, что датчик Flame Sensor при обнаружении пламени посылает сигнал на Arduino, запускает звуковой и световой сигнал и посылает показатели на компьютер.
+
+</details>
+
+<details>
+<summary>Click to see Task_0.4</summary>
+
+![Lab3_Task_0.4](/lab_3/images/Task_0.4/Task_0.4.png)
+
+Принцип работы этой схемы заключается в том, что датчик влажности почвы измеряет уровень влажности окружающей среды, если уровень влажности ниже заданных показателей, посылает сигнал на Arduino, который включает водяной насос для увлажнения и выводит сообщение на компьютер "Pump ON" и "Pump OFF".
+
+</details>
+
+<details>
+<summary>Click to see Task_1-6</summary>
+
+![Lab3_Task_1-6](/lab_3/images/Task_1-6/Task_1-6.png)
+
+Объединяем схемы с Task_0.1 по Task_0.4 в одну с помощью беспаечной платы.  
+Добавляем звуковое и световое оповещения индивидульное для каждого датчика.  
+Вся информация теперь выводится на дисплей LCD 16X2 I2C.  
+Теперь водяной насос включается не только от датчика влажности почвы, но и от датчика влажности воздуха.
+
+</details>
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [C++](https://devdocs.io/cpp/)
+
+## Building
+
+For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+
+---
+
+</details>
+
 ## Wishes
 
 Use this project wisely.  
