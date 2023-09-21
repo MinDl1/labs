@@ -1,15 +1,14 @@
 #include <WiFi.h>
 
-const char* ssid     = "your-ssid"; // Change this to your WiFi SSID
-const char* password = "your-password"; // Change this to your WiFi password
+const char* ssid     = "Lab_319_new";
+const char* password = "rbcrbcrbc";
 
 int httpPort = 6000; // This should not be changed
-IPAddress host(10,0,2,10);
+IPAddress host(10,215,3,74);
 WiFiClient client;
 
 void setup()
 {
-    pinMode(5, OUTPUT);
     Serial.begin(115200);
     while(!Serial){delay(100);}
 
@@ -37,13 +36,9 @@ void setup()
 
 void loop(){
   // WRITE --------------------------------------------------------------------------------------------
-  if (client.available()) {
-    client.write("something\n");
-    digitalWrite(5, HIGH);
-    client.stop();
-  }
-  else{
-    digitalWrite(5, LOW);
+  if(client.connected()){
+    client.print("\nsomething");
+    Serial.println("something");
   }
   // -------------------------------------------------------------------------------------------------
 

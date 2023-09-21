@@ -1,7 +1,7 @@
 #include <WiFi.h>
 
-const char* ssid     = "yourssid";
-const char* password = "yourpasswd";
+const char* ssid     = "Lab_319_new";
+const char* password = "rbcrbcrbc";
 int port = 6000;
 
 WiFiServer server(port);
@@ -9,7 +9,6 @@ WiFiServer server(port);
 void setup()
 {
     Serial.begin(115200);
-    pinMode(5, OUTPUT);      // set the LED pin mode
 
     delay(10);
 
@@ -41,15 +40,14 @@ void loop(){
 
   if (client) {                             // if you get a client,
     Serial.println("New Client.");           // print a message out the serial port
-    String currentLine = "";                // make a String to hold incoming data from the client
+    String currentLine = "";     
+    char c;           // make a String to hold incoming data from the client
     while (client.connected()) {            // loop while the client's connected
-      digitalWrite(5, HIGH);
-      if (client.available()) {             // if there's bytes to read from the client,
-        char c = client.read();             // read a byte, then
-        Serial.write(c);                    // print it out the serial monitor
+      if (client.available()) {
+        c = client.read();             // read a byte, then
+        Serial.print(c);                    // print it out the serial monitor
       }
     }
-    digitalWrite(5, LOW);
     // close the connection:
     client.stop();
     Serial.println("Client Disconnected.");
