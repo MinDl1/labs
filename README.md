@@ -292,7 +292,7 @@ void loop() {
  // delay(500);
 }
 ```
-Other code in folders in [Lab_3](/lab_3)
+Other code in folders in [Lab_3](/lab_3/code/)
 
 #### Electrical circuit
 
