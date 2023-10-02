@@ -203,7 +203,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 # Lab_3
 
-Lab_3 Это проект основанный на Arduino который позволяет обнаружить нарушение климаьисеских условий. 
+Lab_3 Это проект основанный на Arduino который позволяет обнаружить нарушение климатических условий. 
 
 Lab_3 source code is made available on [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
 
@@ -217,7 +217,7 @@ Lab_3 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 
 #### Hardware:
 
-##### Minimum kit(to complete tasks one by one): 
+##### Maximum kit(to complete all tasks one by one):
 
 - Computer - 1
 - Arduino UNO - 1
@@ -227,27 +227,23 @@ Lab_3 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 - LCD 16X2 I2C - 1
 - MQ-3- 1
 - Flame sensor - 1
-- 220 Ω resistor - 1
+- 220 Ω resistor - 2
 - LED - 1
+- RGB LED - 1
 - Buzzer - 1
 - Water pump - 1
 - Relay - 1
 - 9V battery - 1
 - Ground humidity sensor - 1
+- Wires kit
 
-![Minimum kit for Project](/lab_3/images/Minimum_kit.png)
+##### Last scheme for Project
 
-##### Maximum kit(to complete all tasks one by one):
+![Task_1_image](/lab_3/images/Task_1-6/Task_1-6.jpg)
 
-- Will be ubdated soon...
+##### DFD
 
-![Maximum kit for Project](/lab_3/images/Maximum_kit.png)
-
-##### Base scheme for Project
-
-![task_1_image](/lab_3/images/task_1/task_1.png)
-
-![task_0_Circuit](/lab_3/images/task_1/task_1_Circuit.png)
+![DFD](/lab_3/images/Lab_3_cheme.png)
 
 ##### Other images
 
@@ -258,7 +254,7 @@ Other images with connection in [/images](/lab_3/images)
 - [Arduino IDE](https://www.arduino.cc/en/software)
 
 Our code has clear comments, but for you we will write the main points here.  
-This is a base code for our Project.
+This is a base code for Task_0.3 for our Project.
 
 ```cpp
 // Подключение пинов
@@ -292,7 +288,7 @@ void loop() {
  // delay(500);
 }
 ```
-Other code in folders in [Lab_3](/lab_3)
+Other code in folders in [Lab_3](/lab_3/code/)
 
 #### Electrical circuit
 
@@ -301,7 +297,7 @@ Other code in folders in [Lab_3](/lab_3)
 
 ![Lab3_Task_0.1](/lab_3/images/Task_0.1/Task_0.1.png)
 
-Принцип работы этой схемы заключается в том, что датчик DHT11 измеряет температуру и влажность окружающй сренды, считывает эти данные,  через Arduino передаёт на дисплей LCD 16X2 I2C, который выводит этм данные. 
+Принцип работы этой схемы заключается в том, что датчик DHT11 измеряет температуру и влажность окружающй сренды, считывает эти данные,  через Arduino передаёт на дисплей LCD 16X2 I2C, который выводит эти данные. 
 
 </details>
 
@@ -335,7 +331,7 @@ Other code in folders in [Lab_3](/lab_3)
 <details>
 <summary>Click to see Task_1-6</summary>
 
-![Lab3_Task_1-6](/lab_3/images/Task_1-6/Task_1-6.png)
+![Lab3_Task_1-6](/lab_3/images/Task_1-6/Task_1-6.jpg)
 
 Объединяем схемы с Task_0.1 по Task_0.4 в одну с помощью беспаечной платы.  
 Добавляем звуковое и световое оповещения индивидульное для каждого датчика.  
