@@ -25,26 +25,26 @@ LiquidCrystal_I2C lcd(0x27,16,2); // Задаем адрес и размерно
 //#define DHTTYPE DHT21 // DHT 21 (AM2301)
 //инициализация датчика
 int t_w_numTones = 10;
-// Ноты C, C#, D, D#, E, F, F#, G, G#, A
+// Ноты 
 int t_w_tones[10] = {261, 277, 294, 311, 330, 349, 370, 392, 415, 440};
 DHT dht(DHTPIN, DHTTYPE);
 
 //gas
 int gas_numTones = 10;
-// Ноты C, C#, D, D#, E, F, F#, G, G#, A
+// Ноты 
 int gas_tones[10] = {400, 400, 400, 400, 400, 400, 400, 400, 400, 400};
 #define ANALOGPIN A1 //подключение аналогового сигнального пина
 
 //flame
 int flame_numTones = 10;
-// Ноты C, C#, D, D#, E, F, F#, G, G#, A
+// Ноты 
 int flame_tones[10] = {300, 300, 300, 300, 300, 300, 300, 300, 300, 300};
 #define SENSOR_FLAME_PIN 4
 int flame = 0;
 
 //pump
 int pump_numTones = 10;
-// Ноты C, C#, D, D#, E, F, F#, G, G#, A
+// Ноты 
 int pump_tones[10] = {200, 200, 200, 200, 200, 200, 200, 200, 200, 200};
 #define PUMP_PIN 2
 #define WET_PIN A2
@@ -63,7 +63,7 @@ void setup()
     lcd.backlight(); // Включаем подсветку
     lcd.createChar(1, degree); // Создаем символ под номером 1
 
-
+    //Устанавливаем пины вход или выход
     pinMode(SENSOR_FLAME_PIN, INPUT);
 
     pinMode(PUMP_PIN, OUTPUT);
@@ -84,9 +84,11 @@ void loop() {
     float h = dht.readHumidity();
     // Read temperature as Celsius
     float t = dht.readTemperature();
-    delay(3000);
+    delay(3000); //Задержка для считывания
 
+    //Отчищаем дисплей
     lcd.clear();
+    // Условие если влажность и температура больше 30
     if(h > 10 && t > 30){
         // Выводим показания влажности и температуры
         lcd.setCursor(0, 0); // Устанавливаем курсор в начало 1 строки
@@ -97,12 +99,12 @@ void loop() {
         lcd.print("Temp = \1C "); // Выводим текст, \1 - значок градуса
         lcd.setCursor(7, 1); // Устанавливаем курсор на 7 символ
         lcd.print(t,1); // Выводим значение температуры
-        for (int i = 0; i < t_w_numTones; i++) {
+        for (int i = 0; i < t_w_numTones; i++) { // цикл, чтобы звучала мелодия из нот и мигало в тот-же такт задержки
             tone(SOUND_PIN, t_w_tones[i]);
             digitalWrite(LED_DIOD1, HIGH);
             delay(800);
         }
-        noTone(SOUND_PIN);
+        noTone(SOUND_PIN); //выключаем звук нот
     }
     else{
         // Выводим показания влажности и температуры
@@ -114,15 +116,19 @@ void loop() {
         lcd.print("Temp = \1C  "); // Выводим текст, \1 - значок градуса
         lcd.setCursor(7, 1); // Устанавливаем курсор на 7 символ
         lcd.print(t,1); // Выводим значение температуры
-        digitalWrite(LED_DIOD1, LOW);
+        digitalWrite(LED_DIOD1, LOW); //выключаем светодиод
     }
 
+    //Инициализируем переменую датчика MQ135
     MQ135 gasSensor = MQ135(ANALOGPIN);
+    // Считываем данные PPM(количества углекислого газа)
     float ppm = gasSensor.getPPM();
+    // олучите сопротивление RZero датчика для целей калибровки
     float rzero = gasSensor.getRZero();
     delay(2000);
     lcd.clear();
 
+    // Если ppm больше 35
     if(ppm > 35){
         lcd.setCursor(0, 0);
         lcd.print("ppm> : % ");
@@ -142,6 +148,7 @@ void loop() {
     }
 
     lcd.clear();
+    //Считываем есть ли пламя
     flame = digitalRead(SENSOR_FLAME_PIN);
     delay(2000);
     if (flame == 1){
@@ -160,11 +167,13 @@ void loop() {
         digitalWrite(LED_DIOD3, LOW);
     }
 
+    // Считываем Влажность почвы
     soilMoistureValue = analogRead(WET_PIN);
     percentage = map(soilMoistureValue, 490, 1023, 100, 0);
     delay(2000);
     lcd.clear();
 
+    //Если процент влажности почвы меньше 10 или влажность воздуха меньше 35 то включается насос и мигает светодиод и музыка играет
     if(percentage < 10 || h < 35){
         lcd.setCursor(0, 0);
         lcd.print("Pump on % ");
