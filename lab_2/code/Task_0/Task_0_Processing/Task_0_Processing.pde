@@ -1,6 +1,6 @@
-import processing.serial.*;
+import processing.serial.*; //Добавление библиотеки serial
 
-Serial myPort;
+Serial myPort; //порт
 String resultString; // Строuная переменная для результатов
 
 float leftPaddle, rightPaddle;//переменныедляѕначений // датчихов иѕгиба
@@ -28,13 +28,13 @@ int xPos, yPos;
 boolean ballInMotion=false;//мячихдвижется? 
 int leftScore = 0;
 int rightScore = 0;
-int fastBall = 0;
+int fastBall = 0; //скорость мячика
 
 int fontSize = 36; // раѕмер mрифта для отображения счета
 
 void setup(){
   size(640, 480); // устанавливаем раѕмер охна апплета
-  String portName = Serial.list()[1];
+  String portName = Serial.list()[1]; //выбираем порт с которого будем считывать 1, 0, 2
   // открываем последовательный порт: 
   myPort = new Serial(this, portName, 9600);
   // сuитываем байты в буфер, пока не дойдем до // символа перевода строки (ASCII 10): 
@@ -43,7 +43,7 @@ void setup(){
   leftPaddle = height/2;
   rightPaddle = height/2;
   resetButton = 0;
-  serveButton = 0;
+  serveButton = 0; // кнопка для скорости мячика
   // инициалиѕируем гориѕонтальные поѕиции рахетох: 
   leftPaddleX = 50;
   rightPaddleX = width - 50;
@@ -88,6 +88,7 @@ void draw(){
   background(#044f6f);
   fill(#ffffff);
   // рисуем левую рахетху:
+  // Лимиты
   if(leftPaddle > leftMaximum){
     leftPaddle = leftMaximum;
   }
@@ -107,7 +108,7 @@ void draw(){
   if(ballInMotion==true){
     animateBall(); 
   }
-  // если нажата хнопха подачи, ѕапусхаем мячих в движение: 
+  // если нажата хнопха скорости, увиличиваем скорость, если скорость больше 2 то скорость становится обычной
   if (serveButton == 1) {
      fastBall++;
      if(fastBall > 2){
@@ -167,6 +168,7 @@ void animateBall(){
   // обновляем местонахождение мячиха: 
   xPos = xPos + xDirection;
   yPos = yPos + yDirection;
+  // Если скорость 1 2 3
   if(fastBall >= 1){
     xPos = xPos + xDirection;
     yPos = yPos + yDirection;
