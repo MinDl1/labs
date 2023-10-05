@@ -19,7 +19,7 @@ void setup() {
  //Для страниц
  //server.on("/SendAuth", handle_auth);
  server.on("/", handle_auth);
- //server.on("/getRoot", handle_root);
+ server.on("/getRoot", handle_auth);
  server.on("/getDHT11", get_page_DHT11);
  server.on("/getMQ135", get_page_MQ135);
  server.on("/getFlame_sensor", get_page_Flame_sensor);
@@ -61,17 +61,12 @@ bool is_authentified() {
   return false;
 }
 
-bool is_not_auth_send_main(){
-  if (!is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s); // Отправить веб-страницу
-    return true;
-  }
-  return false;
-}
-
 void handle_auth(){
-  if (is_not_auth_send_main){ return;}
+  if (is_authentified()) {
+    String s = MAIN_page; // Чтение содержимого HTML
+    server.send (200, "text/html", s);
+    return;
+  }
   bool login_bool = false;
   bool passwd_bool = false;
   for (int i = 0; i < server.args(); i++){
@@ -104,66 +99,106 @@ void handle_auth(){
 }*/
 
 void get_page_DHT11(){
-  if (is_not_auth_send_main){ return;}
+  if (!is_authentified()) {
+    String s = MAIN_page; // Чтение содержимого HTML
+    server.send (200, "text/html", s);
+    return;
+  }
   String s = DHT11_page; // Чтение содержимого HTML
   server.send (200, "text/html", s); // Отправить веб-страницу
 }
 
 void get_page_MQ135(){
-  if (is_not_auth_send_main){ return;}
+  if (!is_authentified()) {
+    String s = MAIN_page; // Чтение содержимого HTML
+    server.send (200, "text/html", s);
+    return;
+  }
   String s = MQ135_page; // Чтение содержимого HTML
   server.send (200, "text/html", s); // Отправить веб-страницу
 }
 
 void get_page_Flame_sensor(){
-  if (is_not_auth_send_main){ return;}
+  if (!is_authentified()) {
+    String s = MAIN_page; // Чтение содержимого HTML
+    server.send (200, "text/html", s);
+    return;
+  }
   String s = Flame_sensor_page; // Чтение содержимого HTML
   server.send (200, "text/html", s); // Отправить веб-страницу
 }
 
 void get_page_Pump_Wet(){
-  if (is_not_auth_send_main){ return;}
+  if (!is_authentified()) {
+    String s = MAIN_page; // Чтение содержимого HTML
+    server.send (200, "text/html", s);
+    return;
+  }
   String s = Pump_Wet_page; // Чтение содержимого HTML
   server.send (200, "text/html", s); // Отправить веб-страницу
 }
 
 void get_data_DHT11_temp(){
-  if (is_not_auth_send_main){ return;}
+  if (!is_authentified()) {
+    String s = MAIN_page; // Чтение содержимого HTML
+    server.send (200, "text/html", s);
+    return;
+  }
   int a = random(10, 30);
   String temp = String (a);
   server.send (200, "text/plain", temp);
 }
 
 void get_data_DHT11_wet(){
-  if (is_not_auth_send_main){ return;}
+  if (!is_authentified()) {
+    String s = MAIN_page; // Чтение содержимого HTML
+    server.send (200, "text/html", s);
+    return;
+  }
   int a = random(30, 90);
   String wetness = String (a);
   server.send (200, "text/plain", wetness);
 }
 
 void get_data_MQ135_ppm(){
-  if (is_not_auth_send_main){ return;}
+  if (!is_authentified()) {
+    String s = MAIN_page; // Чтение содержимого HTML
+    server.send (200, "text/html", s);
+    return;
+  }
   int a = random(300, 900);
   String ppm = String (a);
   server.send (200, "text/plain", ppm);
 }
 
 void get_data_Flame_sens(){
-  if (is_not_auth_send_main){ return;}
+  if (!is_authentified()) {
+    String s = MAIN_page; // Чтение содержимого HTML
+    server.send (200, "text/html", s);
+    return;
+  }
   int a = random(2); 
   String flame = String (a);
   server.send (200, "text/plain", flame);
 }
 
 void get_data_Pump_work(){
-  if (is_not_auth_send_main){ return;}
+  if (!is_authentified()) {
+    String s = MAIN_page; // Чтение содержимого HTML
+    server.send (200, "text/html", s);
+    return;
+  }
   int a = random(2);
   String pump = String (a);
   server.send (200, "text/plain", pump);
 }
 
 void get_data_Wet_ground(){
-  if (is_not_auth_send_main){ return;}
+  if (!is_authentified()) {
+    String s = MAIN_page; // Чтение содержимого HTML
+    server.send (200, "text/html", s);
+    return;
+  }
   int a = random(60, 120);
   String wetground = String (a);
   server.send (200, "text/plain", wetground);
