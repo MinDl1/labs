@@ -17,21 +17,15 @@ void setup() {
  delay(100);
 
  //Для страниц
- //server.on("/SendAuth", handle_auth);
- server.on("/", handle_auth);
- server.on("/getRoot", handle_auth);
- server.on("/getDHT11", get_page_DHT11);
- server.on("/getMQ135", get_page_MQ135);
- server.on("/getFlame_sensor", get_page_Flame_sensor);
- server.on("/getPump_Wet", get_page_Pump_Wet);
+ server.on("/", handle_root);
+ server.on("/Auth", handle_auth);
+ server.on("/getDHT11", handle_DHT11);
+ server.on("/getMQ135", handle_MQ135);
+ server.on("/getFlame_sensor", handle_Flame_sensor);
+ server.on("/getPump_Wet", handle_Pump_Wet);
 
  //для датчиков
- server.on("/getDHT11_temp", get_data_DHT11_temp);
- server.on("/getDHT11_wet", get_data_DHT11_wet);
- server.on("/getMQ135_ppm", get_data_MQ135_ppm);
- server.on("/getFlame_sens", get_data_Flame_sens);
- server.on("/getPump_work", get_data_Pump_work);
- server.on("/getWet_ground", get_data_Wet_ground);
+ server.on("/getData", get_data);
 
  server.onNotFound(handle_NotFound);
 
@@ -45,8 +39,15 @@ void setup() {
  Serial.println("HTTP server started");
 }
 
+//String res_s = "";
 void loop() {
   server.handleClient();
+
+  /*
+  if(Serial.available() == 0){}
+  res_s = Serial.readString();
+  res_s.trim();
+  */
 
   delay(2);
 }
@@ -63,145 +64,112 @@ bool is_authentified() {
 
 void handle_auth(){
   if (is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s);
-    return;
-  }
-  bool login_bool = false;
-  bool passwd_bool = false;
-  for (int i = 0; i < server.args(); i++){
-    if(server.argName(i) == "login" && server.arg(i) == "esp32")login_bool = true;     // получить имя параметра и значение Сравниваем
-    else if(server.argName(i) == "passwd" && server.arg(i) == "01234567")passwd_bool = true;
-  }
-  if(login_bool && passwd_bool){
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.sendHeader("Cache-Control", "no-cache");
-    //server.sendHeader("Set-Cookie", "login=esp32");
-    server.sendHeader("Set-Cookie", "ESPSESSIONID=1");
-
-    server.send (200, "text/html", s); // Отправить веб-страницу
-  }
-  else{
-    String s = Auth_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s); // Отправить веб-страницу
-  }
-}
-
-/*void handle_root() {
-  if (!is_authentified()){
     server.sendHeader("Location", "/");
     server.sendHeader("Cache-Control", "no-cache");
     server.send(301);
     return;
   }
-  String s = MAIN_plain; // Чтение содержимого HTML
-  server.send (200, "text/html", s); // Отправить веб-страницу
-}*/
-
-void get_page_DHT11(){
-  if (!is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s);
-    return;
+  // получить имя параметра и значение Сравниваем
+  if (server.hasArg("login") && server.hasArg("passwd")) {
+    if(server.arg("login") == "esp32" && server.arg("passwd") == "01234567"){
+      server.sendHeader("Cache-Control", "no-cache");
+      server.sendHeader("Set-Cookie", "ESPSESSIONID=1");
+      server.sendHeader("Location", "/");
+      server.sendHeader("Cache-Control", "no-cache");
+      server.send(301);
+      return;
+    }
   }
-  String s = DHT11_page; // Чтение содержимого HTML
-  server.send (200, "text/html", s); // Отправить веб-страницу
+  server.send (200, "text/html", Auth_page); // Отправить веб-страницу
 }
 
-void get_page_MQ135(){
+void handle_root(){
   if (!is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s);
+    server.sendHeader("Location", "/Auth");
+    server.sendHeader("Cache-Control", "no-cache");
+    server.send(301);
     return;
   }
-  String s = MQ135_page; // Чтение содержимого HTML
-  server.send (200, "text/html", s); // Отправить веб-страницу
+  server.send (200, "text/html", MAIN_page); // Отправить веб-страницу
 }
 
-void get_page_Flame_sensor(){
+void handle_DHT11(){
   if (!is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s);
+    server.sendHeader("Location", "/Auth");
+    server.sendHeader("Cache-Control", "no-cache");
+    server.send(301);
     return;
   }
-  String s = Flame_sensor_page; // Чтение содержимого HTML
-  server.send (200, "text/html", s); // Отправить веб-страницу
+  server.send (200, "text/html", DHT11_page); // Отправить веб-страницу
 }
 
-void get_page_Pump_Wet(){
+void handle_MQ135(){
   if (!is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s);
+    server.sendHeader("Location", "/Auth");
+    server.sendHeader("Cache-Control", "no-cache");
+    server.send(301);
     return;
   }
-  String s = Pump_Wet_page; // Чтение содержимого HTML
-  server.send (200, "text/html", s); // Отправить веб-страницу
+  server.send (200, "text/html", MQ135_page); // Отправить веб-страницу
 }
 
-void get_data_DHT11_temp(){
+void handle_Flame_sensor(){
   if (!is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s);
+    server.sendHeader("Location", "/Auth");
+    server.sendHeader("Cache-Control", "no-cache");
+    server.send(301);
     return;
   }
-  int a = random(10, 30);
-  String temp = String (a);
-  server.send (200, "text/plain", temp);
+  server.send (200, "text/html", Flame_sensor_page); // Отправить веб-страницу
 }
 
-void get_data_DHT11_wet(){
+void handle_Pump_Wet(){
   if (!is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s);
+    server.sendHeader("Location", "/Auth");
+    server.sendHeader("Cache-Control", "no-cache");
+    server.send(301);
     return;
   }
-  int a = random(30, 90);
-  String wetness = String (a);
-  server.send (200, "text/plain", wetness);
+  server.send (200, "text/html", Pump_Wet_page); // Отправить веб-страницу
 }
 
-void get_data_MQ135_ppm(){
+void get_data(){
   if (!is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s);
+    server.sendHeader("Location", "/Auth");
+    server.sendHeader("Cache-Control", "no-cache");
+    server.send(301);
     return;
   }
-  int a = random(300, 900);
-  String ppm = String (a);
-  server.send (200, "text/plain", ppm);
-}
-
-void get_data_Flame_sens(){
-  if (!is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s);
-    return;
+  int a1 = random(10, 30);
+  int a2 = random(30, 90);
+  int a3 = random(300, 900);
+  int a4 = random(2);
+  int a5 = random(2);
+  int a6 = random(60, 120);
+  //res_s send
+  String res_in = String(a1)+","+String(a2)+","+String(a3)+","+String(a4)+","+String(a5)+","+String(a6);
+  String res[6];
+  for(int i = 0, j = 0; i < res_in.length(); i++){
+    if(',' == res_in[i]){
+      j++;
+    }
+    else{
+      res[j]+=res_in[i];
+    }
   }
-  int a = random(2); 
-  String flame = String (a);
-  server.send (200, "text/plain", flame);
-}
-
-void get_data_Pump_work(){
-  if (!is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s);
-    return;
+  String res_str = "";
+  if(server.argName(0) == "DHT11" && server.arg(0) == "1"){
+    res_str=res[0]+",";
+    res_str+=res[1]+",";
   }
-  int a = random(2);
-  String pump = String (a);
-  server.send (200, "text/plain", pump);
-}
-
-void get_data_Wet_ground(){
-  if (!is_authentified()) {
-    String s = MAIN_page; // Чтение содержимого HTML
-    server.send (200, "text/html", s);
-    return;
+  if(server.argName(1) == "MQ135" && server.arg(1) == "1")res_str+=res[2]+",";
+  if(server.argName(2) == "Flame_sensor" && server.arg(2) == "1")res_str+=res[3]+",";
+  if(server.argName(3) == "Pump_Wet" && server.arg(3) == "1"){
+    res_str+=res[4]+",";
+    res_str+=res[5];
   }
-  int a = random(60, 120);
-  String wetground = String (a);
-  server.send (200, "text/plain", wetground);
+  Serial.println(res_str);
+  server.send (200, "text/plain", res_str); // Отправить
 }
 
 void handle_NotFound(){

@@ -41,9 +41,9 @@ div {
 </Style>
 <h1> Lab 4 </h1>
 <form action="/send_auth">
-  <label for="fname">Login:</label>
+  <label for="log">Login:</label>
   <input type="text" id="log" placeholder="MinDl1" name="log"><br><br>
-  <label for="lname">Password:</label>
+  <label for="pass">Password:</label>
   <input type="text" id="pass" placeholder="********" name="pass"><br><br>
 </form>
 
@@ -57,43 +57,10 @@ function sendData (login, passwd) {
   var xhttp = new XMLHttpRequest ();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
+      window.location.href = "/Auth"
     }
   };
   xhttp.open ("POST", "?login=" + login + "&passwd=" + passwd, true);
-  xhttp.send ();
-}
-
-setInterval (function () {
-  // Повторно вызвать функцию с интервалом 2 секунды
-  getData("DHT11_temp");
-  getData("DHT11_wet");
-  getData("MQ135_ppm");
-  getData("Flame_sens");
-  getData("Pump_work");
-  getData("Wet_ground");
-}, 2000); // частота обновления 2000 мсек
-
-
-function getData (sensor) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById (sensor). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("GET", "get"+sensor, true);
-  xhttp.send ();
-}
-
-function getHandle(handle) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("GET", "get"+handle, true);
   xhttp.send ();
 }
 
@@ -214,10 +181,10 @@ html{
 }
 </Style>
 <h1> Lab 4 </h1>
-	<button id = DHT11 class = "button1" onclick = 'getHandle("DHT11")'> DHT11 </button>
-	<button id = MQ135 class = "button2" onclick = 'getHandle("MQ135")'> MQ135 </button>
-	<button id = Flame_sensor class = "button3" onclick = 'getHandle("Flame_sensor")'> Flame_sensor </button>
-  <button id = Pump_Wet class = "button4" onclick = 'getHandle("Pump_Wet")'> Pump_Wet </button>
+	<button id = DHT11 class = "button1" onclick = 'window.location.href = "/getDHT11"'> DHT11 </button>
+	<button id = MQ135 class = "button2" onclick = 'window.location.href = "/getMQ135"'> MQ135 </button>
+	<button id = Flame_sensor class = "button3" onclick = 'window.location.href = "/getFlameSensor"'> Flame_sensor </button>
+  <button id = Pump_Wet class = "button4" onclick = 'window.location.href = "/getPump_Wet"'> Pump_Wet </button>
   <BR>
   <BR>
   <div class = "DHT11">
@@ -237,47 +204,27 @@ html{
 </DIV>
 
 <Script>
-function sendData (login, passwd) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("POST", "?login=" + login + "&passwd=" + passwd, true);
-  xhttp.send ();
-}
 
 setInterval (function () {
   // Повторно вызвать функцию с интервалом 2 секунды
-  getData("DHT11_temp");
-  getData("DHT11_wet");
-  getData("MQ135_ppm");
-  getData("Flame_sens");
-  getData("Pump_work");
-  getData("Wet_ground");
-}, 2000); // частота обновления 2000 мсек
+  getData();
+}, 0.1); // частота обновления 2000 мсек
 
 
-function getData (sensor) {
+function getData () {
   var xhttp = new XMLHttpRequest ();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById (sensor). innerHTML = this.responseText;
+      var parse_resp = this.responseText.split(",");
+      document.getElementById ("DHT11_temp"). innerHTML = parse_resp[0];
+      document.getElementById ("DHT11_wet"). innerHTML = parse_resp[1];
+      document.getElementById ("MQ135_ppm"). innerHTML = parse_resp[2];
+      document.getElementById ("Flame_sens"). innerHTML = parse_resp[3];
+      document.getElementById ("Pump_work"). innerHTML = parse_resp[4];
+      document.getElementById ("Wet_ground"). innerHTML = parse_resp[5];
     }
   };
-  xhttp.open ("GET", "get"+sensor, true);
-  xhttp.send ();
-}
-
-function getHandle(handle) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("GET", "get"+handle, true);
+  xhttp.open ("POST", "getData?DHT11=1&MQ135=1&Flame_sensor=1&Pump_Wet=1", true);
   xhttp.send ();
 }
 
@@ -362,10 +309,10 @@ html{
 }
 </Style>
 <h1> Lab 4 </h1>
-	<button id = Main_page class = "button1" onclick = 'getHandle("Root")'> Main page </button>
-	<button id = MQ135 class = "button2" onclick = 'getHandle("MQ135")'> MQ135 </button>
-	<button id = Flame_sensor class = "button3" onclick = 'getHandle("Flame_sensor")'> Flame_sensor </button>
-  <button id = Pump_Wet class = "button4" onclick = 'getHandle("Pump_Wet")'> Pump_Wet </button>
+	<button id = Main_page class = "button1" onclick = 'window.location.href = "/"'> Main page </button>
+	<button id = MQ135 class = "button2" onclick = 'window.location.href = "/getMQ135"'> MQ135 </button>
+	<button id = Flame_sensor class = "button3" onclick = 'window.location.href = "/getFlame_sensor"'> Flame_sensor </button>
+  <button id = Pump_Wet class = "button4" onclick = 'window.location.href = "/getPump_Wet"'> Pump_Wet </button>
   <BR>
   <BR>
   <div class = "DHT11">
@@ -375,47 +322,23 @@ html{
 </DIV>
 
 <Script>
-function sendData (login, passwd) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("POST", "?login=" + login + "&passwd=" + passwd, true);
-  xhttp.send ();
-}
 
 setInterval (function () {
   // Повторно вызвать функцию с интервалом 2 секунды
-  getData("DHT11_temp");
-  getData("DHT11_wet");
-  getData("MQ135_ppm");
-  getData("Flame_sens");
-  getData("Pump_work");
-  getData("Wet_ground");
-}, 2000); // частота обновления 2000 мсек
+  getData();
+}, 0.1); // частота обновления 2000 мсек
 
 
-function getData (sensor) {
+function getData () {
   var xhttp = new XMLHttpRequest ();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById (sensor). innerHTML = this.responseText;
+      var parse_resp = this.responseText.split(",");
+      document.getElementById ("DHT11_temp"). innerHTML = parse_resp[0];
+      document.getElementById ("DHT11_wet"). innerHTML = parse_resp[1];
     }
   };
-  xhttp.open ("GET", "get"+sensor, true);
-  xhttp.send ();
-}
-
-function getHandle(handle) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("GET", "get"+handle, true);
+  xhttp.open ("POST", "getData?DHT11=1&MQ135=0&Flame_sensor=0&Pump_Wet=0", true);
   xhttp.send ();
 }
 
@@ -500,10 +423,10 @@ html{
 }
 </Style>
 <h1> Lab 4 </h1>
-	<button id = Main_page class = "button1" onclick = 'getHandle("Root")'> Main page </button>
-	<button id = DHT11 class = "button2" onclick = 'getHandle("DHT11")'> DHT11 </button>
-	<button id = Flame_sensor class = "button3" onclick = 'getHandle("Flame_sensor")'> Flame_sensor </button>
-  <button id = Pump_Wet class = "button4" onclick = 'getHandle("Pump_Wet")'> Pump_Wet </button>
+	<button id = Main_page class = "button1" onclick = 'window.location.href = "/"'> Main page </button>
+	<button id = DHT11 class = "button2" onclick = 'window.location.href = "/getDHT11"'> DHT11 </button>
+	<button id = Flame_sensor class = "button3" onclick = 'window.location.href = "/getFlame_sensor"'> Flame_sensor </button>
+  <button id = Pump_Wet class = "button4" onclick = 'window.location.href = "/getPump_Wet"'> Pump_Wet </button>
   <BR>
   <BR>
   <div class = "MQ135">
@@ -512,47 +435,22 @@ html{
 </DIV>
 
 <Script>
-function sendData (login, passwd) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("POST", "?login=" + login + "&passwd=" + passwd, true);
-  xhttp.send ();
-}
 
 setInterval (function () {
   // Повторно вызвать функцию с интервалом 2 секунды
-  getData("DHT11_temp");
-  getData("DHT11_wet");
-  getData("MQ135_ppm");
-  getData("Flame_sens");
-  getData("Pump_work");
-  getData("Wet_ground");
-}, 2000); // частота обновления 2000 мсек
+  getData();
+}, 0.1); // частота обновления 2000 мсек
 
 
-function getData (sensor) {
+function getData () {
   var xhttp = new XMLHttpRequest ();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById (sensor). innerHTML = this.responseText;
+      var parse_resp = this.responseText.split(",");
+      document.getElementById ("MQ135_ppm"). innerHTML = parse_resp[0];
     }
   };
-  xhttp.open ("GET", "get"+sensor, true);
-  xhttp.send ();
-}
-
-function getHandle(handle) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("GET", "get"+handle, true);
+  xhttp.open ("POST", "getData?DHT11=0&MQ135=1&Flame_sensor=0&Pump_Wet=0", true);
   xhttp.send ();
 }
 
@@ -637,10 +535,10 @@ html{
 }
 </Style>
 <h1> Lab 4 </h1>
-	<button id = Main_page class = "button1" onclick = 'getHandle("Root")'> Main page </button>
-	<button id = DHT11 class = "button2" onclick = 'getHandle("DHT11")'> DHT11 </button>
-	<button id = MQ135 class = "button3" onclick = 'getHandle("MQ135")'> MQ135 </button>
-  <button id = Pump_Wet class = "button4" onclick = 'getHandle("Pump_Wet")'> Pump_Wet </button>
+	<button id = Main_page class = "button1" onclick = 'window.location.href = "/"'> Main page </button>
+	<button id = DHT11 class = "button2" onclick = 'window.location.href = "/getDHT11"'> DHT11 </button>
+	<button id = MQ135 class = "button3" onclick = 'window.location.href = "/getMQ135"'> MQ135 </button>
+  <button id = Pump_Wet class = "button4" onclick = 'window.location.href = "/getPump_Wet"'> Pump_Wet </button>
   <BR>
   <BR>
   <div class = "Flame_s">
@@ -649,47 +547,22 @@ html{
 </DIV>
 
 <Script>
-function sendData (login, passwd) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("POST", "?login=" + login + "&passwd=" + passwd, true);
-  xhttp.send ();
-}
 
 setInterval (function () {
   // Повторно вызвать функцию с интервалом 2 секунды
-  getData("DHT11_temp");
-  getData("DHT11_wet");
-  getData("MQ135_ppm");
-  getData("Flame_sens");
-  getData("Pump_work");
-  getData("Wet_ground");
-}, 2000); // частота обновления 2000 мсек
+  getData();
+}, 0.1); // частота обновления 2000 мсек
 
 
-function getData (sensor) {
+function getData () {
   var xhttp = new XMLHttpRequest ();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById (sensor). innerHTML = this.responseText;
+      var parse_resp = this.responseText.split(",");
+      document.getElementById ("Flame_sens"). innerHTML = parse_resp[0];
     }
   };
-  xhttp.open ("GET", "get"+sensor, true);
-  xhttp.send ();
-}
-
-function getHandle(handle) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("GET", "get"+handle, true);
+  xhttp.open ("POST", "getData?DHT11=0&MQ135=0&Flame_sensor=1&Pump_Wet=0", true);
   xhttp.send ();
 }
 
@@ -774,10 +647,10 @@ html{
 }
 </Style>
 <h1> Lab 4 </h1>
-	<button id = Main_page class = "button1" onclick = 'getHandle("Root")'> Main page </button>
-	<button id = DHT11 class = "button2" onclick = 'getHandle("DHT11")'> DHT11 </button>
-	<button id = MQ135 class = "button3" onclick = 'getHandle("MQ135")'> MQ135 </button>
-  <button id = Flame_sensor class = "button4" onclick = 'getHandle("Flame_sensor")'> Flame_sensor </button>
+	<button id = Main_page class = "button1" onclick = 'window.location.href = "/"'> Main page </button>
+	<button id = DHT11 class = "button2" onclick = 'window.location.href = "/getDHT11"'> DHT11 </button>
+	<button id = MQ135 class = "button3" onclick = 'window.location.href = "/getMQ135"'> MQ135 </button>
+  <button id = Flame_sensor class = "button4" onclick = 'window.location.href = "/getFlame_sensor"'> Flame_sensor </button>
   <BR>
   <BR>
   <div class = "Pump_Wet">
@@ -787,47 +660,23 @@ html{
 </DIV>
 
 <Script>
-function sendData (login, passwd) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("POST", "?login=" + login + "&passwd=" + passwd, true);
-  xhttp.send ();
-}
 
 setInterval (function () {
   // Повторно вызвать функцию с интервалом 2 секунды
-  getData("DHT11_temp");
-  getData("DHT11_wet");
-  getData("MQ135_ppm");
-  getData("Flame_sens");
-  getData("Pump_work");
-  getData("Wet_ground");
-}, 2000); // частота обновления 2000 мсек
+  getData();
+}, 0.1); // частота обновления 2000 мсек
 
 
-function getData (sensor) {
+function getData () {
   var xhttp = new XMLHttpRequest ();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById (sensor). innerHTML = this.responseText;
+      var parse_resp = this.responseText.split(",");
+      document.getElementById ("Pump_work").innerHTML = parse_resp[0];
+      document.getElementById ("Wet_ground").innerHTML = parse_resp[1];
     }
   };
-  xhttp.open ("GET", "get"+sensor, true);
-  xhttp.send ();
-}
-
-function getHandle(handle) {
-  var xhttp = new XMLHttpRequest ();
-  xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById ("lab"). innerHTML = this.responseText;
-    }
-  };
-  xhttp.open ("GET", "get"+handle, true);
+  xhttp.open ("POST", "getData?DHT11=0&MQ135=0&Flame_sensor=0&Pump_Wet=1", true);
   xhttp.send ();
 }
 
