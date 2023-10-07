@@ -6,7 +6,7 @@ Labs is a project based on different hardware and software.
 The project is made possible by [MinDl](https://github.com/MinDl1), [Gryn69](https://github.com/Gryn69), [Goremika26](https://github.com/Goremika26) who've generously donated dozens of hours in code development and upkeep.
 
 <details>
-<summary>Laboratory 1</summary>
+<summary>Laboratory 1.1</summary>
 
 # Lab_1
 
@@ -18,7 +18,7 @@ Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 
 ### Narrative documentation:
 
-- Our [docs](/lab_1/docs/)
+- Our [docs](/lab_1/lab_1.1/docs/)
 
 ### Hardware and Software:
 
@@ -34,7 +34,7 @@ Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 - Wires Male-Male - 4
 - 220 Ohm resistor- 1
 
-![Minimum kit for Project](/lab_1/images/Minimum_kit.png)
+![Minimum kit for Project](/lab_1/lab_1.1/images/Minimum_kit.png)
 
 ##### Maximum kit(to complete all tasks one by one):
 
@@ -47,17 +47,17 @@ Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 - 220 Ohm resistor - 3
 - Slider switches - 6
 
-![Maximum kit for Project](/lab_1/images/Maximum_kit.png)
+![Maximum kit for Project](/lab_1/lab_1.1/images/Maximum_kit.png)
 
 ##### Base scheme for Project
 
-![task_1_image](/lab_1/images/task_1/task_1.png)
+![task_1_image](/lab_1/lab_1.1/images/task_1/task_1.png)
 
-![task_0_Circuit](/lab_1/images/task_1/task_1_Circuit.png)
+![task_0_Circuit](/lab_1/lab_1.1/images/task_1/task_1_Circuit.png)
 
 ##### Other images
 
-Other images with connection in [/images](/lab_1/images)
+Other images with connection in [/images](/lab_1/lab_1.1/images)
 
 #### Software:
 
@@ -101,7 +101,7 @@ void on_off_diod(int pin){
   digitalWrite(pin, 0);
 }
 ```
-Other code in folders in [lab_1](/lab_1)
+Other code in folders in [lab_1](/lab_1/lab_1.1)
 
 #### Tinkercad
 
@@ -199,9 +199,250 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 </details>
 
 <details>
-<summary>Laboratory 3</summary>
+<summary>Laboratory 1.2</summary>
 
-# Lab_3
+# Lab_1.2
+
+Monkey ping pong  
+Lab_1.2 is a project based on Arduino that allows you to play ping-pong with flexible sensor.
+
+Lab_1.2 source code is made available on [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [docs](/lab_1/lab_1.2/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+##### Minimum kit(to complete task_0): 
+
+- Computer - 1
+- Arduino UNO - 1
+- Wire for connecting an Arduino UNO to a computer - 1
+- Small breadboard - 1
+- Buttons - 2
+- Set of wires
+- 4 kΩ Resistor - 4
+- Flexible sensor - 2
+
+![Minimum kit for Project](/lab_1/lab_1.2/images/Minimum_kit.png)
+
+##### Maximum kit(to complete all tasks one by one):
+
+- Computer - 1
+- Arduino UNO - 1
+- Wire for connecting an Arduino UNO to a computer - 1
+- Small breadboard - 1
+- Buttons - 2
+- Set of wires
+- 4 kΩ Resistor - 6
+- Flexible sensor - 4
+
+![Maximum kit for Project](/lab_1/lab_1.2/images/Maximum_kit.png)
+
+##### Base scheme for Project
+
+![Task_0_image](/lab_1/lab_1.2/images/Task_0/Task_0.png)
+
+![Task_0_Circuit](/lab_1/lab_1.2/images/Task_0/Task_0_Circuit.png)
+
+##### Other images
+
+Other images with connection in [/images](/lab_1/lab_1.2/images)
+
+#### Software:
+
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Processing](https://processing.org/)
+
+Our code has clear comments, but for you we will write the main points here.  
+This is a base code for our Project.
+
+Arduino code
+
+```cpp
+/*
+Сuитыватель показаний датчиков Контекст: Arduino
+
+Сuитывает показания с двух аналоговых входов и двух цифровых входов и выводит их знаuения.
+
+Подклюuения:
+Аналоговые датuики — к контактам аналогового ввода A0 и A1 Кнопки — к контактам цифрового ввода 4 и 5
+*/
+
+
+const int leftSensor = A0; // аналоговый ввод для левой руки 
+const int rightSensor = A1; // аналоговый ввод для правой руки 
+const int resetButton = 4; // цифровой ввод для кнопки сброса 
+const int serveButton = 5; // цифровой ввод для кнопки подаuи
+
+int leftReading = 0;	// показания датuика левой руки 
+int rightReading = 0;	// показания датuика правой руки 
+int resetReading = 0;	// данные кнопки сброса
+int serveReading = 0;	// данные кнопки подаuи
+
+void setup() {
+// настраиваем последовательное соединение: 
+  Serial.begin(9600);
+// configure the digital inputs: 
+  pinMode(resetButton, INPUT); 
+  pinMode(serveButton, INPUT);
+}
+
+void loop() {
+// сuитываем показания аналоговых датuиков: 
+  leftReading = analogRead(leftSensor); 
+  rightReading = analogRead(rightSensor);
+
+// сuитываем показания цифровых датuиков: 
+  resetReading = digitalRead(resetButton); 
+  serveReading = digitalRead(serveButton);
+
+// Выводим результаты на экран: 
+  Serial.print(leftReading); 
+  Serial.print(','); 
+  Serial.print(rightReading); 
+  Serial.print(','); 
+  Serial.print(resetReading); 
+  Serial.print(',');
+/* выводим на экран последнее показание датuика
+с помощью функции printlin(), uтобы каждый набор из uетырех показаний был на отдельной строке:
+*/
+Serial.println(serveReading);
+}
+```
+Processing code
+
+```java
+import processing.serial.*;
+
+Serial myPort;
+String resultString; // Строuная переменная для результатов
+
+void setup() {
+  size(480, 130); // устанавливаем размер окна апплета 
+  printArray(Serial.list()); // Выводим на экран все
+  // доступные последовательные порты
+  
+  // Hа моем компьютере порт микроконтроллера обыuно
+  // первый порт в списке,
+  // поэтому я открываю Serial.list()[0].
+  // Измените 0 на номер последовательного порта,
+  // к которому подклюuен ваш микроконтроллер: 
+  String portName = Serial.list()[1];
+  // открываем последовательный порт:
+  myPort = new Serial(this, portName, 9600);
+  
+  // сuитываем байты в буфер, пока не дойдем до символа
+  // перевода строки (ASCII 10): 
+  myPort.bufferUntil('\n');
+}
+
+void draw() {
+  // задаем цвет фона и заливки для окна апплета: 
+  background(#044f6f);
+  fill(#ffffff);
+  // выводим строку в окне:
+  if (resultString != null) { 
+    text(resultString, 10, height/2);
+  }
+}
+
+/* Метод serialEvent() исполняется автоматиuески в программе каждый раз, когда в буфер записывается
+байт со знаuением, определенным в методе bufferUntil() в процедуре setup():
+*/
+
+void serialEvent(Serial myPort) {
+  // Сuитываем данные из последовательного буфера: 
+  String inputString = myPort.readStringUntil('\n');
+  
+  // Отбрасываем символы возврата каретки
+  // и перевода строки из строки ввода: 
+  inputString = trim(inputString);
+  // Оuищаем переменную resultString: 
+  resultString = "";
+  
+  // Разделяем входную строку по запятым и преобразовываем
+  // полуuенные фрагменты в целые uисла:
+  int sensors[] = int(inputString.split(", "));
+  
+  // Добавляем знаuения к строке результата:
+  for (int sensorNum = 0; sensorNum < sensors.length; sensorNum++) {
+    resultString += "Sensor " + sensorNum + ": ";
+    resultString += sensors[sensorNum] + '\t';
+  }
+  // Выводим результат на экран: 
+  println(resultString);
+}
+```
+
+Other code in folders in [lab_2](/lab_1/lab_1.2/code)
+
+#### Tinkercad
+
+<details>
+<summary>Click to see Task_0</summary>
+
+[Lab_2_Task_0 in Tinkercad](https://www.tinkercad.com/things/9XXuvXolDj3?sharecode=ggglE6MH0tPTb_5_Z6lmFAVOzXe-qpBiG2zrRJ5MMPM)  
+This circuit and code allows you to control 2 ping-pong paddles with flexible sensor and show you the game. 
+
+</details>
+
+<details>
+<summary>Click to see Task_0_Arduino_ultrasonic_sensor</summary>
+
+[Lab_2_Task_0_Arduino_ultrasonic_sensor in Tinkercad](https://www.tinkercad.com/things/7Oxql65PcST?sharecode=waaRPWMERvyUNfi1oD_xEmB36GVAiRF01Zue4sO-fDY)  
+This circuit and code allows you to control 2 ping-pong paddles with ultrasonic sensor and show you the game. 
+
+</details>
+
+<details>
+<summary>Click to see Task_1-3</summary>
+
+[Lab_2_Task_1-3 in Tinkercad](https://www.tinkercad.com/things/e2kYLFEPLQk?sharecode=waSgHX7pjD2xIQmv0CseYd5RBD_IypeuP4LmsLCPHZI)  
+This circuit and code allows you to control 4 ping-pong paddles with flexible sensor and show you the game. 
+
+</details>
+
+<details>
+<summary>Click to see Task_1-3_Arduino_ultrasonic_sensor</summary>
+
+[Lab_2_Task_1-3_Arduino_ultrasonic_sensor in Tinkercad](https://www.tinkercad.com/things/h1qa7SH4AzB?sharecode=0vdZN52ufLO0fdSQTVMLpmT19Iv72kAeBdPmgsLWeyQ)  
+This circuit and code allows you to control 4 ping-pong paddles with ultrasonic sensor and show you the game. 
+
+</details>
+
+<details>
+<summary>Click to see Task_4</summary>
+
+Will be updated soon
+
+</details>
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [C++](https://devdocs.io/cpp/)
+- [Tinkercad](https://www.tinkercad.com/learn)
+- [Processing](https://processing.org/)
+
+## Building
+
+For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software) and [Processing](https://processing.org/) to see the game and play.  
+This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+
+---
+
+</details>
+
+<details>
+<summary>Laboratory 1.3</summary>
+
+# Lab_1.3
 
 Lab_3 Это проект основанный на Arduino который позволяет обнаружить нарушение климатических условий. 
 
@@ -211,7 +452,7 @@ Lab_3 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 
 ### Narrative documentation:
 
-- Our [docs](/lab_3/docs/)
+- Our [docs](/lab_1/lab_1.3/docs/)
 
 ### Hardware and Software:
 
@@ -239,15 +480,15 @@ Lab_3 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 
 ##### Last scheme for Project
 
-![Task_1_image](/lab_3/images/Task_1-6/Task_1-6.jpg)
+![Task_1_image](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.jpg)
 
 ##### DFD
 
-![DFD](/lab_3/images/Lab_3_cheme.png)
+![DFD](/lab_1/lab_1.3/images/Lab_3_cheme.png)
 
 ##### Other images
 
-Other images with connection in [/images](/lab_3/images)
+Other images with connection in [/images](/lab_1/lab_1.3/images)
 
 #### Software:
 
@@ -288,14 +529,14 @@ void loop() {
  // delay(500);
 }
 ```
-Other code in folders in [Lab_3](/lab_3/code/)
+Other code in folders in [Lab_3](/lab_1/lab_1.3/code/)
 
 #### Electrical circuit
 
 <details>
 <summary>Click to see Task_0.1</summary>
 
-![Lab3_Task_0.1](/lab_3/images/Task_0.1/Task_0.1.png)
+![Lab3_Task_0.1](/lab_1/lab_1.3/images/Task_0.1/Task_0.1.png)
 
 Принцип работы этой схемы заключается в том, что датчик DHT11 измеряет температуру и влажность окружающй сренды, считывает эти данные,  через Arduino передаёт на дисплей LCD 16X2 I2C, который выводит эти данные. 
 
@@ -304,7 +545,7 @@ Other code in folders in [Lab_3](/lab_3/code/)
 <details>
 <summary>Click to see Task_0.2</summary>
 
-![Lab3_Task_0.2](/lab_3/images/Task_0.2/Task_0.2.png)
+![Lab3_Task_0.2](/lab_1/lab_1.3/images/Task_0.2/Task_0.2.png)
 
 Принцип работы этой схемы заключается в том, что датчик MQ-3 измеряет количество углексилого газа в воздухе и через Arduino посылает показатели на компьютер.
 
@@ -313,7 +554,7 @@ Other code in folders in [Lab_3](/lab_3/code/)
 <details>
 <summary>Click to see Task_0.3</summary>
 
-![Lab3_Task_0.3](/lab_3/images/Task_0.3/Task_0.3.png)
+![Lab3_Task_0.3](/lab_1/lab_1.3/images/Task_0.3/Task_0.3.png)
 
 Принцип работы этой схемы заключается в том, что датчик Flame Sensor при обнаружении пламени посылает сигнал на Arduino, запускает звуковой и световой сигнал и посылает показатели на компьютер.
 
@@ -322,7 +563,7 @@ Other code in folders in [Lab_3](/lab_3/code/)
 <details>
 <summary>Click to see Task_0.4</summary>
 
-![Lab3_Task_0.4](/lab_3/images/Task_0.4/Task_0.4.png)
+![Lab3_Task_0.4](/lab_1/lab_1.3/images/Task_0.4/Task_0.4.png)
 
 Принцип работы этой схемы заключается в том, что датчик влажности почвы измеряет уровень влажности окружающей среды, если уровень влажности ниже заданных показателей, посылает сигнал на Arduino, который включает водяной насос для увлажнения и выводит сообщение на компьютер "Pump ON" и "Pump OFF".
 
@@ -331,7 +572,7 @@ Other code in folders in [Lab_3](/lab_3/code/)
 <details>
 <summary>Click to see Task_1-6</summary>
 
-![Lab3_Task_1-6](/lab_3/images/Task_1-6/Task_1-6.jpg)
+![Lab3_Task_1-6](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.jpg)
 
 Объединяем схемы с Task_0.1 по Task_0.4 в одну с помощью беспаечной платы.  
 Добавляем звуковое и световое оповещения индивидульное для каждого датчика.  
