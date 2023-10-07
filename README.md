@@ -18,7 +18,7 @@ Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 
 ### Narrative documentation:
 
-- Our [docs](/lab_1/docs/)
+- Our [docs](/lab_1/lab_1.1/docs/)
 
 ### Hardware and Software:
 
@@ -34,7 +34,7 @@ Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 - Wires Male-Male - 4
 - 220 Ohm resistor- 1
 
-![Minimum kit for Project](/lab_1/images/Minimum_kit.png)
+![Minimum kit for Project](/lab_1/lab_1.1/images/Minimum_kit.png)
 
 ##### Maximum kit(to complete all tasks one by one):
 
@@ -47,17 +47,17 @@ Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 - 220 Ohm resistor - 3
 - Slider switches - 6
 
-![Maximum kit for Project](/lab_1/images/Maximum_kit.png)
+![Maximum kit for Project](/lab_1/lab_1.1/images/Maximum_kit.png)
 
 ##### Base scheme for Project
 
-![task_1_image](/lab_1/images/task_1/task_1.png)
+![task_1_image](/lab_1/lab_1.1/images/task_1/task_1.png)
 
-![task_0_Circuit](/lab_1/images/task_1/task_1_Circuit.png)
+![task_0_Circuit](/lab_1/lab_1.1/images/task_1/task_1_Circuit.png)
 
 ##### Other images
 
-Other images with connection in [/images](/lab_1/images)
+Other images with connection in [/images](/lab_1/lab_1.1/images)
 
 #### Software:
 
@@ -101,7 +101,7 @@ void on_off_diod(int pin){
   digitalWrite(pin, 0);
 }
 ```
-Other code in folders in [lab_1](/lab_1)
+Other code in folders in [lab_1](/lab_1/lab_1.1)
 
 #### Tinkercad
 
@@ -212,7 +212,7 @@ Lab_2 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 
 ### Narrative documentation:
 
-- Our [docs](/lab_2/docs/)
+- Our [docs](/lab_1/lab_1.2/docs/)
 
 ### Hardware and Software:
 
@@ -229,7 +229,7 @@ Lab_2 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 - 4 kΩ Resistor - 4
 - Flexible sensor - 2
 
-![Minimum kit for Project](/lab_2/images/Minimum_kit.png)
+![Minimum kit for Project](/lab_1/lab_1.2/images/Minimum_kit.png)
 
 ##### Maximum kit(to complete all tasks one by one):
 
@@ -242,17 +242,17 @@ Lab_2 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 - 4 kΩ Resistor - 6
 - Flexible sensor - 4
 
-![Maximum kit for Project](/lab_2/images/Maximum_kit.png)
+![Maximum kit for Project](/lab_1/lab_1.2/images/Maximum_kit.png)
 
 ##### Base scheme for Project
 
-![Task_0_image](/lab_2/images/Task_0/Task_0.png)
+![Task_0_image](/lab_1/lab_1.2/images/Task_0/Task_0.png)
 
-![Task_0_Circuit](/lab_2/images/Task_0/Task_0_Circuit.png)
+![Task_0_Circuit](/lab_1/lab_1.2/images/Task_0/Task_0_Circuit.png)
 
 ##### Other images
 
-Other images with connection in [/images](/lab_2/images)
+Other images with connection in [/images](/lab_1/lab_1.2/images)
 
 #### Software:
 
@@ -380,7 +380,7 @@ void serialEvent(Serial myPort) {
 }
 ```
 
-Other code in folders in [lab_2](/lab_2/code)
+Other code in folders in [lab_2](/lab_1/lab_1.2/code)
 
 #### Tinkercad
 
