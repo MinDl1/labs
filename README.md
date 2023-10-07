@@ -574,6 +574,8 @@ Other code in folders in [Lab_3](/lab_1/lab_1.3/code/)
 
 ![Lab3_Task_1-6](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.jpg)
 
+![Lab3_Task_1-6](/lab_1/lab_1.3/images/Task_1-6/Circuit_Task_1-6.png)
+
 Объединяем схемы с Task_0.1 по Task_0.4 в одну с помощью беспаечной платы.  
 Добавляем звуковое и световое оповещения индивидульное для каждого датчика.  
 Вся информация теперь выводится на дисплей LCD 16X2 I2C.  
