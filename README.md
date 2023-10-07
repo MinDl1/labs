@@ -8,17 +8,17 @@ The project is made possible by [MinDl](https://github.com/MinDl1), [Gryn69](htt
 <details>
 <summary>Laboratory 1</summary>
 
-# Lab_1
+# Lab_1.1
 
-Lab_1 is a project based on Arduino that allows you to control the brightness of a three-color LED from the keyboard.
+Lab_1.1 is a project based on Arduino that allows you to control the brightness of a three-color LED from the keyboard.
 
-Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+Lab_1.1 source code is made available on [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
 
 ## Documentation
 
 ### Narrative documentation:
 
-- Our [docs](/lab_1/docs/)
+- Our [docs](/lab_1/lab_1.1/docs/)
 
 ### Hardware and Software:
 
@@ -34,7 +34,7 @@ Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 - Wires Male-Male - 4
 - 220 Ohm resistor- 1
 
-![Minimum kit for Project](/lab_1/images/Minimum_kit.png)
+![Minimum kit for Project](/lab_1/lab_1.1/images/Minimum_kit.png)
 
 ##### Maximum kit(to complete all tasks one by one):
 
@@ -47,17 +47,17 @@ Lab_1 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 - 220 Ohm resistor - 3
 - Slider switches - 6
 
-![Maximum kit for Project](/lab_1/images/Maximum_kit.png)
+![Maximum kit for Project](/lab_1/lab_1.1/images/Maximum_kit.png)
 
 ##### Base scheme for Project
 
-![task_1_image](/lab_1/images/task_1/task_1.png)
+![task_1_image](/lab_1/lab_1.1/images/task_1/task_1.png)
 
-![task_0_Circuit](/lab_1/images/task_1/task_1_Circuit.png)
+![task_0_Circuit](/lab_1/lab_1.1/images/task_1/task_1_Circuit.png)
 
 ##### Other images
 
-Other images with connection in [/images](/lab_1/images)
+Other images with connection in [/images](/lab_1/lab_1.1/images)
 
 #### Software:
 
@@ -101,7 +101,7 @@ void on_off_diod(int pin){
   digitalWrite(pin, 0);
 }
 ```
-Other code in folders in [lab_1](/lab_1)
+Other code in folders in [lab_1](/lab_1/lab_1.1)
 
 #### Tinkercad
 
