@@ -18,8 +18,7 @@ Lab_1.1 source code is made available on [Arduino Uno](https://docs.arduino.cc/h
 
 ### Narrative documentation:
 
-- Our [docs](/lab_1/lab_1.1/docs/)
-- Our [docs](/lab_1/lab_1.1/docs/)
+- Our [lab_1.1 docs](/lab_1/lab_1.1/docs/)
 
 ### Hardware and Software:
 
@@ -35,8 +34,7 @@ Lab_1.1 source code is made available on [Arduino Uno](https://docs.arduino.cc/h
 - Wires Male-Male - 4
 - 220 Ohm resistor- 1
 
-![Minimum kit for Project](/lab_1/lab_1.1/images/Minimum_kit.png)
-![Minimum kit for Project](/lab_1/lab_1.1/images/Minimum_kit.png)
+![lab_1.1 Minimum kit for Project](/lab_1/lab_1.1/images/Minimum_kit.png)
 
 ##### Maximum kit(to complete all tasks one by one):
 
@@ -49,21 +47,21 @@ Lab_1.1 source code is made available on [Arduino Uno](https://docs.arduino.cc/h
 - 220 Ohm resistor - 3
 - Slider switches - 6
 
-![Maximum kit for Project](/lab_1/lab_1.1/images/Maximum_kit.png)
-![Maximum kit for Project](/lab_1/lab_1.1/images/Maximum_kit.png)
+![lab_1.1 Maximum kit for Project](/lab_1/lab_1.1/images/Maximum_kit.png)
 
 ##### Base scheme for Project
 
-![task_1_image](/lab_1/lab_1.1/images/task_1/task_1.png)
-![task_1_image](/lab_1/lab_1.1/images/task_1/task_1.png)
+![lab_1.1 task_1_image](/lab_1/lab_1.1/images/task_1/task_1.png)
 
-![task_0_Circuit](/lab_1/lab_1.1/images/task_1/task_1_Circuit.png)
-![task_0_Circuit](/lab_1/lab_1.1/images/task_1/task_1_Circuit.png)
+![lab_1.1 task_0_Circuit](/lab_1/lab_1.1/images/task_1/task_1_Circuit.png)
+
+##### DFD
+
+![lab_1.1 DFD](/lab_1/lab_1.1/images/Lab_1_cheme.png)
 
 ##### Other images
 
-Other images with connection in [/images](/lab_1/lab_1.1/images)
-Other images with connection in [/images](/lab_1/lab_1.1/images)
+Other images with connection in [/lab_1/lab_1.1/images](/lab_1/lab_1.1/images)
 
 #### Software:
 
@@ -107,14 +105,14 @@ void on_off_diod(int pin){
   digitalWrite(pin, 0);
 }
 ```
-Other code in folders in [lab_1](/lab_1/lab_1.1)
+Other code in folders in [/lab_1/lab_1.1](/lab_1/lab_1.1)
 
 #### Tinkercad
 
 <details>
 <summary>Click to see task_0</summary>
 
-[Lab_1_Task_0 in Tinkercad](https://www.tinkercad.com/things/hUXn1sMvgoT?sharecode=V5-eb4NnIwa8_icPDEYQduF4htVFSvu5pyuB1vv3SXI)  
+[lab_1.1 Task_0 in Tinkercad](https://www.tinkercad.com/things/hUXn1sMvgoT?sharecode=V5-eb4NnIwa8_icPDEYQduF4htVFSvu5pyuB1vv3SXI)  
 This circuit and code allows you to control the brightness of a RGB LED from the keyboard to make one of 16.7 million. 
 For work you need to write r(number)g(number)b(number). __For example:__
 - Red - r9g0b0
@@ -126,7 +124,7 @@ For work you need to write r(number)g(number)b(number). __For example:__
 <details>
 <summary>Click to see task_1</summary>
 
-[Lab_1_Task_1 in Tinkercad](https://www.tinkercad.com/things/dO035Wefz5l?sharecode=3Hm3jjuLs1g7HK-fbBIjScHFplTGOnRNh4iorSZp8e8)  
+[lab_1.1 Task_1 in Tinkercad](https://www.tinkercad.com/things/dO035Wefz5l?sharecode=3Hm3jjuLs1g7HK-fbBIjScHFplTGOnRNh4iorSZp8e8)  
 This circuit and code allows you to on and off the brightness of a RGB LED.  
 It works like this, one second is red, one second is green, one second is blue.  
 You can't on or off, it just work after upload on [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
@@ -136,7 +134,7 @@ You can't on or off, it just work after upload on [Arduino Uno](https://docs.ard
 <details>
 <summary>Click to see task_2_V1</summary>
 
-[Lab_1_Task_2_V1 in Tinkercad](https://www.tinkercad.com/things/6JCQkYWYs3B?sharecode=U9FOTmA9Ncuwa_fjG77oxHb8qkzK34U_dj44oW_pIuc)  
+[lab_1.1 Task_2_V1 in Tinkercad](https://www.tinkercad.com/things/6JCQkYWYs3B?sharecode=U9FOTmA9Ncuwa_fjG77oxHb8qkzK34U_dj44oW_pIuc)  
 This circuit and code allows you to on and off the brightness of a RGB LED.
 It has one mode. You can on and off RGB LED if you write 'g'
 
@@ -145,7 +143,7 @@ It has one mode. You can on and off RGB LED if you write 'g'
 <details>
 <summary>Click to see task_2_V2</summary>
 
-[Lab_1_Task_2_V2 in Tinkercad](https://www.tinkercad.com/things/8wfPLGTnTLq?sharecode=STpkbYADtMDm-hr6B4mwUL6ALgLF5M9m0D9LhN1DJ6o)  
+[lab_1.1 Task_2_V2 in Tinkercad](https://www.tinkercad.com/things/8wfPLGTnTLq?sharecode=STpkbYADtMDm-hr6B4mwUL6ALgLF5M9m0D9LhN1DJ6o)  
 This circuit and code allows you to on and off the brightness of a RGB LED.
 It has two modes:  
 - First mode work like, you need to write r(number)g(number)b(number). Like in [task_0](#tinkercad). To on off this mode you need to write 'q'.
@@ -156,7 +154,7 @@ It has two modes:
 <details>
 <summary>Click to see task_3-4</summary>
 
-[Lab_1_Task_3-4 in Tinkercad](https://www.tinkercad.com/things/62KvX8lanUf?sharecode=Ap17QtAgDOo48hsks5oYpykxV940c-53qGE7I705esw)  
+[lab_1.1 Task_3-4 in Tinkercad](https://www.tinkercad.com/things/62KvX8lanUf?sharecode=Ap17QtAgDOo48hsks5oYpykxV940c-53qGE7I705esw)  
 This circuit and code allows you to on and off the brightness of a Three RGB LEDs.
 It has two modes:  
 - First mode work like, you need to write r(number)g(number)b(number). Like in [task_0](#tinkercad). To on off this mode you need to write 'q'.
@@ -168,7 +166,7 @@ The code is the same as the code in task_2_V2
 <details>
 <summary>Click to see task_5_V1</summary>
 
-[Lab_1_Task_5_V1 in Tinkercad](https://www.tinkercad.com/things/53uGiR72OBC?sharecode=NPoRelFheTzRlagaMws3vqDz3LDr-U90Xm8LTyd8h8A)  
+[lab_1.1 Task_5_V1 in Tinkercad](https://www.tinkercad.com/things/53uGiR72OBC?sharecode=NPoRelFheTzRlagaMws3vqDz3LDr-U90Xm8LTyd8h8A)  
 This circuit and code allows you to on and off the brightness of a Three RGB LEDs.
 It has three modes:  
 - First mode work like, you need to write r(number)g(number)b(number). Like in [task_0](#tinkercad). To on off this mode you need to write 'q'.
@@ -181,7 +179,7 @@ The code is the same as the code in task_3-4
 <details>
 <summary>Click to see task_5_V2</summary>
 
-[Lab_1_Task_5_V2 in Tinkercad](https://www.tinkercad.com/things/dGwQRqxL8Af?sharecode=uzq7HeGMdqiiHOq7ge5AVx8bif7cwTnom_EspXsSfKo)  
+[lab_1.1 Task_5_V2 in Tinkercad](https://www.tinkercad.com/things/dGwQRqxL8Af?sharecode=uzq7HeGMdqiiHOq7ge5AVx8bif7cwTnom_EspXsSfKo)  
 This circuit and code allows you to on and off the brightness of a Three RGB LEDs.
 It has two modes:  
 - First mode work like, one second is red, one second is green, one second is blue. Like in [task_1](#tinkercad). To on off this mode you need to write 'w'.
@@ -218,7 +216,7 @@ Lab_1.2 source code is made available on [Arduino Uno](https://docs.arduino.cc/h
 
 ### Narrative documentation:
 
-- Our [docs](/lab_1/lab_1.2/docs/)
+- Our [lab_1.2 docs](/lab_1/lab_1.2/docs/)
 
 ### Hardware and Software:
 
@@ -256,9 +254,13 @@ Lab_1.2 source code is made available on [Arduino Uno](https://docs.arduino.cc/h
 
 ![Task_0_Circuit](/lab_1/lab_1.2/images/Task_0/Task_0_Circuit.png)
 
+##### DFD
+
+![lab_1.2 DFD](/lab_1/lab_1.2/images/Lab_2_cheme.png)
+
 ##### Other images
 
-Other images with connection in [/images](/lab_1/lab_1.2/images)
+Other images with connection in [/lab_1/lab_1.2/images](/lab_1/lab_1.2/images)
 
 #### Software:
 
@@ -386,14 +388,14 @@ void serialEvent(Serial myPort) {
 }
 ```
 
-Other code in folders in [lab_2](/lab_1/lab_1.2/code)
+Other code in folders in [/lab_1/lab1.2/code](/lab_1/lab_1.2/code)
 
 #### Tinkercad
 
 <details>
 <summary>Click to see Task_0</summary>
 
-[Lab_2_Task_0 in Tinkercad](https://www.tinkercad.com/things/9XXuvXolDj3?sharecode=ggglE6MH0tPTb_5_Z6lmFAVOzXe-qpBiG2zrRJ5MMPM)  
+[lab_1.2 Task_0 in Tinkercad](https://www.tinkercad.com/things/9XXuvXolDj3?sharecode=ggglE6MH0tPTb_5_Z6lmFAVOzXe-qpBiG2zrRJ5MMPM)  
 This circuit and code allows you to control 2 ping-pong paddles with flexible sensor and show you the game. 
 
 </details>
@@ -401,7 +403,7 @@ This circuit and code allows you to control 2 ping-pong paddles with flexible se
 <details>
 <summary>Click to see Task_0_Arduino_ultrasonic_sensor</summary>
 
-[Lab_2_Task_0_Arduino_ultrasonic_sensor in Tinkercad](https://www.tinkercad.com/things/7Oxql65PcST?sharecode=waaRPWMERvyUNfi1oD_xEmB36GVAiRF01Zue4sO-fDY)  
+[lab_1.2 Task_0_Arduino_ultrasonic_sensor in Tinkercad](https://www.tinkercad.com/things/7Oxql65PcST?sharecode=waaRPWMERvyUNfi1oD_xEmB36GVAiRF01Zue4sO-fDY)  
 This circuit and code allows you to control 2 ping-pong paddles with ultrasonic sensor and show you the game. 
 
 </details>
@@ -409,7 +411,7 @@ This circuit and code allows you to control 2 ping-pong paddles with ultrasonic 
 <details>
 <summary>Click to see Task_1-3</summary>
 
-[Lab_2_Task_1-3 in Tinkercad](https://www.tinkercad.com/things/e2kYLFEPLQk?sharecode=waSgHX7pjD2xIQmv0CseYd5RBD_IypeuP4LmsLCPHZI)  
+[lab_1.2 Task_1-3 in Tinkercad](https://www.tinkercad.com/things/e2kYLFEPLQk?sharecode=waSgHX7pjD2xIQmv0CseYd5RBD_IypeuP4LmsLCPHZI)  
 This circuit and code allows you to control 4 ping-pong paddles with flexible sensor and show you the game. 
 
 </details>
@@ -417,7 +419,7 @@ This circuit and code allows you to control 4 ping-pong paddles with flexible se
 <details>
 <summary>Click to see Task_1-3_Arduino_ultrasonic_sensor</summary>
 
-[Lab_2_Task_1-3_Arduino_ultrasonic_sensor in Tinkercad](https://www.tinkercad.com/things/h1qa7SH4AzB?sharecode=0vdZN52ufLO0fdSQTVMLpmT19Iv72kAeBdPmgsLWeyQ)  
+[lab_1.2 Task_1-3_Arduino_ultrasonic_sensor in Tinkercad](https://www.tinkercad.com/things/h1qa7SH4AzB?sharecode=0vdZN52ufLO0fdSQTVMLpmT19Iv72kAeBdPmgsLWeyQ)  
 This circuit and code allows you to control 4 ping-pong paddles with ultrasonic sensor and show you the game. 
 
 </details>
@@ -425,7 +427,7 @@ This circuit and code allows you to control 4 ping-pong paddles with ultrasonic 
 <details>
 <summary>Click to see Task_4</summary>
 
-Will be updated soon
+- Not done
 
 </details>
 
@@ -450,15 +452,15 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 # Lab_1.3
 
-Lab_3 Это проект основанный на Arduino который позволяет обнаружить нарушение климатических условий. 
+Lab_1.3 Это проект основанный на Arduino который позволяет обнаружить нарушение климатических условий. 
 
-Lab_3 source code is made available on [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+Lab_1.3 source code is made available on [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
 
 ## Documentation
 
 ### Narrative documentation:
 
-- Our [docs](/lab_1/lab_1.3/docs/)
+- Our [lab_1.3 docs](/lab_1/lab_1.3/docs/)
 
 ### Hardware and Software:
 
@@ -486,15 +488,15 @@ Lab_3 source code is made available on [Arduino Uno](https://docs.arduino.cc/har
 
 ##### Last scheme for Project
 
-![Task_1_image](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.jpg)
+![lab_1.3 Task_1_image](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.jpg)
 
 ##### DFD
 
-![DFD](/lab_1/lab_1.3/images/Lab_3_cheme.png)
+![lab_1.3 DFD](/lab_1/lab_1.3/images/Lab_3_cheme.png)
 
 ##### Other images
 
-Other images with connection in [/images](/lab_1/lab_1.3/images)
+Other images with connection in [/lab_1/lab_1.3/images](/lab_1/lab_1.3/images)
 
 #### Software:
 
@@ -535,14 +537,14 @@ void loop() {
  // delay(500);
 }
 ```
-Other code in folders in [Lab_3](/lab_1/lab_1.3/code/)
+Other code in folders in [/lab_1/lab_1.3/code/](/lab_1/lab_1.3/code/)
 
 #### Electrical circuit
 
 <details>
 <summary>Click to see Task_0.1</summary>
 
-![Lab3_Task_0.1](/lab_1/lab_1.3/images/Task_0.1/Task_0.1.png)
+![lab_1.3 Task_0.1](/lab_1/lab_1.3/images/Task_0.1/Task_0.1.png)
 
 Принцип работы этой схемы заключается в том, что датчик DHT11 измеряет температуру и влажность окружающй сренды, считывает эти данные,  через Arduino передаёт на дисплей LCD 16X2 I2C, который выводит эти данные. 
 
@@ -551,7 +553,7 @@ Other code in folders in [Lab_3](/lab_1/lab_1.3/code/)
 <details>
 <summary>Click to see Task_0.2</summary>
 
-![Lab3_Task_0.2](/lab_1/lab_1.3/images/Task_0.2/Task_0.2.png)
+![lab_1.3 Task_0.2](/lab_1/lab_1.3/images/Task_0.2/Task_0.2.png)
 
 Принцип работы этой схемы заключается в том, что датчик MQ-3 измеряет количество углексилого газа в воздухе и через Arduino посылает показатели на компьютер.
 
@@ -560,7 +562,7 @@ Other code in folders in [Lab_3](/lab_1/lab_1.3/code/)
 <details>
 <summary>Click to see Task_0.3</summary>
 
-![Lab3_Task_0.3](/lab_1/lab_1.3/images/Task_0.3/Task_0.3.png)
+![lab_1.3 Task_0.3](/lab_1/lab_1.3/images/Task_0.3/Task_0.3.png)
 
 Принцип работы этой схемы заключается в том, что датчик Flame Sensor при обнаружении пламени посылает сигнал на Arduino, запускает звуковой и световой сигнал и посылает показатели на компьютер.
 
@@ -569,7 +571,7 @@ Other code in folders in [Lab_3](/lab_1/lab_1.3/code/)
 <details>
 <summary>Click to see Task_0.4</summary>
 
-![Lab3_Task_0.4](/lab_1/lab_1.3/images/Task_0.4/Task_0.4.png)
+![lab_1.3 Task_0.4](/lab_1/lab_1.3/images/Task_0.4/Task_0.4.png)
 
 Принцип работы этой схемы заключается в том, что датчик влажности почвы измеряет уровень влажности окружающей среды, если уровень влажности ниже заданных показателей, посылает сигнал на Arduino, который включает водяной насос для увлажнения и выводит сообщение на компьютер "Pump ON" и "Pump OFF".
 
@@ -578,9 +580,9 @@ Other code in folders in [Lab_3](/lab_1/lab_1.3/code/)
 <details>
 <summary>Click to see Task_1-6</summary>
 
-![Lab3_Task_1-6](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.jpg)
+![lab_1.3 Task_1-6](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.jpg)
 
-![Lab3_Task_1-6](/lab_1/lab_1.3/images/Task_1-6/Circuit_Task_1-6.png)
+![lab_1.3 Task_1-6](/lab_1/lab_1.3/images/Task_1-6/Circuit_Task_1-6.png)
 
 Объединяем схемы с Task_0.1 по Task_0.4 в одну с помощью беспаечной платы.  
 Добавляем звуковое и световое оповещения индивидульное для каждого датчика.  
