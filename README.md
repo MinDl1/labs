@@ -5,6 +5,10 @@
 Labs is a project based on different hardware and software.  
 The project is made possible by [MinDl](https://github.com/MinDl1), [Gryn69](https://github.com/Gryn69), [Goremika26](https://github.com/Goremika26) who've generously donated dozens of hours in code development and upkeep.
 
+## Documentation
+
+- Our [lab1 docs](/lab_1/docs/)
+
 <details>
 <summary>Laboratory 1.1</summary>
 
