@@ -10,8 +10,11 @@ IPAddress gateway(192,168,2,1);
 IPAddress subnet(255,255,255,0);
 WebServer server(80);
 
+int count_args = 6;
+String res_in = "0,0,0,0,0,0";
+
 void setup() {
- Serial.begin(115200);
+ Serial1.begin(115200);
  WiFi.softAP(ssid, password);
  WiFi.softAPConfig(local_ip, gateway, subnet);
  delay(100);
@@ -36,20 +39,17 @@ void setup() {
  server.collectHeaders(headerkeys, headerkeyssize);
 
  server.begin();
- Serial.println("HTTP server started");
 }
 
-//String res_s = "";
 void loop() {
   server.handleClient();
 
-  /*
-  if(Serial.available() == 0){}
-  res_s = Serial.readString();
-  res_s.trim();
-  */
+  if(Serial.available()){
+    res_in = Serial1.readString();
+    res_in.trim();
+  }
 
-  delay(2);
+  delay(2000);
 }
 
 bool is_authentified() {
@@ -140,23 +140,9 @@ void get_data(){
     server.send(301);
     return;
   }
-  int a1 = random(10, 30);
-  int a2 = random(30, 90);
-  int a3 = random(300, 900);
-  int a4 = random(2);
-  int a5 = random(2);
-  int a6 = random(60, 120);
-  //res_s send
-  String res_in = String(a1)+","+String(a2)+","+String(a3)+","+String(a4)+","+String(a5)+","+String(a6);
-  String res[6];
-  for(int i = 0, j = 0; i < res_in.length(); i++){
-    if(',' == res_in[i]){
-      j++;
-    }
-    else{
-      res[j]+=res_in[i];
-    }
-  }
+  String res[count_args];
+  parse_string(res_in, res, count_args);
+
   String res_str = "";
   if(server.argName(0) == "DHT11" && server.arg(0) == "1"){
     res_str=res[0]+",";
@@ -168,8 +154,18 @@ void get_data(){
     res_str+=res[4]+",";
     res_str+=res[5];
   }
-  Serial.println(res_str);
   server.send (200, "text/plain", res_str); // Отправить
+}
+
+void parse_string(String res_in, String *res, int count_args){
+  for(int i = 0, j = 0; i < res_in.length() && j < count_args; i++){
+    if(',' == res_in[i]){
+      j++;
+    }
+    else{
+      res[j]+=res_in[i];
+    }
+  }
 }
 
 void handle_NotFound(){
