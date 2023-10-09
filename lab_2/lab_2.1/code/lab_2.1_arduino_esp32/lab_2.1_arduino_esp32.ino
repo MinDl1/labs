@@ -14,7 +14,7 @@ int count_args = 6;
 String res_in = "0,0,0,0,0,0";
 
 void setup() {
- Serial1.begin(115200);
+ Serial.begin(115200);
  WiFi.softAP(ssid, password);
  WiFi.softAPConfig(local_ip, gateway, subnet);
  delay(100);
@@ -45,11 +45,11 @@ void loop() {
   server.handleClient();
 
   if(Serial.available()){
-    res_in = Serial1.readString();
+    res_in = Serial.readString();
     res_in.trim();
   }
 
-  delay(2000);
+  delay(2);
 }
 
 bool is_authentified() {

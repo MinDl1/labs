@@ -75,7 +75,7 @@ void setup()
     pinMode(LED_DIOD3, OUTPUT);
     pinMode(SOUND_PIN, OUTPUT);
 
-    Serial1.begin(115200);
+    Serial.begin(115200);
 }
 void loop() {
     // Reading temperature or humidity takes about 250 milliseconds!
@@ -196,7 +196,6 @@ void loop() {
         digitalWrite(PUMP_PIN, LOW);
         digitalWrite(LED_DIOD, LOW);
     }
-    //String res = String(t)+','+String(h)+','+String(ppm)+','+String(flame)+','+String(int_pump)+','+String(percentage);
-    String res = String(random(100))+','+String(random(100))+','+String(random(100))+','+String(random(100))+','+String(random(100))+','+String(random(100));
-    Serial.write(res);
+    String res = String(t)+','+String(h)+','+String(ppm)+','+String(flame)+','+String(int_pump)+','+String(percentage);
+    Serial.print(res);
 }
