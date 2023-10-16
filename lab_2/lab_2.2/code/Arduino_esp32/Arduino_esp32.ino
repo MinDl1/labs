@@ -13,8 +13,6 @@
 #define greenPin 12
 #define redPin 32
 #define SOUND_PIN 33
-bool grD = false;
-bool rdD = false;
 
 //used in authentication
 MFRC522::MIFARE_Key key;
@@ -23,10 +21,11 @@ MFRC522::StatusCode status;
 // Defined pins to module RC522
 MFRC522 mfrc522(SS_PIN, RST_PIN);
  
-// замените на свои учетные данные
+// замените на свои учетные данные wifi
 const char* ssid = "";
 const char* password = "";
 
+// для email рассылки
 #define emailSenderAccount    ""  
 #define emailSenderPassword   ""
 #define emailRecipient        ""
@@ -35,9 +34,15 @@ const char* password = "";
 #define emailSubject          "ESP32 door"
 SMTPData smtpData;
 
+// Определение порта для доступа к серверу
 WebServer server(80);
 
+// переменные для светодиодов
+bool grD = false;
+bool rdD = false;
+// переменная открыта дверь или закрыта
 bool bool_o_c = false;
+// переменная для проверки карт, что в ней записано
 String our_code = "somes";
 
 LiquidCrystal_I2C lcd(0x27,16,2); // Задаем адрес и размерность дисплея
@@ -132,15 +137,13 @@ void handle_auth(){
       server.sendHeader("Cache-Control", "no-cache");
       server.sendHeader("Set-Cookie", "ESPSESSIONID=1");
       server.sendHeader("Location", "/");
-      server.sendHeader("Cache-Control", "no-cache");
       server.send(301);
       return;
     }
-    if(server.arg("login") == "admin" && server.arg("passwd") == "12345"){
+    else if(server.arg("login") == "admin" && server.arg("passwd") == "12345"){
       server.sendHeader("Cache-Control", "no-cache");
       server.sendHeader("Set-Cookie", "ESPSESSIONID=2");
       server.sendHeader("Location", "/");
-      server.sendHeader("Cache-Control", "no-cache");
       server.send(301);
       return;
     }
