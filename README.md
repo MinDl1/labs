@@ -617,7 +617,301 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 <details>
 <summary>Laboratory 2</summary>
 
+
+## Documentation
+
+- Our [lab1 docs](/lab_2/docs/)
+
+<details>
+<summary>Laboratory 1.1</summary>
+
+# Lab_1.1
+
 - Updated soon
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [lab_1.1 docs](/lab_1/lab_1.1/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+![lab_1.1 Minimum kit for Project](/lab_1/lab_1.1/images/Minimum_kit.png)
+
+##### Maximum kit(to complete all tasks one by one):
+
+- Updated soon
+
+![lab_1.1 Maximum kit for Project](/lab_1/lab_1.1/images/Maximum_kit.png)
+
+##### Base scheme for Project
+
+![lab_1.1 task_1_image](/lab_1/lab_1.1/images/task_1/task_1.png)
+
+![lab_1.1 task_0_Circuit](/lab_1/lab_1.1/images/task_1/task_1_Circuit.png)
+
+##### DFD
+
+![lab_1.1 DFD](/lab_1/lab_1.1/images/Lab_1_cheme.png)
+
+##### Other images
+
+Other images with connection in [/lab_1/lab_1.1/images](/lab_1/lab_1.1/images)
+
+#### Software:
+
+- [Arduino IDE](https://www.arduino.cc/en/software)
+
+Our code has clear comments, but for you we will write the main points here.  
+This is a base code for our Project.
+
+```cpp
+// - Updated soon
+```
+Other code in folders in [/lab_1/lab_1.1](/lab_1/lab_1.1)
+
+#### Tinkercad
+
+<details>
+<summary>Click to see task_0</summary>
+
+- Updated soon
+
+</details>
+
+<details>
+<summary>Click to see task_1</summary>
+
+- Updated soon
+
+</details>
+
+<details>
+<summary>Click to see task_2_V1</summary>
+
+- Updated soon
+
+</details>
+
+<details>
+<summary>Click to see task_2_V2</summary>
+
+- Updated soon
+
+</details>
+
+<details>
+<summary>Click to see task_3-4</summary>
+
+- Updated soon
+
+</details>
+
+<details>
+<summary>Click to see task_5_V1</summary>
+
+- Updated soon
+
+</details>
+
+<details>
+<summary>Click to see task_5_V2</summary>
+
+- Updated soon
+
+</details>
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [C++](https://devdocs.io/cpp/)
+- [Tinkercad](https://www.tinkercad.com/learn)
+
+## Building
+
+For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+
+---
+
+</details>
+
+<details>
+<summary>Laboratory 1.2</summary>
+
+# Lab_1.2
+
+- Updated soon
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [lab_1.2 docs](/lab_1/lab_1.2/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+##### Maximum kit(to complete all tasks one by one):
+
+- Updated soon
+
+![Maximum kit for Project](/lab_1/lab_1.2/images/Maximum_kit.png)
+
+##### Base scheme for Project
+
+![Task_0_image](/lab_1/lab_1.2/images/Task_0/Task_0.png)
+
+![Task_0_Circuit](/lab_1/lab_1.2/images/Task_0/Task_0_Circuit.png)
+
+##### DFD
+
+![lab_1.2 DFD](/lab_1/lab_1.2/images/Lab_2_cheme.png)
+
+##### Other images
+
+Other images with connection in [/lab_1/lab_1.2/images](/lab_1/lab_1.2/images)
+
+#### Software:
+
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Processing](https://processing.org/)
+
+Our code has clear comments, but for you we will write the main points here.  
+This is a base code for our Project.
+
+Arduino code
+
+```cpp
+// - Updated soon
+```
+Processing code
+
+Other code in folders in [/lab_1/lab1.2/code](/lab_1/lab_1.2/code)
+
+#### Tinkercad
+
+<details>
+<summary>Click to see Task_0</summary>
+
+- Updated soon
+
+</details>
+
+<details>
+<summary>Click to see Task_0_Arduino_ultrasonic_sensor</summary>
+
+- Updated soon
+
+</details>
+
+<details>
+<summary>Click to see Task_1-3</summary>
+
+- Updated soon
+
+</details>
+
+<details>
+<summary>Click to see Task_1-3_Arduino_ultrasonic_sensor</summary>
+
+- Updated soon
+
+</details>
+
+<details>
+<summary>Click to see Task_4</summary>
+
+- Not done
+
+</details>
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [C++](https://devdocs.io/cpp/)
+
+## Building
+
+For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software) and [Processing](https://processing.org/) to see the game and play.  
+This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+
+---
+
+</details>
+
+<details>
+<summary>Laboratory 1.3</summary>
+
+# Lab_1.3
+
+- Updated soon
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [lab_1.3 docs](/lab_1/lab_1.3/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+##### Maximum kit(to complete all tasks one by one):
+
+- Updated soon
+
+##### Last scheme for Project
+
+![lab_1.3 Task_1_image](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.jpg)
+
+##### DFD
+
+![lab_1.3 DFD](/lab_1/lab_1.3/images/Lab_3_cheme.png)
+
+##### Other images
+
+Other images with connection in [/lab_1/lab_2.3/images](/lab_1/lab_2.3/images)
+
+#### Software:
+
+- [Arduino IDE](https://www.arduino.cc/en/software)
+
+Our code has clear comments, but for you we will write the main points here.  
+This is a base code for Task_1-6 for our Project.
+
+```cpp
+// updated soon
+}
+```
+Other code in folders in [/lab_1/lab_2.3/code/](/lab_1/lab_2.3/code/)
+
+#### Electrical circuit
+
+<details>
+<summary>Click to see Task_1-6</summary>
+
+- Updated soon
+
+</details>
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [C++](https://devdocs.io/cpp/)
+
+## Building
+
+For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+
+---
+
+</details>
 
 </details>
 
