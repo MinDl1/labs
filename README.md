@@ -620,12 +620,12 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 ## Documentation
 
-- Our [lab1 docs](/lab_2/docs/)
+- Our [lab2 docs](/lab_2/docs/)
 
 <details>
-<summary>Laboratory 1.1</summary>
+<summary>Laboratory 2.1</summary>
 
-# Lab_1.1
+# Lab_2.1
 
 - Updated soon
 
@@ -633,33 +633,33 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 ### Narrative documentation:
 
-- Our [lab_1.1 docs](/lab_1/lab_1.1/docs/)
+- Our [lab_2.1 docs](/lab_2/lab_2.1/docs/)
 
 ### Hardware and Software:
 
 #### Hardware:
 
-![lab_1.1 Minimum kit for Project](/lab_1/lab_1.1/images/Minimum_kit.png)
+![lab_2.1 Minimum kit for Project](/lab_2/lab_2.1/images/Minimum_kit.png)
 
 ##### Maximum kit(to complete all tasks one by one):
 
 - Updated soon
 
-![lab_1.1 Maximum kit for Project](/lab_1/lab_1.1/images/Maximum_kit.png)
+![lab_2.1 Maximum kit for Project](/lab_2/lab_2.1/images/Maximum_kit.png)
 
 ##### Base scheme for Project
 
-![lab_1.1 task_1_image](/lab_1/lab_1.1/images/task_1/task_1.png)
+![lab_2.1 task_1-6_image](/lab_2/lab_2.1/images/task_1-6/task_1-6.png)
 
-![lab_1.1 task_0_Circuit](/lab_1/lab_1.1/images/task_1/task_1_Circuit.png)
+![lab_2.1 task_1-6_Circuit](/lab_2/lab_2.1/images/task_1-6/task_1-6_Circuit.png)
 
 ##### DFD
 
-![lab_1.1 DFD](/lab_1/lab_1.1/images/Lab_1_cheme.png)
+![lab_2.1 DFD](/lab_2/lab_2.1/images/Lab_2_cheme.png)
 
 ##### Other images
 
-Other images with connection in [/lab_1/lab_1.1/images](/lab_1/lab_1.1/images)
+Other images with connection in [/lab_2/lab_2.1/images](/lab_2/lab_2.1/images)
 
 #### Software:
 
@@ -671,64 +671,12 @@ This is a base code for our Project.
 ```cpp
 // - Updated soon
 ```
-Other code in folders in [/lab_1/lab_1.1](/lab_1/lab_1.1)
-
-#### Tinkercad
-
-<details>
-<summary>Click to see task_0</summary>
-
-- Updated soon
-
-</details>
-
-<details>
-<summary>Click to see task_1</summary>
-
-- Updated soon
-
-</details>
-
-<details>
-<summary>Click to see task_2_V1</summary>
-
-- Updated soon
-
-</details>
-
-<details>
-<summary>Click to see task_2_V2</summary>
-
-- Updated soon
-
-</details>
-
-<details>
-<summary>Click to see task_3-4</summary>
-
-- Updated soon
-
-</details>
-
-<details>
-<summary>Click to see task_5_V1</summary>
-
-- Updated soon
-
-</details>
-
-<details>
-<summary>Click to see task_5_V2</summary>
-
-- Updated soon
-
-</details>
+Other code in folders in [/lab_2/lab_2.1](/lab_2/lab_2.1)
 
 ### Language & Applications documentation:
 
 - [Arduino](https://docs.arduino.cc/)
 - [C++](https://devdocs.io/cpp/)
-- [Tinkercad](https://www.tinkercad.com/learn)
 
 ## Building
 
@@ -740,9 +688,9 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 </details>
 
 <details>
-<summary>Laboratory 1.2</summary>
+<summary>Laboratory 2.2</summary>
 
-# Lab_1.2
+# Lab_2.2
 
 - Updated soon
 
@@ -750,7 +698,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 ### Narrative documentation:
 
-- Our [lab_1.2 docs](/lab_1/lab_1.2/docs/)
+- Our [lab_2.2 docs](/lab_2/lab_2.2/docs/)
 
 ### Hardware and Software:
 
@@ -760,21 +708,21 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 - Updated soon
 
-![Maximum kit for Project](/lab_1/lab_1.2/images/Maximum_kit.png)
+![Maximum kit for Project](/lab_2/lab_2.2/images/Maximum_kit.png)
 
 ##### Base scheme for Project
 
-![Task_0_image](/lab_1/lab_1.2/images/Task_0/Task_0.png)
+![Task_1-6_image](/lab_2/lab_2.2/images/Task_1-6/Task_1-6.png)
 
-![Task_0_Circuit](/lab_1/lab_1.2/images/Task_0/Task_0_Circuit.png)
+![Task_1-6_Circuit](/lab_2/lab_2.2/images/Task_1-6/Task_1-6_Circuit.png)
 
 ##### DFD
 
-![lab_1.2 DFD](/lab_1/lab_1.2/images/Lab_2_cheme.png)
+![lab_2.2 DFD](/lab_2/lab_2.2/images/Lab_2_cheme.png)
 
 ##### Other images
 
-Other images with connection in [/lab_1/lab_1.2/images](/lab_1/lab_1.2/images)
+Other images with connection in [/lab_2/lab_2.2/images](/lab_2/lab_2.2/images)
 
 #### Software:
 
@@ -791,44 +739,7 @@ Arduino code
 ```
 Processing code
 
-Other code in folders in [/lab_1/lab1.2/code](/lab_1/lab_1.2/code)
-
-#### Tinkercad
-
-<details>
-<summary>Click to see Task_0</summary>
-
-- Updated soon
-
-</details>
-
-<details>
-<summary>Click to see Task_0_Arduino_ultrasonic_sensor</summary>
-
-- Updated soon
-
-</details>
-
-<details>
-<summary>Click to see Task_1-3</summary>
-
-- Updated soon
-
-</details>
-
-<details>
-<summary>Click to see Task_1-3_Arduino_ultrasonic_sensor</summary>
-
-- Updated soon
-
-</details>
-
-<details>
-<summary>Click to see Task_4</summary>
-
-- Not done
-
-</details>
+Other code in folders in [/lab_2/lab2.2/code](/lab_2/lab_2.2/code)
 
 ### Language & Applications documentation:
 
@@ -845,9 +756,9 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 </details>
 
 <details>
-<summary>Laboratory 1.3</summary>
+<summary>Laboratory 2.3</summary>
 
-# Lab_1.3
+# Lab_2.3
 
 - Updated soon
 
@@ -855,7 +766,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 ### Narrative documentation:
 
-- Our [lab_1.3 docs](/lab_1/lab_1.3/docs/)
+- Our [lab_2.3 docs](/lab_3/lab_2.3/docs/)
 
 ### Hardware and Software:
 
@@ -867,11 +778,11 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 ##### Last scheme for Project
 
-![lab_1.3 Task_1_image](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.jpg)
+![lab_2.3 Task_1-6_image](/lab_2/lab_2.3/images/Task_1-6/Task_1-6.jpg)
 
 ##### DFD
 
-![lab_1.3 DFD](/lab_1/lab_1.3/images/Lab_3_cheme.png)
+![lab_2.3 DFD](/lab_2/lab_2.3/images/Lab_3_cheme.png)
 
 ##### Other images
 
