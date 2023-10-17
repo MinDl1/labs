@@ -15,8 +15,10 @@ int count_args = 6;
 String res_in = "0,0,0,0,0,0";
 int time_ = 0;
 
+// Функция setup(опередления различных начальных настроек)
 void setup() {
  Serial.begin(115200);
+ // настройки вайфая
  WiFi.softAP(ssid, password);
  WiFi.softAPConfig(local_ip, gateway, subnet);
  delay(100);
@@ -32,6 +34,7 @@ void setup() {
  //для датчиков
  server.on("/getData", get_data);
 
+ // если страница не найдена
  server.onNotFound(handle_NotFound);
 
  //Для куки чтобы отслеживать их и выдовать
@@ -39,10 +42,11 @@ void setup() {
  size_t headerkeyssize = sizeof(headerkeys) / sizeof(char*);
  //ask server to track these headers
  server.collectHeaders(headerkeys, headerkeyssize);
-
+ //страт сервера
  server.begin();
 }
 
+// повторяющаяся функция в которой мы читаем данные с Arduino UNO R3 и таймера и ждет кдиентов к серверу
 void loop() {
   server.handleClient();
 
@@ -54,6 +58,7 @@ void loop() {
   delay(2);
 }
 
+// для аутентификации по куки
 bool is_authentified() {
   if (server.hasHeader("Cookie")) {
     String cookie = server.header("Cookie");
@@ -64,6 +69,7 @@ bool is_authentified() {
   return false;
 }
 
+// для аутентификации
 void handle_auth(){
   if (is_authentified()) {
     server.sendHeader("Location", "/");
@@ -85,6 +91,7 @@ void handle_auth(){
   server.send (200, "text/html", Auth_page); // Отправить веб-страницу
 }
 
+// для главного роута
 void handle_root(){
   if (!is_authentified()) {
     server.sendHeader("Location", "/Auth");
@@ -95,6 +102,7 @@ void handle_root(){
   server.send (200, "text/html", MAIN_page); // Отправить веб-страницу
 }
 
+// для датчика dht11 страница
 void handle_DHT11(){
   if (!is_authentified()) {
     server.sendHeader("Location", "/Auth");
@@ -105,6 +113,7 @@ void handle_DHT11(){
   server.send (200, "text/html", DHT11_page); // Отправить веб-страницу
 }
 
+// для датчика mq135 страница
 void handle_MQ135(){
   if (!is_authentified()) {
     server.sendHeader("Location", "/Auth");
@@ -115,6 +124,7 @@ void handle_MQ135(){
   server.send (200, "text/html", MQ135_page); // Отправить веб-страницу
 }
 
+// для датчики flame_sensor страница
 void handle_Flame_sensor(){
   if (!is_authentified()) {
     server.sendHeader("Location", "/Auth");
@@ -125,6 +135,7 @@ void handle_Flame_sensor(){
   server.send (200, "text/html", Flame_sensor_page); // Отправить веб-страницу
 }
 
+// для датчики pump_wet страница
 void handle_Pump_Wet(){
   if (!is_authentified()) {
     server.sendHeader("Location", "/Auth");
@@ -135,6 +146,7 @@ void handle_Pump_Wet(){
   server.send (200, "text/html", Pump_Wet_page); // Отправить веб-страницу
 }
 
+// для датчиков отправки данных
 void get_data(){
   if (!is_authentified()) {
     server.sendHeader("Location", "/Auth");
@@ -160,6 +172,7 @@ void get_data(){
   server.send (200, "text/plain", res_str); // Отправить
 }
 
+// для парсинга строки на нужное нам разделение
 void parse_string(String res_in, String *res, int count_args){
   for(int i = 0, j = 0; i < res_in.length() && j < count_args; i++){
     if(',' == res_in[i]){
@@ -171,6 +184,7 @@ void parse_string(String res_in, String *res, int count_args){
   }
 }
 
+//для несуществующей страницы
 void handle_NotFound(){
  server.send(404, "text/plain", "Not found");
 }

@@ -4,6 +4,7 @@
 #include <WiFi.h>
 #include <WebServer.h>
 #include <LiquidCrystal_I2C.h>
+// !!! в той же папке
 #include "pages.h"
 
 #include <MFRC522.h> //library responsible for communicating with the module RFID-RC522
@@ -49,6 +50,7 @@ String our_code = "somes";
 
 LiquidCrystal_I2C lcd(0x27,16,2); // Задаем адрес и размерность дисплея
 
+// Функция setup(опередления различных начальных настроек)
 void setup(){
     Serial.begin(9600);
     pinMode(greenPin, OUTPUT);
@@ -58,6 +60,7 @@ void setup(){
     lcd.init(); // Инициализация lcd
     lcd.backlight(); // Включаем подсветку
 
+    // для вайфая
     WiFi.begin(ssid, password);
     while (WiFi.status() != WL_CONNECTED) {
       Serial.print(".");
@@ -80,7 +83,7 @@ void setup(){
     server.collectHeaders(headerkeys, headerkeyssize);
     server.begin();
 
-
+    //для смтп
     smtpData.setLogin(smtpServer, smtpServerPort, emailSenderAccount, emailSenderPassword);
     // Указываем адрес почты-получателя
     smtpData.setSender("ESP32", emailSenderAccount);
@@ -102,6 +105,7 @@ void setup(){
     Serial.println();
 }
 
+// если всё норм при отправки смтп
 void sendCallback(SendStatus msg) {
   // Выводим текущий статус
   Serial.println(msg.info());
@@ -112,6 +116,7 @@ void sendCallback(SendStatus msg) {
   }
 }
 
+// для аутентификации по куки
 int is_authentified() {
   if (server.hasHeader("Cookie")) {
     String cookie = server.header("Cookie");
@@ -125,6 +130,7 @@ int is_authentified() {
   return 0;
 }
 
+// для аутентификации
 void handle_auth(){
   int auth_ = is_authentified();
   if (auth_ == 1 || auth_ == 2) {
@@ -153,6 +159,7 @@ void handle_auth(){
   server.send (200, "text/html", Auth_page); // Отправить веб-страницу
 }
 
+// для главного роута
 void handle_root(){
   int auth_ = is_authentified();
   if (auth_ != 1 && auth_ != 2) {
@@ -168,11 +175,14 @@ void handle_root(){
   server.send (200, "text/html", MAIN_page_admin); // Отправить веб-страницу
 }
 
+//для несуществующей страницы
 void handle_NotFound(){
  server.send(404, "text/plain", "Not found");
 }
 
+// для датчиков отправки данных
 void get_data(){
+  // авторизован ли
   int auth_ = is_authentified();
   if (auth_ != 1 && auth_ != 2) {
     server.sendHeader("Location", "/Auth");
@@ -181,6 +191,7 @@ void get_data(){
     return;
   }
   String res_data = "";
+  //если закрыто админом
   if(bool_o_c && auth_ != 2){
     lcd.clear();
     lcd.setCursor(0, 0); // Устанавливаем курсор в начало 1 строки
@@ -190,7 +201,9 @@ void get_data(){
     server.send (200, "text/plain", String("Доступ запрещен, Доступ запрещен, Закрыто")); // Отправить
     return;
   }
+  // если есть арг read_write
   if(server.argName(0) == "read_write"){
+    // читаем
     if(server.arg(0) == "r"){
       if (!mfrc522.PICC_IsNewCardPresent()){
         res_data = String("Карта не приложена"); // Отправить
@@ -210,6 +223,7 @@ void get_data(){
       mfrc522.PICC_HaltA();
       mfrc522.PCD_StopCrypto1();
     }
+    //пишем
     else if(server.arg(0) == "w"){
       if(server.argName(1) == "wrin"){
         if (!mfrc522.PICC_IsNewCardPresent()){
@@ -233,7 +247,9 @@ void get_data(){
       }
     }
   }
+  //админ
   if(auth_ == 2){
+    //открываем
     if(server.argName(0) == "open"){
       if(server.arg(0) == "o"){
         Serial.println("opened door");
@@ -245,10 +261,12 @@ void get_data(){
         //Очищаем память
         smtpData.empty();
       }
+      //закрыто
       else{
         res_data+= ", Закрыто";
     }
     }
+    //разрешено или запрещено
     if(server.argName(0) == "open_close"){
       if(server.arg(0) == "c"){
         if(bool_o_c){
@@ -269,8 +287,10 @@ void get_data(){
   server.send (200, "text/plain", res_data); // Отправить
 }
 
+// бесконечный цикл
 void loop() {
     server.handleClient();
+    //открыто
     if(grD){
       digitalWrite(greenPin, 1);
       digitalWrite(SOUND_PIN, 1);
@@ -282,6 +302,7 @@ void loop() {
       digitalWrite(greenPin, 0);
       grD = false;
     }
+    //закрыто
     if(rdD){
       digitalWrite(redPin, 1);
       digitalWrite(SOUND_PIN, 1);

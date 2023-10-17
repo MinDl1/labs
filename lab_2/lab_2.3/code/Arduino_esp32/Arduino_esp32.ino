@@ -1,17 +1,24 @@
 // ВАЖНЫЕ библиотеки
 #include <FastBot.h> 
 
+//вайфай
 #define WIFI_SSID "" 
 #define WIFI_PASS "" 
+//токен
 #define BOT_TOKEN ""
+//датчики
 #define ky_038 32
 #define ky_018 33
 
+//массивы
 const int count_mass = 5;
 String hi_mass[count_mass] = {"Привет!", "Hello", "Прив", "Hi", "Салам"};
 String how_mass[count_mass] = {"Нормально", "Норма, а у тебя?", "Нормас", "Бомба", "Бомба, а у тебя?"};
 
+//старт бот
 FastBot bot(BOT_TOKEN); 
+
+// Функция setup(опередления различных начальных настроек)
 void setup() { 
     connectWiFi(); 
     bot.attach(newMsg);
@@ -19,9 +26,13 @@ void setup() {
     pinMode(ky_038, INPUT);
     pinMode(ky_018, INPUT);
 } 
+
+// бесконечный цикл
 void loop() { 
     bot.tick(); 
 } 
+
+// подключение к вайфая
 void connectWiFi() { 
     delay(2000); 
     Serial.begin(115200); 
@@ -37,6 +48,7 @@ void connectWiFi() {
     Serial.println("Connected"); 
 } 
 
+//ответ на сообщение
 void newMsg(FB_msg& msg) { 
     String tem = "("+msg.chatID+", "+msg.username+", "+msg.text+")"; 
     Serial.println(msg.text.substring(0, 22));
