@@ -1,3 +1,4 @@
+// ВАЖНЫЕ библиотеки
 #include <WiFi.h>
 #include <WebServer.h>
 #include "pages.h"
@@ -12,6 +13,7 @@ WebServer server(80);
 
 int count_args = 6;
 String res_in = "0,0,0,0,0,0";
+int time_ = 0;
 
 void setup() {
  Serial.begin(115200);
@@ -48,7 +50,7 @@ void loop() {
     res_in = Serial.readString();
     res_in.trim();
   }
-
+  time_+=3000;
   delay(2);
 }
 
@@ -152,8 +154,9 @@ void get_data(){
   if(server.argName(2) == "Flame_sensor" && server.arg(2) == "1")res_str+=res[3]+",";
   if(server.argName(3) == "Pump_Wet" && server.arg(3) == "1"){
     res_str+=res[4]+",";
-    res_str+=res[5];
+    res_str+=res[5]+",";
   }
+  if(server.argName(4) == "ttime" && server.arg(4) == "1")res_str+=String(time_/1000);
   server.send (200, "text/plain", res_str); // Отправить
 }
 

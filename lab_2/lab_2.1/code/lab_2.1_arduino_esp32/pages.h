@@ -201,14 +201,17 @@ html{
   Значение Pump: <span id = "Pump_work"> 0 </span> <br>
   Значение Wet_ground: <span id = "Wet_ground"> 0 </span> <br>
   </div>
+  <div class = "timer">
+  Время работы сервера: <span id = "ttime"> 0 </span> <br> 
+  </div>
 </DIV>
 
 <Script>
 
 setInterval (function () {
-  // Повторно вызвать функцию с интервалом 2 секунды
+  // Повторно вызвать функцию с интервалом 1 секунды
   getData();
-}, 1000); // частота обновления 2000 мсек
+}, 1000); // частота обновления 1000 мсек
 
 
 function getData () {
@@ -222,9 +225,10 @@ function getData () {
       document.getElementById ("Flame_sens"). innerHTML = parse_resp[3];
       document.getElementById ("Pump_work"). innerHTML = parse_resp[4];
       document.getElementById ("Wet_ground"). innerHTML = parse_resp[5];
+      document.getElementById ("ttime"). innerHTML = parse_resp[6];
     }
   };
-  xhttp.open ("POST", "getData?DHT11=1&MQ135=1&Flame_sensor=1&Pump_Wet=1", true);
+  xhttp.open ("POST", "getData?DHT11=1&MQ135=1&Flame_sensor=1&Pump_Wet=1&ttime=1", true);
   xhttp.send ();
 }
 

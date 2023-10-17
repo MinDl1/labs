@@ -1,3 +1,5 @@
+// For esp32
+// ВАЖНЫЕ библиотеки
 #include "ESP32_MailClient.h"
 #include <WiFi.h>
 #include <WebServer.h>
@@ -116,7 +118,7 @@ int is_authentified() {
     if (cookie.indexOf("ESPSESSIONID=1") != -1) {
       return 1;
     }
-    if (cookie.indexOf("ESPSESSIONID=2") != -1) {
+    else if (cookie.indexOf("ESPSESSIONID=2") != -1) {
       return 2;
     }
   }
