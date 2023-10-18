@@ -54,7 +54,7 @@ void loop() {
     res_in = Serial.readString();
     res_in.trim();
   }
-  time_+=3000;
+  time_ = millis();
   delay(2);
 }
 
