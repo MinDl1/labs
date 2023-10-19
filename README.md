@@ -117,7 +117,7 @@ void on_off_diod(int pin){
   digitalWrite(pin, 0);
 }
 ```
-Other code in folders in [/lab_1/lab_1.1](/lab_1/lab_1.1)
+Other code in folder in [/lab_1/lab_1.1/code](/lab_1/lab_1.1/code)
 
 #### Tinkercad
 
@@ -652,7 +652,7 @@ Lab_2.1 Проект можно выполнить на [Arduino Uno R3](https:/
 
 ##### Maximum kit(to complete all tasks one by one):
 
-- Плата Arduino Uno R3 - 1 шт.
+- Микроконтроллер Arduino Uno R3 - 1 шт.
 - Беспаечная макетная плата - 1 шт.
 - Дисплей LCD1602 - 1 шт.
 - Датчик огня YG1006 - 1 шт.
@@ -663,7 +663,7 @@ Lab_2.1 Проект можно выполнить на [Arduino Uno R3](https:/
 - Реле 1-5 В - 1 шт.
 - Водяной насос - 1 шт.
 - Резистор 10 Ом - 2 шт.
-- Плата ESP32S NodeMCU - 1 шт.
+- Микроконтроллер ESP32S NodeMCU - 1 шт.
 - Светодиод LED - 2 шт.
 - Источник питания 9 В - 1 шт.
 
@@ -683,7 +683,7 @@ Other images with connection in [/lab_2/lab_2.1/images](/lab_2/lab_2.1/images)
 
 ##### Visio
 
-Visio in folders in [/lab_2/lab2.1/visio](/lab_2/lab_2.1/visio)
+Visio in folder in [/lab_2/lab2.1/visio](/lab_2/lab_2.1/visio)
 
 #### Software:
 
@@ -692,7 +692,7 @@ Visio in folders in [/lab_2/lab2.1/visio](/lab_2/lab_2.1/visio)
 Our code has clear comments.  
 This is a base code for our Project.
 
-Code in folders in [/lab_2/lab_2.1](/lab_2/lab_2.1)
+Code in folder in [/lab_2/lab_2.1/code](/lab_2/lab_2.1/code)
 
 ### Language & Applications documentation:
 
@@ -702,7 +702,7 @@ Code in folders in [/lab_2/lab_2.1](/lab_2/lab_2.1)
 ## Building
 
 For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
-This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3) and [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ---
 
@@ -754,7 +754,7 @@ Other images with connection in [/lab_2/lab_2.2/images](/lab_2/lab_2.2/images)
 
 ##### Visio
 
-Visio in folders in [/lab_2/lab2.2/visio](/lab_2/lab_2.2/visio)
+Visio in folder in [/lab_2/lab2.2/visio](/lab_2/lab_2.2/visio)
 
 #### Software:
 
@@ -764,7 +764,7 @@ Visio in folders in [/lab_2/lab2.2/visio](/lab_2/lab_2.2/visio)
 Our code has clear comments.  
 This is a base code for our Project.
 
-Code in folders in [/lab_2/lab2.2/code](/lab_2/lab_2.2/code)
+Code in folder in [/lab_2/lab2.2/code](/lab_2/lab_2.2/code)
 
 ### Language & Applications documentation:
 
@@ -774,7 +774,7 @@ Code in folders in [/lab_2/lab2.2/code](/lab_2/lab_2.2/code)
 ## Building
 
 For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
-This code work only for [NodeMCU 32S] (https://nodemcu.readthedocs.io/en/dev-esp32/).
+This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ---
 
@@ -823,7 +823,7 @@ Other images with connection in [/lab_1/lab_2.3/images](/lab_1/lab_2.3/images)
 
 ##### Visio
 
-Visio in folders in [/lab_2/lab2.3/visio](/lab_2/lab_2.3/visio)
+Visio in folder in [/lab_2/lab2.3/visio](/lab_2/lab_2.3/visio)
 
 #### Software:
 
@@ -832,7 +832,7 @@ Visio in folders in [/lab_2/lab2.3/visio](/lab_2/lab_2.3/visio)
 Our code has clear comments.  
 This is a base code for Task_1-6 for our Project.
 
-Code in folders in [/lab_1/lab_2.3/code/](/lab_1/lab_2.3/code/)
+Code in folder in [/lab_1/lab_2.3/code/](/lab_1/lab_2.3/code/)
 
 ### Language & Applications documentation:
 
@@ -842,7 +842,7 @@ Code in folders in [/lab_1/lab_2.3/code/](/lab_1/lab_2.3/code/)
 ## Building
 
 For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
-This code work only for [NodeMCU 32S] (https://nodemcu.readthedocs.io/en/dev-esp32/).
+This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ---
 
