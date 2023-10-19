@@ -629,7 +629,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 Lab_2.1 - это проект на базе Arduino, который позволяет протестировать возможность использования Arduino в качестве сервера, а именно создать собственную точку доступа, подключив Arduino UNO R3 к ESP32. Кроме того, разрабатывается многостраничный веб-сайт с автоматическим обновлением данных о системе климат-контроля.
 
-Lab_2.1 Исходный код доступен на [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3 ).
+Lab_2.1 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S] (https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ## Documentation
 
@@ -651,39 +651,39 @@ Lab_2.1 Исходный код доступен на [Arduino Uno](https://docs
 - Buzzer madule Louleveltrigger - 1 шт.
 - Датчик Louleveltrigger - 1 шт.
 - Датчик влажности MH-SenSor Series - 1 шт.
-- Реле 1*5 В - 1 шт.
+- Реле 1-5 В - 1 шт.
 - Водяной насос - 1 шт.
-- Резистор 4 Ом - 2 шт.
+- Резистор 10 Ом - 2 шт.
 - Плата ESP32S NodeMCU - 1 шт.
 - Светодиод LED - 2 шт.
-
-![lab_2.1 Maximum kit for Project](/lab_2/lab_2.1/images/Maximum_kit.png)
+- Источник питания 9 В - 1 шт.
 
 ##### Base scheme for Project
 
-![lab_2.1 task_1-6_image](/lab_2/lab_2.1/images/task_1-6/task_1-6.png)
+![lab_2.1 task_1-6_image](/lab_2/lab_2.1/images/lab_2.1.png)
 
-![lab_2.1 task_1-6_Circuit](/lab_2/lab_2.1/images/task_1-6/task_1-6_Circuit.png)
+![lab_2.1 task_1-6_Circuit](/lab_2/lab_2.1/images/Circuit_Task_1-6.png)
 
 ##### DFD
 
-![lab_2.1 DFD](/lab_2/lab_2.1/images/Lab_2_cheme.png)
+![lab_2.1 DFD](/lab_2/lab_2.1/images/DFD.png)
 
 ##### Other images
 
 Other images with connection in [/lab_2/lab_2.1/images](/lab_2/lab_2.1/images)
 
+##### Visio
+
+Visio in folders in [/lab_2/lab2.1/visio](/lab_2/lab_2.1/visio)
+
 #### Software:
 
 - [Arduino IDE](https://www.arduino.cc/en/software)
 
-Our code has clear comments, but for you we will write the main points here.  
+Our code has clear comments.  
 This is a base code for our Project.
 
-```cpp
-// - Updated soon
-```
-Other code in folders in [/lab_2/lab_2.1](/lab_2/lab_2.1)
+Code in folders in [/lab_2/lab_2.1](/lab_2/lab_2.1)
 
 ### Language & Applications documentation:
 
@@ -706,7 +706,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 Lab_2.2 - Второй этап носит за собой функцию определения возможностей взаимодействия пользователя с приложением посредством работы с RFID модулем. Также анализируется допустимость переноса данных в клиент сервер и создания многостраничного сайта с различными пользователями с возможностью отправки уведомлений на почту.
 
-Lab_2.2 Исходный код доступен на [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3 ).
+Lab_2.2 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S] (https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ## Documentation
 
@@ -720,53 +720,42 @@ Lab_2.2 Исходный код доступен на [Arduino Uno](https://docs
 
 ##### Maximum kit(to complete all tasks one by one):
 
-- Плата Arduino Uno R3 - 1 шт.
+- Buzzer madule Louleveltrigger - 1 шт.
 - Беспаечная макетная плата - 1 шт.
 - Дисплей LCD1602 - 1 шт.
-- Датчик огня YG1006 - 1 шт.
-- Датчик газа MQ 135 - 1 шт.
-- Buzzer madule Louleveltrigger - 1 шт.
-- Датчик Louleveltrigger - 1 шт.
-- Датчик влажности MH-SenSor Series - 1 шт.
-- Реле 1*5 В - 1 шт.
-- Водяной насос - 1 шт.
-- Резистор 4 Ом - 2 шт.
-- Плата ESP32S NodeMCU - 1 шт.
-- Светодиод LED - 2 шт.
+- Резистор 10 Ом - 2 шт.
+- Микроконтроллер ESP32S NodeMCU - 1 шт.
+- Светодиод LED красный - 1 шт.
+- Светодиод LED зеленый - 1 шт.
 - RFID-модуль RC522 - 1 шт.
-
-![Maximum kit for Project](/lab_2/lab_2.2/images/Maximum_kit.png)
 
 ##### Base scheme for Project
 
-![Task_1-6_image](/lab_2/lab_2.2/images/Task_1-6/Task_1-6.png)
+![Task_1-6_image](/lab_2/lab_2.2/images/lab_2.2.png)
 
-![Task_1-6_Circuit](/lab_2/lab_2.2/images/Task_1-6/Task_1-6_Circuit.png)
+![Task_1-6_Circuit](/lab_2/lab_2.2/images/Circuit_Task_1-6.png)
 
 ##### DFD
 
-![lab_2.2 DFD](/lab_2/lab_2.2/images/Lab_2_cheme.png)
+![lab_2.2 DFD](/lab_2/lab_2.2/images/DFD.png)
 
 ##### Other images
 
 Other images with connection in [/lab_2/lab_2.2/images](/lab_2/lab_2.2/images)
+
+##### Visio
+
+Visio in folders in [/lab_2/lab2.2/visio](/lab_2/lab_2.2/visio)
 
 #### Software:
 
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [Processing](https://processing.org/)
 
-Our code has clear comments, but for you we will write the main points here.  
+Our code has clear comments.  
 This is a base code for our Project.
 
-Arduino code
-
-```cpp
-// - Updated soon
-```
-Processing code
-
-Other code in folders in [/lab_2/lab2.2/code](/lab_2/lab_2.2/code)
+Code in folders in [/lab_2/lab2.2/code](/lab_2/lab_2.2/code)
 
 ### Language & Applications documentation:
 
@@ -775,8 +764,8 @@ Other code in folders in [/lab_2/lab2.2/code](/lab_2/lab_2.2/code)
 
 ## Building
 
-For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software) and [Processing](https://processing.org/) to see the game and play.  
-This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+This code work only for [NodeMCU 32S] (https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ---
 
@@ -789,7 +778,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 Lab_2.3 - На третьем этапе производится анализ результатов, полученных на первых двух этапах и последующее создание телеграм бота с интерфейсом напоминаний.
 
-Lab_2.3 Исходный код доступен на [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3 ).
+Lab_2.3 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S] (https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ## Documentation
 
@@ -803,56 +792,38 @@ Lab_2.3 Исходный код доступен на [Arduino Uno](https://docs
 
 ##### Maximum kit(to complete all tasks one by one):
 
-- Плата Arduino Uno R3 - 1 шт.
 - Беспаечная макетная плата - 1 шт.
 - Дисплей LCD1602 - 1 шт.
-- Датчик огня YG1006 - 1 шт.
-- Датчик газа MQ 135 - 1 шт.
-- Buzzer madule Louleveltrigger - 1 шт.
-- Датчик Louleveltrigger - 1 шт.
-- Датчик влажности MH-SenSor Series - 1 шт.
-- Реле 1*5 В - 1 шт.
-- Водяной насос - 1 шт.
-- Резистор 4 Ом - 2 шт.
 - Плата ESP32S NodeMCU - 1 шт.
-- Светодиод LED - 2 шт.
-- RFID-модуль RC522 - 1 шт.
 - Датчик звука ky – 038 - 1 шт.
 - Датчик света ky – 018 - 1 шт.
 
 ##### Last scheme for Project
 
-![lab_2.3 Task_1-6_image](/lab_2/lab_2.3/images/Task_1-6/Task_1-6.jpg)
+![lab_2.3 Task_1-6_image](/lab_2/lab_2.3/images/lab_2.3.jpg)
+
+![Task_1-6_Circuit](/lab_2/lab_2.3/images/Circuit_Task_1-6.png)
 
 ##### DFD
 
-![lab_2.3 DFD](/lab_2/lab_2.3/images/Lab_3_cheme.png)
+![lab_2.3 DFD](/lab_2/lab_2.3/images/DFD.png)
 
 ##### Other images
 
 Other images with connection in [/lab_1/lab_2.3/images](/lab_1/lab_2.3/images)
 
+##### Visio
+
+Visio in folders in [/lab_2/lab2.3/visio](/lab_2/lab_2.3/visio)
+
 #### Software:
 
 - [Arduino IDE](https://www.arduino.cc/en/software)
 
-Our code has clear comments, but for you we will write the main points here.  
+Our code has clear comments.  
 This is a base code for Task_1-6 for our Project.
 
-```cpp
-// updated soon
-}
-```
-Other code in folders in [/lab_1/lab_2.3/code/](/lab_1/lab_2.3/code/)
-
-#### Electrical circuit
-
-<details>
-<summary>Click to see Task_1-6</summary>
-
-- Updated soon
-
-</details>
+Code in folders in [/lab_1/lab_2.3/code/](/lab_1/lab_2.3/code/)
 
 ### Language & Applications documentation:
 
@@ -862,7 +833,7 @@ Other code in folders in [/lab_1/lab_2.3/code/](/lab_1/lab_2.3/code/)
 ## Building
 
 For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
-This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3).
+This code work only for [NodeMCU 32S] (https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ---
 
