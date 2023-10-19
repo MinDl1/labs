@@ -22,7 +22,6 @@ FastBot bot(BOT_TOKEN);
 void setup() { 
     connectWiFi(); 
     bot.attach(newMsg);
-    bot.showMenu("Привет! \t Как дела? \n Звук \t Свет");
     pinMode(ky_038, INPUT);
     pinMode(ky_018, INPUT);
 } 
@@ -97,7 +96,10 @@ void newMsg(FB_msg& msg) {
 
     }
     else{
-      bot.sendMessage("Вот список моих команд: \n1)Привет\n2)как дела?\nСвет\nЗвук\nНапоминание в формате(последнее число мсек): Напоминание Сделать лабу|3000", msg.chatID);
+      bot.setChatID(msg.chatID);
+      bot.showMenu("Привет! \t Как дела? \n Звук \t Свет");
+      bot.setChatID(0);
+      bot.sendMessage("Что я умею: \n1)Привет\n2)как дела?\nСвет\nЗвук\nНапоминание в формате(последнее число мсек): Напоминание Сделать лабу|3000", msg.chatID);
     }
     Serial.println(tem); 
 }
