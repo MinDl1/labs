@@ -627,7 +627,9 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 # Lab_2.1
 
-- Updated soon
+Lab_2.1 - это проект на базе Arduino, который позволяет протестировать возможность использования Arduino в качестве сервера, а именно создать собственную точку доступа, подключив Arduino UNO R3 к ESP32. Кроме того, разрабатывается многостраничный веб-сайт с автоматическим обновлением данных о системе климат-контроля.
+
+Lab_2.1 Исходный код доступен на [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3 ).
 
 ## Documentation
 
@@ -639,11 +641,21 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 #### Hardware:
 
-![lab_2.1 Minimum kit for Project](/lab_2/lab_2.1/images/Minimum_kit.png)
-
 ##### Maximum kit(to complete all tasks one by one):
 
-- Updated soon
+- Плата Arduino Uno R3 - 1 шт.
+- Беспаечная макетная плата - 1 шт.
+- Дисплей LCD1602 - 1 шт.
+- Датчик огня YG1006 - 1 шт.
+- Датчик газа MQ 135 - 1 шт.
+- Buzzer madule Louleveltrigger - 1 шт.
+- Датчик Louleveltrigger - 1 шт.
+- Датчик влажности MH-SenSor Series - 1 шт.
+- Реле 1*5 В - 1 шт.
+- Водяной насос - 1 шт.
+- Резистор 4 Ом - 2 шт.
+- Плата ESP32S NodeMCU - 1 шт.
+- Светодиод LED - 2 шт.
 
 ![lab_2.1 Maximum kit for Project](/lab_2/lab_2.1/images/Maximum_kit.png)
 
@@ -692,7 +704,9 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 # Lab_2.2
 
-- Updated soon
+Lab_2.2 - Второй этап носит за собой функцию определения возможностей взаимодействия пользователя с приложением посредством работы с RFID модулем. Также анализируется допустимость переноса данных в клиент сервер и создания многостраничного сайта с различными пользователями с возможностью отправки уведомлений на почту.
+
+Lab_2.2 Исходный код доступен на [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3 ).
 
 ## Documentation
 
@@ -706,7 +720,20 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 ##### Maximum kit(to complete all tasks one by one):
 
-- Updated soon
+- Плата Arduino Uno R3 - 1 шт.
+- Беспаечная макетная плата - 1 шт.
+- Дисплей LCD1602 - 1 шт.
+- Датчик огня YG1006 - 1 шт.
+- Датчик газа MQ 135 - 1 шт.
+- Buzzer madule Louleveltrigger - 1 шт.
+- Датчик Louleveltrigger - 1 шт.
+- Датчик влажности MH-SenSor Series - 1 шт.
+- Реле 1*5 В - 1 шт.
+- Водяной насос - 1 шт.
+- Резистор 4 Ом - 2 шт.
+- Плата ESP32S NodeMCU - 1 шт.
+- Светодиод LED - 2 шт.
+- RFID-модуль RC522 - 1 шт.
 
 ![Maximum kit for Project](/lab_2/lab_2.2/images/Maximum_kit.png)
 
@@ -760,7 +787,9 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 # Lab_2.3
 
-- Updated soon
+Lab_2.3 - На третьем этапе производится анализ результатов, полученных на первых двух этапах и последующее создание телеграм бота с интерфейсом напоминаний.
+
+Lab_2.3 Исходный код доступен на [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3 ).
 
 ## Documentation
 
@@ -774,7 +803,22 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 ##### Maximum kit(to complete all tasks one by one):
 
-- Updated soon
+- Плата Arduino Uno R3 - 1 шт.
+- Беспаечная макетная плата - 1 шт.
+- Дисплей LCD1602 - 1 шт.
+- Датчик огня YG1006 - 1 шт.
+- Датчик газа MQ 135 - 1 шт.
+- Buzzer madule Louleveltrigger - 1 шт.
+- Датчик Louleveltrigger - 1 шт.
+- Датчик влажности MH-SenSor Series - 1 шт.
+- Реле 1*5 В - 1 шт.
+- Водяной насос - 1 шт.
+- Резистор 4 Ом - 2 шт.
+- Плата ESP32S NodeMCU - 1 шт.
+- Светодиод LED - 2 шт.
+- RFID-модуль RC522 - 1 шт.
+- Датчик звука ky – 038 - 1 шт.
+- Датчик света ky – 018 - 1 шт.
 
 ##### Last scheme for Project
 
