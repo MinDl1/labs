@@ -3,10 +3,15 @@
 ## About project
 
 Labs is a project based on different hardware and software.  
-The project is made possible by [MinDl](https://github.com/MinDl1), [Gryn69](https://github.com/Gryn69), [Goremika26](https://github.com/Goremika26) who've generously donated dozens of hours in code development and upkeep.
+The project is made possible by [MinDl](https://github.com/MinDl1), [Gryn69](https://github.com/Gryn69), [Goremika26](https://github.com/Goremika26), [IrinaBelous](https://github.com/IrinaBelous), [KseniiaFilippova](https://github.com/KseniiaFilippova) who've generously donated dozens of hours in code development and upkeep.
 
 <details>
 <summary>Laboratory 1</summary>
+
+## Collaborators
+
+- [Gryn69](https://github.com/Gryn69)
+- [Goremika26](https://github.com/Goremika26)
 
 ## Documentation
 
@@ -617,6 +622,10 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 <details>
 <summary>Laboratory 2</summary>
 
+## Collaborators
+
+- [IrinaBelous](https://github.com/IrinaBelous)
+- [KseniiaFilippova](https://github.com/KseniiaFilippova)
 
 ## Documentation
 
@@ -629,7 +638,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 Lab_2.1 - это проект на базе Arduino, который позволяет протестировать возможность использования Arduino в качестве сервера, а именно создать собственную точку доступа, подключив Arduino UNO R3 к ESP32. Кроме того, разрабатывается многостраничный веб-сайт с автоматическим обновлением данных о системе климат-контроля.
 
-Lab_2.1 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S] (https://nodemcu.readthedocs.io/en/dev-esp32/).
+Lab_2.1 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ## Documentation
 
@@ -706,7 +715,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 Lab_2.2 - Второй этап носит за собой функцию определения возможностей взаимодействия пользователя с приложением посредством работы с RFID модулем. Также анализируется допустимость переноса данных в клиент сервер и создания многостраничного сайта с различными пользователями с возможностью отправки уведомлений на почту.
 
-Lab_2.2 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S] (https://nodemcu.readthedocs.io/en/dev-esp32/).
+Lab_2.2 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ## Documentation
 
@@ -778,7 +787,7 @@ This code work only for [NodeMCU 32S] (https://nodemcu.readthedocs.io/en/dev-esp
 
 Lab_2.3 - На третьем этапе производится анализ результатов, полученных на первых двух этапах и последующее создание телеграм бота с интерфейсом напоминаний.
 
-Lab_2.3 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S] (https://nodemcu.readthedocs.io/en/dev-esp32/).
+Lab_2.3 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ## Documentation
 
