@@ -45,8 +45,8 @@ div {
   <input type="text" id="log" placeholder="MinDl1" name="log"><br><br>
   <label for="pass">Password:</label>
   <input type="text" id="pass" placeholder="********" name="pass"><br><br>
-  <button id = send_log_pass class="button" onclick = 'sendData( document.getElementById("log").value, document.getElementById("pass").value)'> login </button>
 </form>
+<button id = send_log_pass class="button" onclick = 'sendData( document.getElementById("log").value, document.getElementById("pass").value)'> login </button>
     <BR>
     <BR>
 </DIV>

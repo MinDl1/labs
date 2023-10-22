@@ -1,5 +1,6 @@
 // ВАЖНЫЕ библиотеки
 #include <FastBot.h> 
+#include <WiFi.h>
 
 //вайфай
 #define WIFI_SSID "" 

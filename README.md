@@ -636,7 +636,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 # Lab_2.1
 
-Lab_2.1 - это проект на базе Arduino, который позволяет протестировать возможность использования Arduino в качестве сервера, а именно создать собственную точку доступа, подключив Arduino UNO R3 к ESP32. Кроме того, разрабатывается многостраничный веб-сайт с автоматическим обновлением данных о системе климат-контроля.
+Lab_2.1 - это проект на базе Arduino, который позволяет протестировать возможность использования Arduino в качестве сервера, а именно создать собственную точку доступа, подключив Arduino UNO R3 к ESP32. Кроме того, разрабатывается многостраничный веб-сайт с автоматическим обновлением данных системы климат-контроля.
 
 Lab_2.1 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
@@ -652,20 +652,23 @@ Lab_2.1 Проект можно выполнить на [Arduino Uno R3](https:/
 
 ##### Maximum kit(to complete all tasks one by one):
 
-- Микроконтроллер Arduino Uno R3 - 1 шт.
-- Беспаечная макетная плата - 1 шт.
-- Дисплей LCD1602 - 1 шт.
-- Датчик огня YG1006 - 1 шт.
-- Датчик газа MQ 135 - 1 шт.
-- Buzzer madule Louleveltrigger - 1 шт.
-- Датчик Louleveltrigger - 1 шт.
-- Датчик влажности MH-SenSor Series - 1 шт.
-- Реле 1-5 В - 1 шт.
-- Водяной насос - 1 шт.
-- Резистор 10 Ом - 2 шт.
-- Микроконтроллер ESP32S NodeMCU - 1 шт.
-- Светодиод LED - 2 шт.
-- Источник питания 9 В - 1 шт.
+- Микроконтроллер Arduino Uno R3 – 1 шт.
+- Микроконтроллер ESP32S NodeMCU – 1 шт.
+- Компьютер - 1 шт.
+- Беспаечная макетная плата – 1 шт.
+- Датчик температуры и влажности DHT11 – 1шт.
+- Датчик влажности почвы YL38 – 1шт.
+- Датчик огня YG1006 – 1 шт.
+- Датчик газа MQ 135 – 1 шт.
+- Дисплей LCD1602 – 1 шт.
+- Buzzer module Low Level Trigger – 1 шт.
+- Реле 1-5 В – 1 шт.
+- Водяной насос – 1 шт.
+- Резистор 10 Ом – 2 шт.
+- Светодиод LED красный – 1 шт.
+- Светодиод LED зеленый – 1 шт.
+- Источник питания 9 В – 1 шт.
+- Набор проводов - 1 шт.
 
 ##### Base scheme for Project
 
@@ -687,21 +690,31 @@ Visio in folder in [/lab_2/lab2.1/visio](/lab_2/lab_2.1/visio)
 
 #### Software:
 
-- [Arduino IDE](https://www.arduino.cc/en/software)
-
-Our code has clear comments.  
-This is a base code for our Project.
+Our code has clear comments.
 
 Code in folder in [/lab_2/lab_2.1/code](/lab_2/lab_2.1/code)
 
 ### Language & Applications documentation:
 
 - [Arduino](https://docs.arduino.cc/)
-- [C++](https://devdocs.io/cpp/)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Arduino programming language](https://www.arduino.cc/reference/en/)
+- [HTML5](https://ru.wikipedia.org/wiki/HTML5)
+- [JavaScript](https://ru.wikipedia.org/wiki/JavaScript)
+- [CSS](https://ru.wikipedia.org/wiki/CSS)
+
+### Libraries
+
+- Wire.h - для работыс  i2c
+- DHT.h - для работы с датчиком DHT11
+- MQ135.h - для работы с датчиком MQ135
+- WiFi.h - для подключению к WiFi
+- WebServer - для создания сервера из esp32
+- LiquidCrystal_I2C.h - для работы с LCD i2c дисплея
 
 ## Building
 
-For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+For build code and upload on Arduino NodeMCU 32S, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
 This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3) and [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ---
@@ -715,7 +728,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 Lab_2.2 - Второй этап носит за собой функцию определения возможностей взаимодействия пользователя с приложением посредством работы с RFID модулем. Также анализируется допустимость переноса данных в клиент сервер и создания многостраничного сайта с различными пользователями с возможностью отправки уведомлений на почту.
 
-Lab_2.2 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+Lab_2.2 Проект можно выполнить на [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ## Documentation
 
@@ -729,11 +742,11 @@ Lab_2.2 Проект можно выполнить на [Arduino Uno R3](https:/
 
 ##### Maximum kit(to complete all tasks one by one):
 
+- Микроконтроллер ESP32S NodeMCU - 1 шт.
 - Buzzer madule Louleveltrigger - 1 шт.
 - Беспаечная макетная плата - 1 шт.
 - Дисплей LCD1602 - 1 шт.
 - Резистор 10 Ом - 2 шт.
-- Микроконтроллер ESP32S NodeMCU - 1 шт.
 - Светодиод LED красный - 1 шт.
 - Светодиод LED зеленый - 1 шт.
 - RFID-модуль RC522 - 1 шт.
@@ -758,22 +771,32 @@ Visio in folder in [/lab_2/lab2.2/visio](/lab_2/lab_2.2/visio)
 
 #### Software:
 
-- [Arduino IDE](https://www.arduino.cc/en/software)
-- [Processing](https://processing.org/)
-
-Our code has clear comments.  
-This is a base code for our Project.
+Our code has clear comments.
 
 Code in folder in [/lab_2/lab2.2/code](/lab_2/lab_2.2/code)
 
 ### Language & Applications documentation:
 
 - [Arduino](https://docs.arduino.cc/)
-- [C++](https://devdocs.io/cpp/)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Arduino programming language](https://www.arduino.cc/reference/en/)
+- [HTML5](https://ru.wikipedia.org/wiki/HTML5)
+- [JavaScript](https://ru.wikipedia.org/wiki/JavaScript)
+- [CSS](https://ru.wikipedia.org/wiki/CSS)
+
+### Libraries
+
+- Wire.h - для работыс  i2c
+- ESP32_MailClient.h - для отправки email
+- WiFi.h - для подключению к WiFi
+- WebServer - для создания сервера из esp32
+- LiquidCrystal_I2C.h - для работы с LCD i2c дисплея
+- MFRC522.h - для работы с RFID
+- SPI.h - для устройств поддерживающих spi протокол
 
 ## Building
 
-For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+For build code and upload on Arduino NodeMCU 32S, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
 This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ---
@@ -787,7 +810,7 @@ This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp3
 
 Lab_2.3 - На третьем этапе производится анализ результатов, полученных на первых двух этапах и последующее создание телеграм бота с интерфейсом напоминаний.
 
-Lab_2.3 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+Lab_2.3 Проект можно выполнить на [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ## Documentation
 
@@ -827,21 +850,24 @@ Visio in folder in [/lab_2/lab2.3/visio](/lab_2/lab_2.3/visio)
 
 #### Software:
 
-- [Arduino IDE](https://www.arduino.cc/en/software)
-
-Our code has clear comments.  
-This is a base code for Task_1-6 for our Project.
+Our code has clear comments.
 
 Code in folder in [/lab_1/lab_2.3/code/](/lab_1/lab_2.3/code/)
 
 ### Language & Applications documentation:
 
 - [Arduino](https://docs.arduino.cc/)
-- [C++](https://devdocs.io/cpp/)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Arduino programming language](https://www.arduino.cc/reference/en/)
+
+### Libraries
+
+- WiFi.h - для подключению к WiFi
+- FastBot.h - esp32 как сервер для телеграмм бота
 
 ## Building
 
-For build code and upload on Arduino, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+For build code and upload on Arduino NodeMCU 32S, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
 This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
 ---

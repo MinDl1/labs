@@ -79,7 +79,7 @@ void handle_auth(){
   }
   // получить имя параметра и значение Сравниваем
   if (server.hasArg("login") && server.hasArg("passwd")) {
-    if(server.arg("login") == "esp32" && server.arg("passwd") == "01234567"){
+    if(server.arg("login") == "esp32" && server.arg("passwd") == "01234567As"){
       server.sendHeader("Cache-Control", "no-cache");
       server.sendHeader("Set-Cookie", "ESPSESSIONID=1");
       server.sendHeader("Location", "/");

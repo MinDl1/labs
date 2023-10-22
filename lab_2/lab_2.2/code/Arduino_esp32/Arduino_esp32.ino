@@ -92,7 +92,7 @@ void setup(){
     // Указываем тему письма
     smtpData.setSubject(emailSubject);
     // Пишем сообщение обычным текстом
-    smtpData.setMessage("Hello World! - Sent from ESP32 board", false);
+    smtpData.setMessage("Door was opened", false);
     // Добавляем еще получателей, если нужно.
     smtpData.addRecipient(emailRecipient);
     smtpData.setSendCallback(sendCallback);
@@ -141,17 +141,17 @@ void handle_auth(){
   }
   // получить имя параметра и значение Сравниваем
   if (server.hasArg("login") && server.hasArg("passwd")) {
-    if(server.arg("login") == "esp32" && server.arg("passwd") == "01234567"){
+    if(server.arg("login") == "esp32" && server.arg("passwd") == "01234567As"){
+      server.sendHeader("Location", "/");
       server.sendHeader("Cache-Control", "no-cache");
       server.sendHeader("Set-Cookie", "ESPSESSIONID=1");
-      server.sendHeader("Location", "/");
       server.send(301);
       return;
     }
-    else if(server.arg("login") == "admin" && server.arg("passwd") == "12345"){
+    else if(server.arg("login") == "admin" && server.arg("passwd") == "12345QWEzx0"){
+      server.sendHeader("Location", "/");
       server.sendHeader("Cache-Control", "no-cache");
       server.sendHeader("Set-Cookie", "ESPSESSIONID=2");
-      server.sendHeader("Location", "/");
       server.send(301);
       return;
     }
