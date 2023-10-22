@@ -743,6 +743,7 @@ Lab_2.2 Проект можно выполнить на [NodeMCU 32S](https://no
 ##### Maximum kit(to complete all tasks one by one):
 
 - Микроконтроллер ESP32S NodeMCU - 1 шт.
+- Компьютер - 1 шт.
 - Buzzer madule Louleveltrigger - 1 шт.
 - Беспаечная макетная плата - 1 шт.
 - Дисплей LCD1602 - 1 шт.
@@ -825,6 +826,7 @@ Lab_2.3 Проект можно выполнить на [NodeMCU 32S](https://no
 ##### Maximum kit(to complete all tasks one by one):
 
 - Беспаечная макетная плата - 1 шт.
+- Компьютер - 1 шт.
 - Дисплей LCD1602 - 1 шт.
 - Плата ESP32S NodeMCU - 1 шт.
 - Датчик звука ky – 038 - 1 шт.
