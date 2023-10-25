@@ -653,7 +653,9 @@ Lab_2.1 Проект можно выполнить на [Arduino Uno R3](https:/
 ##### Maximum kit(to complete all tasks one by one):
 
 - Микроконтроллер Arduino Uno R3 – 1 шт.
+- Кабель usb type-b/usb type-a
 - Микроконтроллер ESP32S NodeMCU – 1 шт.
+- Кабель microUSB/usb type-a
 - Компьютер - 1 шт.
 - Беспаечная макетная плата – 1 шт.
 - Датчик температуры и влажности DHT11 – 1шт.
@@ -743,6 +745,7 @@ Lab_2.2 Проект можно выполнить на [NodeMCU 32S](https://no
 ##### Maximum kit(to complete all tasks one by one):
 
 - Микроконтроллер ESP32S NodeMCU - 1 шт.
+- Кабель microUSB/usb type-a
 - Компьютер - 1 шт.
 - Buzzer madule Louleveltrigger - 1 шт.
 - Беспаечная макетная плата - 1 шт.
@@ -829,6 +832,7 @@ Lab_2.3 Проект можно выполнить на [NodeMCU 32S](https://no
 - Компьютер - 1 шт.
 - Дисплей LCD1602 - 1 шт.
 - Плата ESP32S NodeMCU - 1 шт.
+- Кабель microUSB/usb type-a
 - Датчик звука ky – 038 - 1 шт.
 - Датчик света ky – 018 - 1 шт.
 

@@ -52,10 +52,7 @@ void connectWiFi() {
 void newMsg(FB_msg& msg) { 
     String tem = "("+msg.chatID+", "+msg.username+", "+msg.text+")"; 
     Serial.println(msg.text.substring(0, 22));
-    if(msg.text == "/start"){
-      bot.sendMessage("Вот список моих команд: \n1)Привет\n2)как дела?\nСвет\nЗвук\nНапоминание в формате(последнее число мсек): Напоминание Сделать лабу|3000", msg.chatID);
-    }
-    else if(msg.text == "Hello" || msg.text == "Hi" || msg.text == "Привет" || msg.text == "Привет!"){ 
+    if(msg.text == "Hello" || msg.text == "Hi" || msg.text == "Привет" || msg.text == "Привет!"){ 
       int i = random(count_mass);
       Serial.println("From: "+msg.chatID+"; text: "+msg.text+"; respose: "+hi_mass[i]);
       bot.sendMessage(hi_mass[i], msg.chatID); 
@@ -78,6 +75,7 @@ void newMsg(FB_msg& msg) {
     else if(msg.text.substring(0, 22) == "Напоминание"){
       String s = msg.text.substring(22);
       String text_time[2] = {"", ""};
+      //парсим строку
       for(int i = 0, j = 0; i < msg.text.length(); i++ ){
         if(s[i] != '|'){
           text_time[j]+=s[i];
@@ -86,7 +84,7 @@ void newMsg(FB_msg& msg) {
           j++;
         }
       }
-      
+      //бесконечный цикл отправления напоминания с интервалом, который указал пользователь
       while(true){
         int delay_ = text_time[1].toInt();
         Serial.println(delay_);
@@ -97,9 +95,11 @@ void newMsg(FB_msg& msg) {
 
     }
     else{
+      //для вывода меню с кнопками
       bot.setChatID(msg.chatID);
       bot.showMenu("Привет! \t Как дела? \n Звук \t Свет");
       bot.setChatID(0);
+      //отправляем что умеет бот
       bot.sendMessage("Что я умею: \n1)Привет\n2)как дела?\nСвет\nЗвук\nНапоминание в формате(последнее число мсек): Напоминание Сделать лабу|3000", msg.chatID);
     }
     Serial.println(tem); 
