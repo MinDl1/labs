@@ -882,6 +882,236 @@ This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp3
 
 </details>
 
+<details>
+<summary>Laboratory 3</summary>
+
+## Collaborators
+
+- [IrinaBelous](https://github.com/IrinaBelous)
+- [KseniiaFilippova](https://github.com/KseniiaFilippova)
+
+## Documentation
+
+- Our [lab3 docs](/lab_3/docs/)
+
+<details>
+<summary>Laboratory 3.1</summary>
+
+# Lab_3.1
+
+Lab_3.1 - Написать!!!
+
+Lab_3.1 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [lab_3.1 docs](/lab_3/lab_3.1/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+##### Maximum kit(to complete all tasks one by one):
+
+Написать состав
+
+##### Base scheme for Project
+
+![lab_3.1 task_1-6_image](/lab_3/lab_3.1/images/lab_3.1.png)
+
+![lab_3.1 task_1-6_Circuit](/lab_3/lab_3.1/images/Circuit_Task_1-6.png)
+
+##### DFD
+
+![lab_3.1 DFD](/lab_3/lab_3.1/images/DFD.png)
+
+##### Other images
+
+Other images with connection in [/lab_3/lab_3.1/images](/lab_3/lab_3.1/images)
+
+##### Visio
+
+Visio in folder in [/lab_3/lab3.1/visio](/lab_3/lab_3.1/visio)
+
+#### Software:
+
+Our code has clear comments.
+
+Code in folder in [/lab_3/lab_3.1/code](/lab_3/lab_3.1/code)
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Arduino programming language](https://www.arduino.cc/reference/en/)
+- [HTML5](https://ru.wikipedia.org/wiki/HTML5)
+- [JavaScript](https://ru.wikipedia.org/wiki/JavaScript)
+- [CSS](https://ru.wikipedia.org/wiki/CSS)
+
+### Libraries
+
+- Wire.h - для работыс  i2c
+- DHT.h - для работы с датчиком DHT11
+- MQ135.h - для работы с датчиком MQ135
+- WiFi.h - для подключению к WiFi
+- WebServer - для создания сервера из esp32
+- LiquidCrystal_I2C.h - для работы с LCD i2c дисплея
+
+## Building
+
+For build code and upload on Arduino NodeMCU 32S, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3) and [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+---
+
+</details>
+
+<details>
+<summary>Laboratory 3.2</summary>
+
+# Lab_3.2
+
+Lab_3.2 - Написать!!!
+
+Lab_3.2 Проект можно выполнить на [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [lab_3.2 docs](/lab_3/lab_3.2/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+##### Maximum kit(to complete all tasks one by one):
+
+Написать состав
+
+##### Base scheme for Project
+
+![Task_1-6_image](/lab_3/lab_3.2/images/lab_3.2.png)
+
+![Task_1-6_Circuit](/lab_3/lab_3.2/images/Circuit_Task_1-6.png)
+
+##### DFD
+
+![lab_3.2 DFD](/lab_3/lab_3.2/images/DFD.png)
+
+##### Other images
+
+Other images with connection in [/lab_3/lab_3.2/images](/lab_3/lab_3.2/images)
+
+##### Visio
+
+Visio in folder in [/lab_3/lab3.2/visio](/lab_3/lab_3.2/visio)
+
+#### Software:
+
+Our code has clear comments.
+
+Code in folder in [/lab_3/lab3.2/code](/lab_3/lab_3.2/code)
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Arduino programming language](https://www.arduino.cc/reference/en/)
+- [HTML5](https://ru.wikipedia.org/wiki/HTML5)
+- [JavaScript](https://ru.wikipedia.org/wiki/JavaScript)
+- [CSS](https://ru.wikipedia.org/wiki/CSS)
+
+### Libraries
+
+- Wire.h - для работыс  i2c
+- ESP32_MailClient.h - для отправки email
+- WiFi.h - для подключению к WiFi
+- WebServer - для создания сервера из esp32
+- LiquidCrystal_I2C.h - для работы с LCD i2c дисплея
+- MFRC522.h - для работы с RFID
+- SPI.h - для устройств поддерживающих spi протокол
+
+## Building
+
+For build code and upload on Arduino NodeMCU 32S, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+---
+
+</details>
+
+<details>
+<summary>Laboratory 3.3</summary>
+
+# Lab_3.3
+
+Lab_3.3 - Написать!!!
+
+Lab_3.3 Проект можно выполнить на [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [lab_3.3 docs](/lab_3/lab_3.3/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+##### Maximum kit(to complete all tasks one by one):
+
+Написать состав!
+
+##### Last scheme for Project
+
+![lab_3.3 Task_1-6_image](/lab_3/lab_3.3/images/lab_3.3.jpg)
+
+![Task_1-6_Circuit](/lab_3/lab_3.3/images/Circuit_Task_1-6.png)
+
+##### DFD
+
+![lab_3.3 DFD](/lab_3/lab_3.3/images/DFD.png)
+
+##### Other images
+
+Other images with connection in [/lab_1/lab_3.3/images](/lab_3/lab_3.3/images)
+
+##### Visio
+
+Visio in folder in [/lab_3/lab3.3/visio](/lab_3/lab_3.3/visio)
+
+#### Software:
+
+Our code has clear comments.
+
+Code in folder in [/lab_3/lab_3.3/code/](/lab_3/lab_3.3/code/)
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Arduino programming language](https://www.arduino.cc/reference/en/)
+
+### Libraries
+
+- WiFi.h - для подключению к WiFi
+- FastBot.h - esp32 как сервер для телеграмм бота
+
+## Building
+
+For build code and upload on Arduino NodeMCU 32S, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+---
+
+</details>
+
+</details>
+
 ## Wishes
 
 Use this project wisely.  
