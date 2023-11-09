@@ -55,7 +55,7 @@ void setup(){
     Serial.begin(9600);
     pinMode(greenPin, OUTPUT);
     pinMode(redPin, OUTPUT);
-    pinMode(SOUND_PIN, OUTPUT);
+    //pinMode(SOUND_PIN, OUTPUT); раскоментировать, если зуммер активный
 
     lcd.init(); // Инициализация lcd
     lcd.backlight(); // Включаем подсветку
@@ -293,25 +293,29 @@ void loop() {
     //открыто
     if(grD){
       digitalWrite(greenPin, 1);
-      digitalWrite(SOUND_PIN, 1);
+      //analoglWrite(SOUND_PIN, 1);
+      tone(SOUND_PIN, 1000); //если пасивный зуммер верхнюю строчку закоментить и эту расскоментить
       lcd.clear();
       lcd.setCursor(0, 0); // Устанавливаем курсор в начало 1 строки
       lcd.print("Opened");
       delay(1000);
-      digitalWrite(SOUND_PIN, 0);
+      //analoglWrite(SOUND_PIN, 0);
+      tone(SOUND_PIN, 0); //если пасивный зуммер верхнюю строчку закоментить и эту расскоментить
       digitalWrite(greenPin, 0);
       grD = false;
     }
     //закрыто
     if(rdD){
       digitalWrite(redPin, 1);
-      digitalWrite(SOUND_PIN, 1);
+      //analogWrite(SOUND_PIN, 200);
+      tone(SOUND_PIN, 1000); //если пасивный зуммер верхнюю строчку закоментить и эту расскоментить
       lcd.clear();
       lcd.setCursor(0, 0); // Устанавливаем курсор в начало 1 строки
       lcd.print("Closed");
       delay(1000);
       digitalWrite(redPin, 0);
-      digitalWrite(SOUND_PIN, 0);
+      //analoglWrite(SOUND_PIN, 0);
+      tone(SOUND_PIN, 0); //если пасивный зуммер верхнюю строчку закоментить и эту расскоментить и наоборот
       rdD = false;
     }
 }

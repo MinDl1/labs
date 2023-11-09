@@ -4,7 +4,7 @@ import datetime
 import csv
 
 # Создаем подключение к базе данных (файл ValueDB будет создан)
-connection = sqlite3.connect('lab_3.1/data/ValueDB.db')
+connection = sqlite3.connect('data/ValueDB.db')
 cursor = connection.cursor()
 
 def create_db():
@@ -34,7 +34,7 @@ def main():
     i = 1
     
     # open the file in the write mode
-    f = open('lab_3.1/data/values.csv', 'w')
+    f = open('data/values.csv', 'w')
     
     print("CSV created")
     # create the csv writer
@@ -48,6 +48,7 @@ def main():
         # Считываем значения с датчика движения
         pirVal = ser.readline().decode('utf-8').rstrip()
         insert_data(i, pirVal, datetime.datetime.now())
+        print(pirVal)
         
         # Если обнаружили движение, то выводим сообщение о тревоге
         if pirVal == "HIGH":
