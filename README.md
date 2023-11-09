@@ -500,7 +500,7 @@ Lab_1.3 source code is made available on [Arduino Uno](https://docs.arduino.cc/h
 
 ##### Last scheme for Project
 
-![lab_1.3 Task_1_image](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.jpg)
+![lab_1.3 Task_1_image](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.png)
 
 ##### DFD
 
@@ -592,7 +592,7 @@ Other code in folders in [/lab_1/lab_1.3/code/](/lab_1/lab_1.3/code/)
 <details>
 <summary>Click to see Task_1-6</summary>
 
-![lab_1.3 Task_1-6](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.jpg)
+![lab_1.3 Task_1-6](/lab_1/lab_1.3/images/Task_1-6/Task_1-6.png)
 
 ![lab_1.3 Task_1-6](/lab_1/lab_1.3/images/Task_1-6/Circuit_Task_1-6.png)
 
