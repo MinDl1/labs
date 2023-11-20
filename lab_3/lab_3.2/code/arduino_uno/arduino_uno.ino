@@ -12,7 +12,7 @@ MAX7219 < 1, 1, 5 > mtrx;   // одна матрица (8х8), пин CS на D5
 LiquidCrystal_I2C lcd(0x27,16,2); // Задаем адрес и размерность дисплея
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   lcd.init(); // Инициализация lcd
   lcd.backlight(); // Включаем подсветку

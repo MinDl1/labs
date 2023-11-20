@@ -37,7 +37,7 @@ import serial
 def index(request):
     return render(request, 'index.html') 
 def control_led(request):
-    port = '/dev/cu.usbmodem11101' # используйте свой COM-порт здесь
+    port = '/dev/cu.usbmodem11401' # используйте свой COM-порт здесь
     baudrate = 115200
     action = request.POST.get("name")+"\n"
     
