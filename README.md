@@ -915,11 +915,14 @@ Lab_3.1 Проект можно выполнить на [Arduino Uno R3](https:/
 
 ##### Maximum kit(to complete all tasks one by one):
 
-Написать состав
+- Servo двигатель - 1 шт.
+- Компьютер - 1 шт.
+- Arduino UNO R3 - 1 шт.
+- Датчик движения HC-SR501 - 1 шт.
+- Кабель usb type-a и type-b
+- Дисплей lcd - 1 шт.
 
 ##### Base scheme for Project
-
-![lab_3.1 task_1-6_image](/lab_3/lab_3.1/images/lab_3.1.png)
 
 ![lab_3.1 task_1-6_Circuit](/lab_3/lab_3.1/images/Circuit_Task_1-6.png)
 
@@ -989,13 +992,15 @@ Lab_3.2 Проект можно выполнить на [NodeMCU 32S](https://no
 
 ##### Maximum kit(to complete all tasks one by one):
 
-Написать состав
+- Компьютер - 1 шт.
+- Arduino UNO R3 - 1 шт.
+- Кабель usb type-a и type-b
+- Дисплей lcd - 1 шт.
+- Зуммер 5 V - 1 шт.
 
 ##### Base scheme for Project
 
-![Task_1-6_image](/lab_3/lab_3.2/images/lab_3.2.png)
-
-![Task_1-6_Circuit](/lab_3/lab_3.2/images/Circuit_Task_1-6.png)
+![Task_1-6_Circuit](/lab_3/lab_3.2/images/Circuit.png)
 
 ##### DFD
 
@@ -1064,13 +1069,15 @@ Lab_3.3 Проект можно выполнить на [NodeMCU 32S](https://no
 
 ##### Maximum kit(to complete all tasks one by one):
 
-Написать состав!
+- Компьютер - 1 шт.
+- Arduino UNO R3 - 1 шт.
+- Кабель usb type-a и type-b
+- Мини ПК Raspberry PI 4 B - 1 шт.
+- Camera 2.2 - 1 шт.
 
 ##### Last scheme for Project
 
-![lab_3.3 Task_1-6_image](/lab_3/lab_3.3/images/lab_3.3.jpg)
-
-![Task_1-6_Circuit](/lab_3/lab_3.3/images/Circuit_Task_1-6.png)
+![Task_1-6_Circuit](/lab_3/lab_3.3/images/Schemes.png)
 
 ##### DFD
 
