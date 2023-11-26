@@ -915,12 +915,11 @@ Lab_3.1 Проект можно выполнить на [Arduino Uno R3](https:/
 
 ##### Maximum kit(to complete all tasks one by one):
 
-- Servo двигатель - 1 шт.
+- Серводвигатель TowerPro SG90 9G - 1 шт.
 - Компьютер - 1 шт.
 - Arduino UNO R3 - 1 шт.
 - Датчик движения HC-SR501 - 1 шт.
 - Кабель usb type-a и type-b
-- Дисплей lcd - 1 шт.
 
 ##### Base scheme for Project
 
@@ -995,8 +994,9 @@ Lab_3.2 Проект можно выполнить на [NodeMCU 32S](https://no
 - Компьютер - 1 шт.
 - Arduino UNO R3 - 1 шт.
 - Кабель usb type-a и type-b
-- Дисплей lcd - 1 шт.
+- Дисплей LCD 16X2 I2C - 1 шт.
 - Зуммер 5 V - 1 шт.
+- Buzzer madule Louleveltrigger - 1 шт. 
 
 ##### Base scheme for Project
 
