@@ -915,11 +915,12 @@ Lab_3.1 Проект можно выполнить на [Arduino Uno R3](https:/
 
 ##### Maximum kit(to complete all tasks one by one):
 
-- Серводвигатель TowerPro SG90 9G - 1 шт.
+- Микроконтроллер Arduino Uno R3 – 1 шт.
+- Кабель usb type-b/usb type-a
 - Компьютер - 1 шт.
-- Arduino UNO R3 - 1 шт.
-- Датчик движения HC-SR501 - 1 шт.
-- Кабель usb type-a и type-b
+- Набор проводов - 1 шт.
+- Датчик движения HC-SR501
+- Серводвигатель TowerPro SG90 9G
 
 ##### Base scheme for Project
 
@@ -987,11 +988,10 @@ Lab_3.2 Проект можно выполнить на [NodeMCU 32S](https://no
 
 ##### Maximum kit(to complete all tasks one by one):
 
+- Buzzer madule Louleveltrigger - 1 шт.
+- Дисплей LCD1602 – 1 шт.
 - Компьютер - 1 шт.
-- Arduino UNO R3 - 1 шт.
-- Кабель usb type-a и type-b
-- Дисплей LCD 16X2 I2C - 1 шт.
-- Buzzer madule Louleveltrigger - 1 шт. 
+- Микроконтроллер Arduino UNO R3 - 1 шт. 
 
 ##### Base scheme for Project
 
@@ -1059,10 +1059,9 @@ Lab_3.3 Проект можно выполнить на [NodeMCU 32S](https://no
 
 ##### Maximum kit(to complete all tasks one by one):
 
+- Микроконтроллер Raspberry pi 4 b
 - Компьютер - 1 шт.
-- Arduino UNO R3 - 1 шт.
-- Кабель usb type-a и type-b
-- Мини ПК Raspberry PI 4 B - 1 шт.
+- Кабель usb type-a и type-b .
 - Camera 2.2 - 1 шт.
 
 ##### Last scheme for Project
