@@ -995,7 +995,6 @@ Lab_3.2 Проект можно выполнить на [NodeMCU 32S](https://no
 - Arduino UNO R3 - 1 шт.
 - Кабель usb type-a и type-b
 - Дисплей LCD 16X2 I2C - 1 шт.
-- Зуммер 5 V - 1 шт.
 - Buzzer madule Louleveltrigger - 1 шт. 
 
 ##### Base scheme for Project
