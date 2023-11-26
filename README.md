@@ -899,7 +899,7 @@ This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp3
 
 # Lab_3.1
 
-Lab_3.1 - Написать!!!
+Lab_3.1 - На первом этапе производится проверка возможности использования компьютера в локальной сети в качестве сервера и оценка работы Arduino Uno в роли микроконтроллера, к которому подключены датчики мониторинга пространства. 
 
 Lab_3.1 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
@@ -976,7 +976,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 # Lab_3.2
 
-Lab_3.2 - Написать!!!
+Lab_3.2 - На втором этапе исследуется система оповещения пользователя при помощи звукового сопровождения. 
 
 Lab_3.2 Проект можно выполнить на [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
@@ -1053,7 +1053,7 @@ This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp3
 
 # Lab_3.3
 
-Lab_3.3 - Написать!!!
+Lab_3.3 - На третьем этапе рассматривается вероятность использования компьютера как сервера с подключенным к нему микроконтроллером Raspberry PI. Также производится подключение системы мониторинга с использованием анализа видеонаблюдения. 
 
 Lab_3.3 Проект можно выполнить на [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
