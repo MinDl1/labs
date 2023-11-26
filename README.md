@@ -954,12 +954,8 @@ Code in folder in [/lab_3/lab_3.1/code](/lab_3/lab_3.1/code)
 
 ### Libraries
 
-- Wire.h - для работыс  i2c
-- DHT.h - для работы с датчиком DHT11
-- MQ135.h - для работы с датчиком MQ135
-- WiFi.h - для подключению к WiFi
-- WebServer - для создания сервера из esp32
-- LiquidCrystal_I2C.h - для работы с LCD i2c дисплея
+- Arduino Programm language(библиотеки: Servo.h)
+- Python(Библиотеки: sqlite3, serial, datetime, csv). 
 
 ## Building
 
@@ -1030,13 +1026,8 @@ Code in folder in [/lab_3/lab3.2/code](/lab_3/lab_3.2/code)
 
 ### Libraries
 
-- Wire.h - для работыс  i2c
-- ESP32_MailClient.h - для отправки email
-- WiFi.h - для подключению к WiFi
-- WebServer - для создания сервера из esp32
-- LiquidCrystal_I2C.h - для работы с LCD i2c дисплея
-- MFRC522.h - для работы с RFID
-- SPI.h - для устройств поддерживающих spi протокол
+- В Arduino Programm language(Библиотеки: LiquidCrystal_I2C.h, GyverMAX7219.h)
+- Python(Библиотеки: sqlite3, os, sys, pathlib, django)
 
 ## Building
 
@@ -1104,8 +1095,7 @@ Code in folder in [/lab_3/lab_3.3/code/](/lab_3/lab_3.3/code/)
 
 ### Libraries
 
-- WiFi.h - для подключению к WiFi
-- FastBot.h - esp32 как сервер для телеграмм бота
+- Python (picamera2, opencv)
 
 ## Building
 
