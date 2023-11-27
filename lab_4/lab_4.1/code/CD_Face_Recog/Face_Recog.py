@@ -17,7 +17,9 @@ picam2 = Picamera2()
 picam2.configure(picam2.create_preview_configuration(main={"format": 'XRGB8888', "size": (640, 480)}))
 picam2.start()
 
-cap = cv2.VideoCapture(0) #Get vidoe feed from the Camera
+cap = cv2.VideoCapture(0,cv2.CAP_DSHOW) #Get vidoe feed from the Camera
+
+i = 0
 
 while(True):
 
@@ -37,7 +39,8 @@ while(True):
     	
 		cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
 
-	cv2.imshow('Preview',img) #Display the Video
+	cv2.imwrite(f'Preview{i}.png',img) #Write the image
+	i+=1
 	if cv2.waitKey(20) & 0xFF == ord('q'):
 		break
 
