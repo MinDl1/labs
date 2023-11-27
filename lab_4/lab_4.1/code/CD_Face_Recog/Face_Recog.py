@@ -39,7 +39,7 @@ while(True):
     	
 		cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
 
-	cv2.imwrite(f'Preview{i}.png',img) #Write the image
+	cv2.imshow(f'Preview{i}.png',img) #Write the image
 	i+=1
 	if cv2.waitKey(20) & 0xFF == ord('q'):
 		break
