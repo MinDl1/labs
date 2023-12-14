@@ -1,0 +1,11 @@
+<!DOCTYPE html> <html>
+<head>
+<title>Morze</title>
+</head> <body>
+<h1>text to morze</h1>
+<form method="POST" action="{% url 'led_control' %}">
+{% csrf_token %}
+<input type="text" name="name" />
+<button type="submit" name="action" value="on">отправить</button>
+</form> </body>
+</html>

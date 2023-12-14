@@ -882,6 +882,231 @@ This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp3
 
 </details>
 
+<details>
+<summary>Laboratory 3</summary>
+
+## Collaborators
+
+- [IrinaBelous](https://github.com/IrinaBelous)
+- [KseniiaFilippova](https://github.com/KseniiaFilippova)
+
+## Documentation
+
+- Our [lab3 docs](/lab_3/docs/)
+
+<details>
+<summary>Laboratory 3.1</summary>
+
+# Lab_3.1
+
+Lab_3.1 - На первом этапе производится проверка возможности использования компьютера в локальной сети в качестве сервера и оценка работы Arduino Uno в роли микроконтроллера, к которому подключены датчики мониторинга пространства. 
+
+Lab_3.1 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [lab_3.1 docs](/lab_3/lab_3.1/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+##### Maximum kit(to complete all tasks one by one):
+
+- Микроконтроллер Arduino Uno R3 – 1 шт.
+- Кабель usb type-b/usb type-a
+- Компьютер - 1 шт.
+- Набор проводов - 1 шт.
+- Датчик движения HC-SR501
+- Серводвигатель TowerPro SG90 9G
+
+##### Base scheme for Project
+
+![lab_3.1 task_1-6_Circuit](/lab_3/lab_3.1/images/Circuit_Task_1-6.png)
+
+##### DFD
+
+![lab_3.1 DFD](/lab_3/lab_3.1/images/DFD.png)
+
+##### Other images
+
+Other images with connection in [/lab_3/lab_3.1/images](/lab_3/lab_3.1/images)
+
+##### Visio
+
+Visio in folder in [/lab_3/lab3.1/visio](/lab_3/lab_3.1/visio)
+
+#### Software:
+
+Our code has clear comments.
+
+Code in folder in [/lab_3/lab_3.1/code](/lab_3/lab_3.1/code)
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Arduino programming language](https://www.arduino.cc/reference/en/)
+- [HTML5](https://ru.wikipedia.org/wiki/HTML5)
+- [JavaScript](https://ru.wikipedia.org/wiki/JavaScript)
+- [CSS](https://ru.wikipedia.org/wiki/CSS)
+
+### Libraries
+
+- Arduino Programm language(библиотеки: Servo.h)
+- Python(Библиотеки: sqlite3, serial, datetime, csv). 
+
+## Building
+
+For build code and upload on Arduino NodeMCU 32S, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3) and [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+---
+
+</details>
+
+<details>
+<summary>Laboratory 3.2</summary>
+
+# Lab_3.2
+
+Lab_3.2 - На втором этапе исследуется система оповещения пользователя при помощи звукового сопровождения. 
+
+Lab_3.2 Проект можно выполнить на [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [lab_3.2 docs](/lab_3/lab_3.2/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+##### Maximum kit(to complete all tasks one by one):
+
+- Buzzer madule Louleveltrigger - 1 шт.
+- Дисплей LCD1602 – 1 шт.
+- Компьютер - 1 шт.
+- Микроконтроллер Arduino UNO R3 - 1 шт. 
+
+##### Base scheme for Project
+
+![Task_1-6_Circuit](/lab_3/lab_3.2/images/Circuit.png)
+
+##### DFD
+
+![lab_3.2 DFD](/lab_3/lab_3.2/images/DFD.png)
+
+##### Other images
+
+Other images with connection in [/lab_3/lab_3.2/images](/lab_3/lab_3.2/images)
+
+##### Visio
+
+Visio in folder in [/lab_3/lab3.2/visio](/lab_3/lab_3.2/visio)
+
+#### Software:
+
+Our code has clear comments.
+
+Code in folder in [/lab_3/lab3.2/code](/lab_3/lab_3.2/code)
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Arduino programming language](https://www.arduino.cc/reference/en/)
+- [HTML5](https://ru.wikipedia.org/wiki/HTML5)
+- [JavaScript](https://ru.wikipedia.org/wiki/JavaScript)
+- [CSS](https://ru.wikipedia.org/wiki/CSS)
+
+### Libraries
+
+- В Arduino Programm language(Библиотеки: LiquidCrystal_I2C.h, GyverMAX7219.h)
+- Python(Библиотеки: sqlite3, os, sys, pathlib, django)
+
+## Building
+
+For build code and upload on Arduino NodeMCU 32S, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+---
+
+</details>
+
+<details>
+<summary>Laboratory 3.3</summary>
+
+# Lab_3.3
+
+Lab_3.3 - На третьем этапе рассматривается вероятность использования компьютера как сервера с подключенным к нему микроконтроллером Raspberry PI. Также производится подключение системы мониторинга с использованием анализа видеонаблюдения. 
+
+Lab_3.3 Проект можно выполнить на [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+## Documentation
+
+### Narrative documentation:
+
+- Our [lab_3.3 docs](/lab_3/lab_3.3/docs/)
+
+### Hardware and Software:
+
+#### Hardware:
+
+##### Maximum kit(to complete all tasks one by one):
+
+- Микроконтроллер Raspberry pi 4 b
+- Компьютер - 1 шт.
+- Кабель usb type-a и type-b .
+- Camera 2.2 - 1 шт.
+
+##### Last scheme for Project
+
+![Task_1-6_Circuit](/lab_3/lab_3.3/images/Schemes.png)
+
+##### DFD
+
+![lab_3.3 DFD](/lab_3/lab_3.3/images/DFD.png)
+
+##### Other images
+
+Other images with connection in [/lab_1/lab_3.3/images](/lab_3/lab_3.3/images)
+
+##### Visio
+
+Visio in folder in [/lab_3/lab3.3/visio](/lab_3/lab_3.3/visio)
+
+#### Software:
+
+Our code has clear comments.
+
+Code in folder in [/lab_3/lab_3.3/code/](/lab_3/lab_3.3/code/)
+
+### Language & Applications documentation:
+
+- [Arduino](https://docs.arduino.cc/)
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Arduino programming language](https://www.arduino.cc/reference/en/)
+
+### Libraries
+
+- Python (picamera2, opencv)
+
+## Building
+
+For build code and upload on Arduino NodeMCU 32S, you need to download [Arduino IDE](https://www.arduino.cc/en/software).  
+This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
+
+---
+
+</details>
+
+</details>
+
 ## Wishes
 
 Use this project wisely.  
