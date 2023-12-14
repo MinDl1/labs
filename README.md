@@ -899,7 +899,7 @@ This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp3
 
 # Lab_3.1
 
-Lab_3.1 - Написать!!!
+Lab_3.1 - На первом этапе производится проверка возможности использования компьютера в локальной сети в качестве сервера и оценка работы Arduino Uno в роли микроконтроллера, к которому подключены датчики мониторинга пространства. 
 
 Lab_3.1 Проект можно выполнить на [Arduino Uno R3](https://docs.arduino.cc/hardware/uno-rev3 ) и [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
@@ -915,11 +915,14 @@ Lab_3.1 Проект можно выполнить на [Arduino Uno R3](https:/
 
 ##### Maximum kit(to complete all tasks one by one):
 
-Написать состав
+- Микроконтроллер Arduino Uno R3 – 1 шт.
+- Кабель usb type-b/usb type-a
+- Компьютер - 1 шт.
+- Набор проводов - 1 шт.
+- Датчик движения HC-SR501
+- Серводвигатель TowerPro SG90 9G
 
 ##### Base scheme for Project
-
-![lab_3.1 task_1-6_image](/lab_3/lab_3.1/images/lab_3.1.png)
 
 ![lab_3.1 task_1-6_Circuit](/lab_3/lab_3.1/images/Circuit_Task_1-6.png)
 
@@ -952,12 +955,8 @@ Code in folder in [/lab_3/lab_3.1/code](/lab_3/lab_3.1/code)
 
 ### Libraries
 
-- Wire.h - для работыс  i2c
-- DHT.h - для работы с датчиком DHT11
-- MQ135.h - для работы с датчиком MQ135
-- WiFi.h - для подключению к WiFi
-- WebServer - для создания сервера из esp32
-- LiquidCrystal_I2C.h - для работы с LCD i2c дисплея
+- Arduino Programm language(библиотеки: Servo.h)
+- Python(Библиотеки: sqlite3, serial, datetime, csv). 
 
 ## Building
 
@@ -973,7 +972,7 @@ This code work only for [Arduino Uno](https://docs.arduino.cc/hardware/uno-rev3)
 
 # Lab_3.2
 
-Lab_3.2 - Написать!!!
+Lab_3.2 - На втором этапе исследуется система оповещения пользователя при помощи звукового сопровождения. 
 
 Lab_3.2 Проект можно выполнить на [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
@@ -989,13 +988,14 @@ Lab_3.2 Проект можно выполнить на [NodeMCU 32S](https://no
 
 ##### Maximum kit(to complete all tasks one by one):
 
-Написать состав
+- Buzzer madule Louleveltrigger - 1 шт.
+- Дисплей LCD1602 – 1 шт.
+- Компьютер - 1 шт.
+- Микроконтроллер Arduino UNO R3 - 1 шт. 
 
 ##### Base scheme for Project
 
-![Task_1-6_image](/lab_3/lab_3.2/images/lab_3.2.png)
-
-![Task_1-6_Circuit](/lab_3/lab_3.2/images/Circuit_Task_1-6.png)
+![Task_1-6_Circuit](/lab_3/lab_3.2/images/Circuit.png)
 
 ##### DFD
 
@@ -1026,13 +1026,8 @@ Code in folder in [/lab_3/lab3.2/code](/lab_3/lab_3.2/code)
 
 ### Libraries
 
-- Wire.h - для работыс  i2c
-- ESP32_MailClient.h - для отправки email
-- WiFi.h - для подключению к WiFi
-- WebServer - для создания сервера из esp32
-- LiquidCrystal_I2C.h - для работы с LCD i2c дисплея
-- MFRC522.h - для работы с RFID
-- SPI.h - для устройств поддерживающих spi протокол
+- В Arduino Programm language(Библиотеки: LiquidCrystal_I2C.h, GyverMAX7219.h)
+- Python(Библиотеки: sqlite3, os, sys, pathlib, django)
 
 ## Building
 
@@ -1048,7 +1043,7 @@ This code work only for [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp3
 
 # Lab_3.3
 
-Lab_3.3 - Написать!!!
+Lab_3.3 - На третьем этапе рассматривается вероятность использования компьютера как сервера с подключенным к нему микроконтроллером Raspberry PI. Также производится подключение системы мониторинга с использованием анализа видеонаблюдения. 
 
 Lab_3.3 Проект можно выполнить на [NodeMCU 32S](https://nodemcu.readthedocs.io/en/dev-esp32/).
 
@@ -1064,13 +1059,14 @@ Lab_3.3 Проект можно выполнить на [NodeMCU 32S](https://no
 
 ##### Maximum kit(to complete all tasks one by one):
 
-Написать состав!
+- Микроконтроллер Raspberry pi 4 b
+- Компьютер - 1 шт.
+- Кабель usb type-a и type-b .
+- Camera 2.2 - 1 шт.
 
 ##### Last scheme for Project
 
-![lab_3.3 Task_1-6_image](/lab_3/lab_3.3/images/lab_3.3.jpg)
-
-![Task_1-6_Circuit](/lab_3/lab_3.3/images/Circuit_Task_1-6.png)
+![Task_1-6_Circuit](/lab_3/lab_3.3/images/Schemes.png)
 
 ##### DFD
 
@@ -1098,8 +1094,7 @@ Code in folder in [/lab_3/lab_3.3/code/](/lab_3/lab_3.3/code/)
 
 ### Libraries
 
-- WiFi.h - для подключению к WiFi
-- FastBot.h - esp32 как сервер для телеграмм бота
+- Python (picamera2, opencv)
 
 ## Building
 
